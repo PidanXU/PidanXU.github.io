@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            EIS2019 | 
+        
+        Stay foolish,stay hungry!
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Xzhah">
+    <meta name="description" itemprop="description" content="二进制">
+    <meta name="keywords" content="ctf,eis2019">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="EMuf09ADP-S7GIydWv2sIXYV0sWMR9YjIKrmuBm6jVU">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Stay foolish,stay hungry!">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://pidanxu.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="EIS2019 | Stay foolish,stay hungry!">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="二进制">
+    <meta property="og:article:tag" content="eis2019"> 
+
+    
+        <meta property="article:published_time" content="11月 21, 2019">
+        <meta property="article:modified_time" content="11月 27, 2019">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="EIS2019 | Stay foolish,stay hungry!">
+    <meta name="twitter:description" content="二进制">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://pidanxu.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://pidanxu.github.io/2019/11/21/EIS2019/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stay foolish,stay hungry!",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Xzhah",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "在这里与你相遇，是一件幸运的事情"
+    },
+    "headline": "EIS2019",
+    "url": "http://pidanxu.github.io/2019/11/21/EIS2019/index.html",
+    "datePublished": "11月 21, 2019",
+    "dateModified": "11月 27, 2019",
+    "description": "二进制",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://pidanxu.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="alternate" href="/atom.xml" title="Stay foolish,stay hungry!" type="application/atom+xml">
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Re"><span class="post-toc-number">1.</span> <span class="post-toc-text">Re</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#re1"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">re1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#re2"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">re2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#re3"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">re3</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Crypto"><span class="post-toc-number">2.</span> <span class="post-toc-text">Crypto</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rsa"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">rsa</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MISC"><span class="post-toc-number">3.</span> <span class="post-toc-text">MISC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#misc3"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">misc3</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#twocats"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">twocats</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MISC1"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">MISC1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MISC2"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">MISC2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#WebShell"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">WebShell</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web"><span class="post-toc-number">4.</span> <span class="post-toc-text">Web</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ezbypass"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Ezbypass</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ezupload"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Ezupload</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                EIS2019
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Xzhah</strong>
+        <span>11月 21, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://pidanxu.github.io/2019/11/21/EIS2019/">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/eis2019/">eis2019</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=EIS2019&url=http://pidanxu.github.io/2019/11/21/EIS2019/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=EIS2019&url=http://pidanxu.github.io/2019/11/21/EIS2019/index.html&via=Xzhah" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pidanxu.github.io/2019/11/21/EIS2019/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pidanxu.github.io/2019/11/21/EIS2019/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Stay foolish,stay hungry!&title=EIS2019&summary=二进制&pics=http://pidanxu.github.io/img/favicon.png&url=http://pidanxu.github.io/2019/11/21/EIS2019/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>[TOC]</p>
+<h2 id="Re"><a href="#Re" class="headerlink" title="Re"></a>Re</h2><h3 id="re1"><a href="#re1" class="headerlink" title="re1"></a>re1</h3><p>把检测断点和ptrace的代码nop了，然后动态跟进去，发现最后输入和以下数组进行异或</p>
+<p>0xc,0x1,0x33,0x2f,0x7a,0x7c,0xe0,0x00,0x3,0x7a,0x73,0x4e,0x88,0x6d,0xd2,0xcc</p>
+<p>最后做一个倒序，和以下密文进行比较</p>
+<p>0xFF,0xE1,0x5F, 0xD7, 0x25, 0x10, 0x13, 0x71, 0x74, 0xBF, 0x19,0x16, 0x5F, 0x5E, 0x30, 0x7F</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c=[<span class="number">0xFF</span>,<span class="number">0xE1</span>,<span class="number">0x5F</span>, <span class="number">0xD7</span>, <span class="number">0x25</span>, <span class="number">0x10</span>, <span class="number">0x13</span>, <span class="number">0x71</span>, <span class="number">0x74</span>, <span class="number">0xBF</span>, <span class="number">0x19</span>,<span class="number">0x16</span>, <span class="number">0x5F</span>, <span class="number">0x5E</span>, <span class="number">0x30</span>, <span class="number">0x7F</span>]</span><br><span class="line">key=[<span class="number">0xc</span>,<span class="number">0x1</span>,<span class="number">0x33</span>,<span class="number">0x2f</span>,<span class="number">0x7a</span>,<span class="number">0x7c</span>,<span class="number">0xe0</span>,<span class="number">0x00</span>,<span class="number">0x3</span>,<span class="number">0x7a</span>,<span class="number">0x73</span>,<span class="number">0x4e</span>,<span class="number">0x88</span>,<span class="number">0x6d</span>,<span class="number">0xd2</span>,<span class="number">0xcc</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">16</span>):</span><br><span class="line">	<span class="keyword">print</span> chr(key[i]^c[<span class="number">15</span>-i])</span><br></pre></td></tr></table></figure>
+<h3 id="re2"><a href="#re2" class="headerlink" title="re2"></a>re2</h3><p>解方程组，matlab代码如下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">syms a10 a11 a12  a13 a14 a15 a16 a17 a18 a19 a110 a111 a112 a113 a114 a115  a116  a117 a118 a119 a120 a121 a122 a123 a124 a125 a126 a127 a128  a129 a130 a131 </span><br><span class="line">e1=<span class="number">37027</span> * a130+ <span class="number">50244</span> * a128+ <span class="number">37157</span> * a127+ <span class="number">58180</span> * a124+ <span class="number">1513</span> * a123+ <span class="number">39390</span> * a122+ <span class="number">29470</span> * a119+ <span class="number">44970</span> * a118+ <span class="number">48734</span> * a116+ <span class="number">2139</span> * a115+ <span class="number">45204</span> * a111+ <span class="number">35081</span> * a110+ <span class="number">39591</span> * a19+ <span class="number">47551</span> * a17+ <span class="number">20069</span> * a16+ <span class="number">45266</span> * a15+ <span class="number">22432</span> * a14+ <span class="number">44493</span> *  a10- <span class="number">326</span> * a11- <span class="number">57451</span> * a12- <span class="number">18424</span> * a13- <span class="number">3751</span> * a18- <span class="number">6984</span> * a112- <span class="number">9410</span> * a113- <span class="number">54261</span> * a114- <span class="number">62111</span> * a117- <span class="number">20305</span> * a120- <span class="number">33120</span> * a121- <span class="number">11160</span> * a125- <span class="number">24198</span> * a126- <span class="number">1646</span> * a129- <span class="number">13318</span> * a131 - <span class="number">34771791</span></span><br><span class="line">e2=<span class="number">12535</span> * a130+ <span class="number">50109</span> * a125+ <span class="number">48594</span> * a122+ <span class="number">11260</span> * a121+ <span class="number">51548</span> * a120+ <span class="number">26720</span> * a118+ <span class="number">9187</span> * a116+ <span class="number">28702</span> * a114+ <span class="number">9624</span> * a113+ <span class="number">21730</span> * a111+ <span class="number">46114</span> * a19+ <span class="number">32499</span> * a18+ <span class="number">11900</span> * a15+ <span class="number">22008</span> * a14+ <span class="number">48560</span> * a12+ <span class="number">-54741</span> *  a10- <span class="number">3606</span> * a11- <span class="number">45416</span> * a13- <span class="number">24275</span> * a16- <span class="number">64371</span> * a17- <span class="number">25714</span> * a110- <span class="number">56673</span> * a112- <span class="number">39430</span> * a115- <span class="number">35779</span> * a117- <span class="number">15144</span> * a119- <span class="number">45050</span> * a123- <span class="number">59016</span> * a124- <span class="number">29262</span> * a126- <span class="number">55650</span> * a127- <span class="number">29492</span> * a128- <span class="number">13828</span> * a129+ <span class="number">40522</span> * a131 +<span class="number">9451883</span></span><br><span class="line">e3=<span class="number">12097</span> * a130+ <span class="number">57988</span> * a128+ <span class="number">52683</span> * a127+ <span class="number">31675</span> * a126+ <span class="number">57822</span> * a125+ <span class="number">29817</span> * a122+ <span class="number">53780</span> * a121+ <span class="number">3541</span> * a120+ <span class="number">20331</span> * a119+ <span class="number">32755</span> * a116+ <span class="number">43681</span> * a115+ <span class="number">20144</span> * a114+ <span class="number">2665</span> * a111+ <span class="number">64858</span> * a110+ <span class="number">63538</span> * a19+ <span class="number">19362</span> * a17+ <span class="number">5819</span> * a15+ <span class="number">15266</span> * a14+ <span class="number">54532</span> * a13+ <span class="number">17703</span> *  a10- <span class="number">16114</span> * a11- <span class="number">24359</span> * a12- <span class="number">33999</span> * a16- <span class="number">58904</span> * a18- <span class="number">11844</span> * a112- <span class="number">29623</span> * a113- <span class="number">42532</span> * a117- <span class="number">60912</span> * a118- <span class="number">4711</span> * a123- <span class="number">56853</span> * a124- <span class="number">33486</span> * a129+ <span class="number">24590</span> * a131 - <span class="number">29782736</span></span><br><span class="line">e4=<span class="number">51792</span> * a130+ <span class="number">36741</span> * a129+ <span class="number">32393</span> * a128+ <span class="number">59561</span> * a127+ <span class="number">48151</span> * a118+ <span class="number">37522</span> * a117+ <span class="number">28232</span> * a115+ <span class="number">2783</span> * a112+ <span class="number">28</span> * a111+ <span class="number">27013</span> * a110+ <span class="number">24960</span> * a19+ <span class="number">42702</span> * a17+ <span class="number">17219</span> * a15+ <span class="number">41149</span> * a14+ <span class="number">3430</span> * a13+ <span class="number">24247</span> *  a10+ <span class="number">64898</span> * a11- <span class="number">24733</span> * a12- <span class="number">16545</span> * a16- <span class="number">1315</span> * a18- <span class="number">15867</span> * a113- <span class="number">12126</span> * a114- <span class="number">3823</span> * a116- <span class="number">20727</span> * a119- <span class="number">12037</span> * a120- <span class="number">9347</span> * a121- <span class="number">39338</span> * a122- <span class="number">50524</span> * a123- <span class="number">38675</span> * a124- <span class="number">26114</span> * a125- <span class="number">4975</span> * a126- <span class="number">24297</span> * a131 - <span class="number">27959979</span></span><br><span class="line">e5=<span class="number">64702</span> * a130+ <span class="number">13289</span> * a129+ <span class="number">25143</span> * a128+ <span class="number">35562</span> * a126+ <span class="number">54655</span> * a125+ <span class="number">26782</span> * a121+ <span class="number">3079</span> * a119+ <span class="number">52035</span> * a118+ <span class="number">62825</span> * a117+ <span class="number">57738</span> * a116+ <span class="number">5380</span> * a115+ <span class="number">64221</span> * a112+ <span class="number">41251</span> * a18+ <span class="number">15294</span> * a12+ <span class="number">-32261</span> *  a10- <span class="number">54551</span> * a11- <span class="number">61664</span> * a13- <span class="number">40648</span> * a14- <span class="number">12277</span> * a15- <span class="number">55300</span> * a16- <span class="number">63212</span> * a17- <span class="number">45548</span> * a19- <span class="number">22362</span> * a110- <span class="number">32993</span> * a111- <span class="number">43046</span> * a113- <span class="number">40770</span> * a114- <span class="number">7119</span> * a120- <span class="number">36194</span> * a122- <span class="number">56102</span> * a123- <span class="number">19468</span> * a124- <span class="number">59856</span> * a127+ <span class="number">23822</span> * a131 +<span class="number">10644544</span></span><br><span class="line">e6=<span class="number">5977</span> * a130+ <span class="number">63681</span> * a124+ <span class="number">6461</span> * a123+ <span class="number">43924</span> * a119+ <span class="number">9886</span> * a118+ <span class="number">22558</span> * a117+ <span class="number">8314</span> * a116+ <span class="number">47577</span> * a114+ <span class="number">43847</span> * a113+ <span class="number">32583</span> * a110+ <span class="number">30627</span> * a18+ <span class="number">47843</span> * a17+ <span class="number">33702</span> * a13+ <span class="number">60965</span> * a12+ <span class="number">-9407</span> * a10+ <span class="number">64048</span> * a11- <span class="number">12654</span> * a14- <span class="number">56126</span> * a15- <span class="number">47366</span> * a16- <span class="number">29056</span> * a19- <span class="number">50822</span> * a111- <span class="number">6240</span> * a112- <span class="number">12371</span> * a115- <span class="number">23282</span> * a120- <span class="number">13137</span> * a121- <span class="number">13716</span> * a122- <span class="number">43391</span> * a125- <span class="number">37217</span> * a126- <span class="number">43714</span> * a127- <span class="number">55909</span> * a128- <span class="number">62806</span> * a129+ <span class="number">36688</span> * a131 - <span class="number">230179</span></span><br><span class="line">e7=<span class="number">26401</span> * a130+ <span class="number">49426</span> * a129+ <span class="number">13407</span> * a128+ <span class="number">58093</span> * a127+ <span class="number">44955</span> * a126+ <span class="number">36904</span> * a125+ <span class="number">5856</span> * a123+ <span class="number">47030</span> * a122+ <span class="number">23917</span> * a120+ <span class="number">40389</span> * a118+ <span class="number">46343</span> * a116+ <span class="number">63390</span> * a114+ <span class="number">54218</span> * a19+ <span class="number">16024</span> * a18+ <span class="number">44459</span> * a16+ <span class="number">57144</span> * a15+ <span class="number">2565</span> * a14+ <span class="number">20301</span> * a12+ <span class="number">-23136</span> * a10+ <span class="number">47281</span> * a11- <span class="number">61441</span> * a13- <span class="number">31365</span> * a17- <span class="number">56894</span> * a110- <span class="number">52977</span> * a111- <span class="number">39404</span> * a112- <span class="number">63477</span> * a113- <span class="number">22773</span> * a115- <span class="number">50258</span> * a117- <span class="number">25970</span> * a119- <span class="number">56685</span> * a121- <span class="number">55893</span> * a124- <span class="number">25199</span> * a131 - <span class="number">15871572</span></span><br><span class="line">e8=<span class="number">22198</span> * a127+ <span class="number">41681</span> * a126+ <span class="number">53436</span> * a125+ <span class="number">11269</span> * a124+ <span class="number">15201</span> * a123+ <span class="number">14952</span> * a121+ <span class="number">58351</span> * a120+ <span class="number">1742</span> * a118+ <span class="number">7881</span> * a116+ <span class="number">18373</span> * a115+ <span class="number">50053</span> * a113+ <span class="number">3911</span> * a111+ <span class="number">15341</span> * a110+ <span class="number">42663</span> * a16+ <span class="number">22400</span> * a14+ <span class="number">4696</span> * a13+ <span class="number">18654</span> * a12+ <span class="number">62577</span> *  a10+ <span class="number">23069</span> * a11- <span class="number">16178</span> * a15- <span class="number">34941</span> * a17- <span class="number">50803</span> * a18- <span class="number">28229</span> * a19- <span class="number">45565</span> * a112- <span class="number">45774</span> * a114- <span class="number">28140</span> * a117- <span class="number">29986</span> * a119- <span class="number">40067</span> * a122- <span class="number">63863</span> * a128- <span class="number">50393</span> * a129- <span class="number">14615</span> * a130+ <span class="number">16722</span> * a131 - <span class="number">12844672</span></span><br><span class="line">e9=<span class="number">17326</span> * a130+ <span class="number">5750</span> * a127+ <span class="number">34037</span> * a125+ <span class="number">40581</span> * a124+ <span class="number">35119</span> * a122+ <span class="number">29560</span> * a121+ <span class="number">54431</span> * a117+ <span class="number">40135</span> * a114+ <span class="number">7362</span> * a111+ <span class="number">31888</span> * a110+ <span class="number">37963</span> * a13+ <span class="number">910</span> * a12+ <span class="number">-39728</span> *  a10+ <span class="number">57392</span> * a11- <span class="number">2274</span> * a14- <span class="number">61995</span> * a15- <span class="number">43938</span> * a16- <span class="number">12412</span> * a17- <span class="number">10642</span> * a18- <span class="number">10303</span> * a19- <span class="number">16356</span> * a112- <span class="number">615</span> * a113- <span class="number">11314</span> * a115- <span class="number">17185</span> * a116- <span class="number">61134</span> * a118- <span class="number">4620</span> * a119- <span class="number">4591</span> * a120- <span class="number">51958</span> * a123- <span class="number">65066</span> * a126- <span class="number">6232</span> * a128- <span class="number">60002</span> * a129+ <span class="number">30503</span> * a131 +<span class="number">7906855</span></span><br><span class="line">e10=<span class="number">31106</span> * a129+ <span class="number">2313</span> * a125+ <span class="number">32582</span> * a124+ <span class="number">61335</span> * a119+ <span class="number">50686</span> * a116+ <span class="number">27537</span> * a115+ <span class="number">58190</span> * a113+ <span class="number">25366</span> * a112+ <span class="number">56260</span> * a111+ <span class="number">6483</span> * a110+ <span class="number">61315</span> * a16+ <span class="number">48180</span> * a12+ <span class="number">-16296</span> * a10- <span class="number">8786</span> * a11- <span class="number">65236</span> * a13- <span class="number">48383</span> * a14- <span class="number">32713</span> * a15- <span class="number">58771</span> * a17- <span class="number">47593</span> * a18- <span class="number">14512</span> * a19- <span class="number">60203</span> * a114- <span class="number">7295</span> * a117- <span class="number">3885</span> * a118- <span class="number">39212</span> * a120- <span class="number">40687</span> * a121- <span class="number">19258</span> * a122- <span class="number">57463</span> * a123- <span class="number">24504</span> * a126- <span class="number">11629</span> * a127- <span class="number">8917</span> * a128- <span class="number">4535</span> * a130+ <span class="number">38212</span> * a131 +<span class="number">5359162</span></span><br><span class="line">e11=<span class="number">33683</span> * a128+ <span class="number">48721</span> * a127+ <span class="number">59096</span> * a126+ <span class="number">17103</span> * a125+ <span class="number">13203</span> * a124+ <span class="number">51928</span> * a123+ <span class="number">33264</span> * a122+ <span class="number">39538</span> * a120+ <span class="number">30153</span> * a118+ <span class="number">35247</span> * a116+ <span class="number">528</span> * a115+ <span class="number">6847</span> * a113+ <span class="number">18706</span> * a112+ <span class="number">35320</span> * a111+ <span class="number">3265</span> * a110+ <span class="number">11413</span> * a19+ <span class="number">51102</span> * a17+ <span class="number">39253</span> * a16+ <span class="number">63683</span> * a15+ <span class="number">25689</span> * a13+ <span class="number">-31610</span> * a10+ <span class="number">52623</span> * a11- <span class="number">35005</span> * a12- <span class="number">9320</span> * a14- <span class="number">16508</span> * a18- <span class="number">55110</span> * a114- <span class="number">63180</span> * a117- <span class="number">13666</span> * a119- <span class="number">49046</span> * a121- <span class="number">42949</span> * a129- <span class="number">60950</span> * a130+ <span class="number">26096</span> * a131 - <span class="number">34815239</span></span><br><span class="line">e12=<span class="number">49588</span> * a130+ <span class="number">61328</span> * a128+ <span class="number">5176</span> * a123+ <span class="number">50390</span> * a122+ <span class="number">21307</span> * a121+ <span class="number">46709</span> * a120+ <span class="number">28722</span> * a119+ <span class="number">3656</span> * a117+ <span class="number">15786</span> * a116+ <span class="number">21116</span> * a115+ <span class="number">49637</span> * a114+ <span class="number">45466</span> * a112+ <span class="number">30791</span> * a110+ <span class="number">59808</span> * a19+ <span class="number">15859</span> * a18+ <span class="number">6146</span> * a17+ <span class="number">47557</span> *  a10+ <span class="number">52902</span> * a11- <span class="number">12806</span> * a12- <span class="number">59773</span> * a13- <span class="number">9182</span> * a14- <span class="number">57417</span> * a15- <span class="number">18447</span> * a16- <span class="number">54963</span> * a111- <span class="number">61599</span> * a113- <span class="number">18454</span> * a118- <span class="number">30277</span> * a124- <span class="number">25544</span> * a125- <span class="number">17882</span> * a126- <span class="number">25149</span> * a127- <span class="number">17363</span> * a129+ <span class="number">21848</span> * a131 - <span class="number">23582278</span></span><br><span class="line">e13=<span class="number">18191</span> * a130+ <span class="number">58284</span> * a127+ <span class="number">4680</span> * a125+ <span class="number">42417</span> * a124+ <span class="number">36604</span> * a120+ <span class="number">54770</span> * a119+ <span class="number">33925</span> * a115+ <span class="number">45365</span> * a113+ <span class="number">12457</span> * a112+ <span class="number">38339</span> * a111+ <span class="number">42505</span> * a19+ <span class="number">29438</span> * a18+ <span class="number">60503</span> * a17+ <span class="number">5104</span> * a14+ <span class="number">59129</span> * a13+ <span class="number">37688</span> * a10+ <span class="number">23309</span> * a11- <span class="number">2616</span> * a12- <span class="number">12561</span> * a15- <span class="number">3215</span> * a16- <span class="number">49703</span> * a110- <span class="number">15471</span> * a114- <span class="number">23447</span> * a116- <span class="number">50859</span> * a117- <span class="number">86</span> * a118- <span class="number">3773</span> * a121- <span class="number">9573</span> * a122- <span class="number">25835</span> * a123- <span class="number">20107</span> * a126- <span class="number">45915</span> * a128- <span class="number">56171</span> * a129+ <span class="number">29164</span> * a131 - <span class="number">30273764</span></span><br><span class="line">e14=<span class="number">64657</span> * a130+ <span class="number">49705</span> * a127+ <span class="number">5149</span> * a126+ <span class="number">16127</span> * a125+ <span class="number">29867</span> * a122+ <span class="number">50998</span> * a121+ <span class="number">13714</span> * a119+ <span class="number">18867</span> * a114+ <span class="number">19385</span> * a113+ <span class="number">38458</span> * a111+ <span class="number">12962</span> * a110+ <span class="number">24700</span> * a19+ <span class="number">50206</span> * a15+ <span class="number">56918</span> * a13+ <span class="number">20452</span> * a10+ <span class="number">18062</span> * a11- <span class="number">56424</span> * a12- <span class="number">10457</span> * a14- <span class="number">12288</span> * a16- <span class="number">54591</span> * a17- <span class="number">44777</span> * a18- <span class="number">52078</span> * a112- <span class="number">9805</span> * a115- <span class="number">48011</span> * a116- <span class="number">27363</span> * a117- <span class="number">20890</span> * a118- <span class="number">788</span> * a120- <span class="number">7954</span> * a123- <span class="number">34056</span> * a124- <span class="number">34732</span> * a128- <span class="number">54092</span> * a129+ <span class="number">35416</span> * a131 - <span class="number">7501764</span></span><br><span class="line">e15=<span class="number">44968</span> * a130+ <span class="number">41644</span> * a126+ <span class="number">24333</span> * a125+ <span class="number">40656</span> * a123+ <span class="number">37330</span> * a122+ <span class="number">52431</span> * a120+ <span class="number">18903</span> * a119+ <span class="number">42329</span> * a116+ <span class="number">40645</span> * a113+ <span class="number">8191</span> * a18+ <span class="number">21330</span> * a15+ <span class="number">1951</span> * a12+ <span class="number">-39611</span> * a10+ <span class="number">25246</span> * a11- <span class="number">37145</span> * a13- <span class="number">3824</span> * a14- <span class="number">49145</span> * a16- <span class="number">43603</span> * a17- <span class="number">60671</span> * a19- <span class="number">53032</span> * a110- <span class="number">48392</span> * a111- <span class="number">15417</span> * a112- <span class="number">13059</span> * a114- <span class="number">58653</span> * a115- <span class="number">51631</span> * a117- <span class="number">50173</span> * a118- <span class="number">44904</span> * a121- <span class="number">34380</span> * a124- <span class="number">18100</span> * a127- <span class="number">57765</span> * a128- <span class="number">64534</span> * a129- <span class="number">26760</span> * a131 +<span class="number">35816639</span></span><br><span class="line">e16=<span class="number">28579</span> * a130+ <span class="number">34688</span> * a129+ <span class="number">29438</span> * a127+ <span class="number">44211</span> * a124+ <span class="number">57593</span> * a121+ <span class="number">7046</span> * a119+ <span class="number">39526</span> * a118+ <span class="number">17545</span> * a117+ <span class="number">61374</span> * a116+ <span class="number">15405</span> * a115+ <span class="number">30392</span> * a114+ <span class="number">19579</span> * a112+ <span class="number">47959</span> * a111+ <span class="number">23926</span> * a19+ <span class="number">43929</span> * a15+ <span class="number">53538</span> * a13+ <span class="number">45166</span> * a12+ <span class="number">-39824</span> * a10+ <span class="number">44401</span> * a11- <span class="number">2540</span> * a14- <span class="number">54452</span> * a16- <span class="number">11199</span> * a17- <span class="number">19801</span> * a18- <span class="number">13592</span> * a110- <span class="number">29922</span> * a113- <span class="number">34144</span> * a120- <span class="number">5305</span> * a122- <span class="number">46917</span> * a123- <span class="number">4511</span> * a125- <span class="number">23881</span> * a126- <span class="number">39081</span> * a128+ <span class="number">3296</span> * a131 - <span class="number">30983928</span></span><br><span class="line">e17=<span class="number">40454</span> * a130+ <span class="number">64380</span> * a129+ <span class="number">41415</span> * a127+ <span class="number">8487</span> * a122+ <span class="number">49381</span> * a119+ <span class="number">7959</span> * a118+ <span class="number">36587</span> * a116+ <span class="number">24510</span> * a115+ <span class="number">6928</span> * a114+ <span class="number">60087</span> * a17+ <span class="number">59815</span> * a15+ <span class="number">15203</span> * a12+ <span class="number">62215</span> * a10+ <span class="number">19566</span> * a11- <span class="number">30340</span> * a13- <span class="number">15964</span> * a14- <span class="number">13939</span> * a16- <span class="number">43008</span> * a18- <span class="number">44925</span> * a19- <span class="number">49239</span> * a110- <span class="number">40498</span> * a111- <span class="number">54453</span> * a112- <span class="number">33557</span> * a113- <span class="number">24721</span> * a117- <span class="number">21456</span> * a120- <span class="number">40311</span> * a121- <span class="number">61111</span> * a123- <span class="number">18918</span> * a124- <span class="number">33393</span> * a125- <span class="number">9301</span> * a126- <span class="number">61619</span> * a128+ <span class="number">58498</span> * a131 +<span class="number">4472687</span></span><br><span class="line">e18=<span class="number">2766</span> * a129+ <span class="number">14305</span> * a128+ <span class="number">10809</span> * a126+ <span class="number">6578</span> * a124+ <span class="number">53612</span> * a123+ <span class="number">36333</span> * a121+ <span class="number">30380</span> * a120+ <span class="number">3633</span> * a119+ <span class="number">35027</span> * a118+ <span class="number">62097</span> * a115+ <span class="number">39085</span> * a114+ <span class="number">21483</span> * a113+ <span class="number">43131</span> * a111+ <span class="number">5725</span> * a19+ <span class="number">40291</span> * a18+ <span class="number">63291</span> * a15+ <span class="number">57560</span> * a14+ <span class="number">40977</span> * a13+ <span class="number">33894</span> * a12+ <span class="number">35423</span> * a10- <span class="number">12994</span> * a11- <span class="number">32256</span> * a16- <span class="number">23534</span> * a17- <span class="number">40660</span> * a110- <span class="number">19119</span> * a112- <span class="number">33732</span> * a116- <span class="number">63756</span> * a117- <span class="number">13528</span> * a122- <span class="number">47605</span> * a125- <span class="number">43202</span> * a127- <span class="number">42819</span> * a130- <span class="number">34232</span> * a131 - <span class="number">18523534</span></span><br><span class="line">e19=<span class="number">48054</span> * a129+ <span class="number">27903</span> * a128+ <span class="number">44427</span> * a127+ <span class="number">26215</span> * a126+ <span class="number">10136</span> * a125+ <span class="number">62674</span> * a120+ <span class="number">31419</span> * a119+ <span class="number">13647</span> * a118+ <span class="number">19761</span> * a115+ <span class="number">34155</span> * a111+ <span class="number">26302</span> * a17+ <span class="number">27559</span> * a16+ <span class="number">53130</span> * a15+ <span class="number">27162</span> * a14+ <span class="number">55103</span> * a13+ <span class="number">58838</span> * a12+ <span class="number">44942</span> * a10+ <span class="number">63420</span> * a11- <span class="number">24313</span> * a18- <span class="number">42499</span> * a19- <span class="number">21629</span> * a110- <span class="number">2633</span> * a112- <span class="number">55014</span> * a113- <span class="number">22926</span> * a114- <span class="number">305</span> * a116- <span class="number">63708</span> * a117- <span class="number">32334</span> * a121- <span class="number">47684</span> * a122- <span class="number">54226</span> * a123- <span class="number">50848</span> * a124- <span class="number">15102</span> * a130- <span class="number">22362</span> * a131 - <span class="number">20982750</span></span><br><span class="line">e20=<span class="number">59525</span> * a130+ <span class="number">23936</span> * a128+ <span class="number">61587</span> * a127+ <span class="number">4221</span> * a126+ <span class="number">55552</span> * a125+ <span class="number">13058</span> * a124+ <span class="number">45781</span> * a115+ <span class="number">65438</span> * a114+ <span class="number">51231</span> * a113+ <span class="number">33875</span> * a111+ <span class="number">6137</span> * a18+ <span class="number">62261</span> * a16+ <span class="number">46559</span> * a14+ <span class="number">26426</span> * a13+ <span class="number">9153</span> * a12+ <span class="number">6300</span> * a10- <span class="number">30549</span> * a11- <span class="number">55683</span> * a15- <span class="number">44433</span> * a17- <span class="number">46194</span> * a19- <span class="number">57198</span> * a110- <span class="number">45266</span> * a112- <span class="number">6605</span> * a116- <span class="number">43397</span> * a117- <span class="number">7672</span> * a118- <span class="number">48485</span> * a119- <span class="number">54035</span> * a120- <span class="number">12567</span> * a121- <span class="number">47051</span> * a122- <span class="number">62256</span> * a123- <span class="number">9828</span> * a129+ <span class="number">50225</span> * a131 - <span class="number">5070455</span></span><br><span class="line">e21=<span class="number">39286</span> * a130+ <span class="number">13236</span> * a129+ <span class="number">42884</span> * a124+ <span class="number">12704</span> * a123+ <span class="number">53136</span> * a122+ <span class="number">47722</span> * a119+ <span class="number">30422</span> * a118+ <span class="number">10481</span> * a117+ <span class="number">55058</span> * a116+ <span class="number">63967</span> * a115+ <span class="number">8353</span> * a111+ <span class="number">62270</span> * a110+ <span class="number">12090</span> * a19+ <span class="number">14796</span> * a14+ <span class="number">59059</span> * a13+ <span class="number">5686</span> * a12+ <span class="number">-28415</span> * a10+ <span class="number">36297</span> * a11- <span class="number">11307</span> * a15- <span class="number">57251</span> * a16- <span class="number">29507</span> * a17- <span class="number">41415</span> * a18- <span class="number">24476</span> * a112- <span class="number">41751</span> * a113- <span class="number">46589</span> * a114- <span class="number">55870</span> * a120- <span class="number">6321</span> * a121- <span class="number">34350</span> * a125- <span class="number">32922</span> * a126- <span class="number">64909</span> * a127- <span class="number">50870</span> * a128+ <span class="number">49349</span> * a131 - <span class="number">3066924</span></span><br><span class="line">e22=<span class="number">18612</span> * a127+ <span class="number">54808</span> * a125+ <span class="number">42491</span> * a123+ <span class="number">16634</span> * a122+ <span class="number">52361</span> * a121+ <span class="number">6252</span> * a120+ <span class="number">63445</span> * a118+ <span class="number">57764</span> * a116+ <span class="number">3991</span> * a115+ <span class="number">61646</span> * a114+ <span class="number">23244</span> * a110+ <span class="number">29174</span> * a19+ <span class="number">5707</span> * a16+ <span class="number">63976</span> * a14+ <span class="number">58731</span> * a12+ <span class="number">15479</span> * a10+ <span class="number">10453</span> * a11- <span class="number">9782</span> * a13- <span class="number">9166</span> * a15- <span class="number">21516</span> * a17- <span class="number">2689</span> * a18- <span class="number">47968</span> * a111- <span class="number">38843</span> * a112- <span class="number">13488</span> * a113- <span class="number">57649</span> * a117- <span class="number">487</span> * a119- <span class="number">30704</span> * a124- <span class="number">61218</span> * a126- <span class="number">32873</span> * a128- <span class="number">58677</span> * a129- <span class="number">2280</span> * a130+ <span class="number">35233</span> * a131 - <span class="number">26232118</span></span><br><span class="line">e23=<span class="number">38132</span> * a130+ <span class="number">58430</span> * a128+ <span class="number">38392</span> * a127+ <span class="number">29396</span> * a125+ <span class="number">15688</span> * a124+ <span class="number">28509</span> * a121+ <span class="number">23301</span> * a117+ <span class="number">56629</span> * a116+ <span class="number">11252</span> * a114+ <span class="number">28641</span> * a113+ <span class="number">35504</span> * a112+ <span class="number">41197</span> * a111+ <span class="number">9520</span> * a14+ <span class="number">50614</span> * a12+ <span class="number">36368</span> * a10- <span class="number">30534</span> * a11- <span class="number">7805</span> * a13- <span class="number">60795</span> * a15- <span class="number">17511</span> * a16- <span class="number">34692</span> * a17- <span class="number">22139</span> * a18- <span class="number">49013</span> * a19- <span class="number">24672</span> * a110- <span class="number">22264</span> * a115- <span class="number">55578</span> * a118- <span class="number">61882</span> * a119- <span class="number">48469</span> * a120- <span class="number">8197</span> * a122- <span class="number">43020</span> * a123- <span class="number">36911</span> * a126- <span class="number">6762</span> * a129+ <span class="number">56670</span> * a131 +<span class="number">860377</span></span><br><span class="line">e24=<span class="number">19958</span> * a129+ <span class="number">35318</span> * a127+ <span class="number">58305</span> * a124+ <span class="number">55072</span> * a120+ <span class="number">58300</span> * a116+ <span class="number">16494</span> * a113+ <span class="number">61205</span> * a19+ <span class="number">8511</span> * a18+ <span class="number">21876</span> * a16+ <span class="number">1791</span> * a13+ <span class="number">28247</span> * a12+ <span class="number">3542</span> * a10- <span class="number">17533</span> * a11- <span class="number">44455</span> * a14- <span class="number">2748</span> * a15- <span class="number">38052</span> * a17- <span class="number">16528</span> * a110- <span class="number">4664</span> * a111- <span class="number">13326</span> * a112- <span class="number">52661</span> * a114- <span class="number">38860</span> * a115- <span class="number">60164</span> * a117- <span class="number">39975</span> * a118- <span class="number">19566</span> * a119- <span class="number">55251</span> * a121- <span class="number">8160</span> * a122- <span class="number">54674</span> * a123- <span class="number">29010</span> * a125- <span class="number">6627</span> * a126- <span class="number">15962</span> * a128- <span class="number">10549</span> * a130- <span class="number">8177</span> * a131 +<span class="number">14482154</span></span><br><span class="line">e25=<span class="number">15394</span> * a129+ <span class="number">13827</span> * a128+ <span class="number">47703</span> * a127+ <span class="number">37204</span> * a126+ <span class="number">8621</span> * a123+ <span class="number">26034</span> * a120+ <span class="number">38644</span> * a119+ <span class="number">26883</span> * a118+ <span class="number">31346</span> * a117+ <span class="number">29853</span> * a115+ <span class="number">2052</span> * a113+ <span class="number">37617</span> * a18+ <span class="number">35004</span> * a13+ <span class="number">25124</span> * a12+ <span class="number">-7510</span> * a10- <span class="number">61303</span> * a11- <span class="number">34033</span> * a14- <span class="number">49161</span> * a15- <span class="number">6021</span> * a16- <span class="number">36125</span> * a17- <span class="number">10528</span> * a19- <span class="number">47741</span> * a110- <span class="number">45531</span> * a111- <span class="number">1546</span> * a112- <span class="number">59464</span> * a114- <span class="number">22656</span> * a116- <span class="number">24655</span> * a121- <span class="number">9816</span> * a122- <span class="number">22299</span> * a124- <span class="number">23745</span> * a125- <span class="number">23945</span> * a130+ <span class="number">48741</span> * a131 +<span class="number">17062269</span></span><br><span class="line">e26=<span class="number">27496</span> * a129+ <span class="number">8511</span> * a127+ <span class="number">61644</span> * a126+ <span class="number">35917</span> * a124+ <span class="number">16432</span> * a121+ <span class="number">53570</span> * a119+ <span class="number">30949</span> * a118+ <span class="number">56668</span> * a116+ <span class="number">5395</span> * a115+ <span class="number">47866</span> * a114+ <span class="number">33349</span> * a112+ <span class="number">41169</span> * a19+ <span class="number">34746</span> * a16+ <span class="number">39102</span> * a15+ <span class="number">19310</span> * a10+ <span class="number">1288</span> * a11- <span class="number">38840</span> * a12- <span class="number">49229</span> * a13- <span class="number">40618</span> * a14- <span class="number">41363</span> * a17- <span class="number">45367</span> * a18- <span class="number">21440</span> * a110- <span class="number">36535</span> * a111- <span class="number">43289</span> * a113- <span class="number">41392</span> * a117- <span class="number">40337</span> * a120- <span class="number">1430</span> * a122- <span class="number">28334</span> * a123- <span class="number">46487</span> * a125- <span class="number">42458</span> * a128- <span class="number">59664</span> * a130+ <span class="number">64335</span> * a131 - <span class="number">6695285</span></span><br><span class="line">e27=<span class="number">41403</span> * a129+ <span class="number">13806</span> * a127+ <span class="number">26203</span> * a126+ <span class="number">59304</span> * a124+ <span class="number">56824</span> * a122+ <span class="number">3954</span> * a121+ <span class="number">33269</span> * a120+ <span class="number">12986</span> * a116+ <span class="number">60427</span> * a115+ <span class="number">42087</span> * a114+ <span class="number">30996</span> * a113+ <span class="number">51835</span> * a111+ <span class="number">53494</span> * a19+ <span class="number">33384</span> * a18+ <span class="number">41797</span> * a14+ <span class="number">17974</span> * a13+ <span class="number">-18187</span> * a10+ <span class="number">28981</span> * a11- <span class="number">53485</span> * a12- <span class="number">20458</span> * a15- <span class="number">8491</span> * a16- <span class="number">16831</span> * a17- <span class="number">31995</span> * a110- <span class="number">12109</span> * a112- <span class="number">51691</span> * a117- <span class="number">58925</span> * a118- <span class="number">40872</span> * a119- <span class="number">30202</span> * a123- <span class="number">30793</span> * a125- <span class="number">42110</span> * a128- <span class="number">1100</span> * a130- <span class="number">26194</span> * a131 - <span class="number">16909859</span></span><br><span class="line">e28=<span class="number">53536</span> * a129+ <span class="number">47559</span> * a128+ <span class="number">42732</span> * a124+ <span class="number">34737</span> * a123+ <span class="number">48156</span> * a122+ <span class="number">15071</span> * a121+ <span class="number">38175</span> * a118+ <span class="number">12186</span> * a117+ <span class="number">28859</span> * a116+ <span class="number">19225</span> * a113+ <span class="number">28950</span> * a111+ <span class="number">19883</span> * a19+ <span class="number">40590</span> * a17+ <span class="number">44081</span> * a15+ <span class="number">20386</span> * a14+ <span class="number">-40011</span> * a10- <span class="number">26232</span> * a11- <span class="number">4849</span> * a12- <span class="number">60564</span> * a13- <span class="number">50739</span> * a16- <span class="number">17237</span> * a18- <span class="number">35381</span> * a110- <span class="number">4203</span> * a112- <span class="number">50964</span> * a114- <span class="number">39946</span> * a115- <span class="number">22511</span> * a119- <span class="number">20539</span> * a120- <span class="number">60250</span> * a125- <span class="number">61430</span> * a126- <span class="number">11009</span> * a127- <span class="number">8879</span> * a130+ <span class="number">46741</span> * a131 +<span class="number">1622782</span></span><br><span class="line">e29=<span class="number">5442</span> * a129+ <span class="number">45907</span> * a128+ <span class="number">7689</span> * a127+ <span class="number">56136</span> * a125+ <span class="number">20039</span> * a124+ <span class="number">18672</span> * a123+ <span class="number">41239</span> * a122+ <span class="number">9871</span> * a120+ <span class="number">34328</span> * a118+ <span class="number">27387</span> * a117+ <span class="number">41615</span> * a116+ <span class="number">41961</span> * a113+ <span class="number">50367</span> * a112+ <span class="number">59350</span> * a18+ <span class="number">29632</span> * a17+ <span class="number">22126</span> * a16+ <span class="number">61953</span> * a15+ <span class="number">34932</span> * a14+ <span class="number">3756</span> * a13+ <span class="number">-42653</span> * a10+ <span class="number">43668</span> * a11- <span class="number">10988</span> * a12- <span class="number">48711</span> * a19- <span class="number">23958</span> * a110- <span class="number">33557</span> * a111- <span class="number">17831</span> * a114- <span class="number">4583</span> * a115- <span class="number">29750</span> * a119- <span class="number">49888</span> * a121- <span class="number">30956</span> * a126- <span class="number">41068</span> * a130+ <span class="number">23514</span> * a131 - <span class="number">33025495</span></span><br><span class="line">e30=<span class="number">41909</span> * a126+ <span class="number">24036</span> * a124+ <span class="number">21760</span> * a122+ <span class="number">50228</span> * a121+ <span class="number">63177</span> * a119+ <span class="number">6738</span> * a118+ <span class="number">869</span> * a117+ <span class="number">19553</span> * a115+ <span class="number">53583</span> * a114+ <span class="number">59508</span> * a113+ <span class="number">15986</span> * a111+ <span class="number">3678</span> * a15+ <span class="number">10458</span> * a14+ <span class="number">5179</span> * a13+ <span class="number">38342</span> * a12+ <span class="number">-26968</span> * a10- <span class="number">23313</span> * a11- <span class="number">32333</span> * a16- <span class="number">43275</span> * a17- <span class="number">2423</span> * a18- <span class="number">60827</span> * a19- <span class="number">42621</span> * a110- <span class="number">27590</span> * a112- <span class="number">56307</span> * a116- <span class="number">30359</span> * a120- <span class="number">19919</span> * a123- <span class="number">18153</span> * a125- <span class="number">6931</span> * a127- <span class="number">5822</span> * a128- <span class="number">30949</span> * a129- <span class="number">16572</span> * a130+ <span class="number">11920</span> * a131 +<span class="number">10454601</span></span><br><span class="line">e31=<span class="number">43819</span> * a129+ <span class="number">54696</span> * a127+ <span class="number">55323</span> * a124+ <span class="number">63177</span> * a123+ <span class="number">6747</span> * a122+ <span class="number">31098</span> * a121+ <span class="number">37870</span> * a118+ <span class="number">55168</span> * a116+ <span class="number">1703</span> * a115+ <span class="number">64744</span> * a114+ <span class="number">57567</span> * a112+ <span class="number">35013</span> * a111+ <span class="number">52295</span> * a110+ <span class="number">46356</span> * a19+ <span class="number">29760</span> * a17+ <span class="number">4313</span> * a16+ <span class="number">18877</span> * a15+ <span class="number">8314</span> * a14+ <span class="number">35980</span> * a12+ <span class="number">8386</span> * a10+ <span class="number">57646</span> * a11- <span class="number">4029</span> * a13- <span class="number">47059</span> * a18- <span class="number">25490</span> * a113- <span class="number">62526</span> * a117- <span class="number">63227</span> * a119- <span class="number">27315</span> * a120- <span class="number">23370</span> * a125- <span class="number">37329</span> * a126- <span class="number">6309</span> * a128- <span class="number">12433</span> * a130+ <span class="number">8882</span> * a131 - <span class="number">51177223</span></span><br><span class="line">e32=<span class="number">17153</span> * a127 + <span class="number">41549</span> * a126 + <span class="number">28202</span> * a124 + <span class="number">36806</span> * a123 + <span class="number">12690</span> * a122 + <span class="number">42821</span> * a120 + <span class="number">39834</span> * a119 + <span class="number">17994</span> * a117 + <span class="number">32765</span> * a114 + <span class="number">25687</span> * a110 + <span class="number">33388</span> * a19 + <span class="number">143</span> * a14 + <span class="number">63776</span> *a10 + <span class="number">8682</span> * a11 - <span class="number">16324</span> * a12 - <span class="number">20022</span> * a13 - <span class="number">48973</span> * a15 - <span class="number">57775</span> * a16 - <span class="number">43820</span> * a17 - <span class="number">41070</span> * a18 - <span class="number">15669</span> * a111 - <span class="number">6946</span> * a112 - <span class="number">23187</span> * a113 - <span class="number">46495</span> * a115 - <span class="number">8395</span> * a116 - <span class="number">27782</span> * a118 - <span class="number">46043</span> * a121 - <span class="number">15428</span> * a125 - <span class="number">59010</span> * a128 - <span class="number">49235</span> * a129 - <span class="number">53666</span> * a130 + <span class="number">28539</span> * a131 +<span class="number">15479857</span></span><br><span class="line">[aa10,aa11,aa12,aa13,aa14,aa15,aa16,aa17,aa18,aa19,aa110,aa111,aa112,aa113,aa114,aa115,aa116,aa117,aa118,aa119,aa120,aa121,aa122,aa123,aa124,aa125,aa126,aa127,aa128,aa129,aa130,aa131]=solve(e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,e19,e20,e21,e22,e23,e24,e25,e26,e27,e28,e29,e30,e31,e32,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a110,a111,a112,a113,a114,a115,a116,a117,a118,a119,a120,a121,a122,a123,a124,a125,a126,a127,a128,a129,a130,a131)</span><br></pre></td></tr></table></figure>
+<p>即可得到flag。</p>
+<h3 id="re3"><a href="#re3" class="headerlink" title="re3"></a>re3</h3><p>这题多解，我佛了</p>
+<img src="/2019/11/21/EIS2019/26.png">
+<p>其实这一坨就是矩阵相乘取余，0x67144772A3C047E5LL * (signed __int128)v26) &gt;&gt; 64) &gt;&gt; 28)这里把v26提出来算常数就知道，是减去除666666666然后*666666666，这么一来就只剩余数了。(也可以把代码dump下来爆破</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;memory.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll table1[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">ll table2[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">ll table3[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">ll table3_old[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">encrpt1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll tmp[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="comment">//ll tmp2[]=&#123;0,0,0,0,1,0,0,0,1&#125;;</span></span><br><span class="line">	ll v26,v27;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">3</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="number">3</span>;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(table2[j+<span class="number">3</span>*i])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;<span class="number">3</span>;++k)</span><br><span class="line">				&#123;v26=table1[j*<span class="number">3</span>+k]*table2[j+<span class="number">3</span>*i];</span><br><span class="line">v27=tmp[i*<span class="number">3</span>+k]+v26<span class="number">-666666666</span>*((((<span class="keyword">unsigned</span> __int128)(<span class="number">7427640243139921893</span>* (<span class="keyword">signed</span> __int128)v26) &gt;&gt; <span class="number">64</span>) &gt;&gt; <span class="number">28</span>)-(v26&gt;&gt;<span class="number">63</span>));</span><br><span class="line">                                        tmp[i*<span class="number">3</span>+k]=v27<span class="number">-666666666</span>*((((<span class="keyword">unsigned</span> __int128)(<span class="number">7427640243139921893</span> *(<span class="keyword">signed</span> __int128) v27) &gt;&gt; <span class="number">64</span>) &gt;&gt; <span class="number">28</span>)-(v27&gt;&gt;<span class="number">63</span>));</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="built_in">memcpy</span>(table2,tmp,<span class="keyword">sizeof</span>(table2));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">encrpt2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll tmp[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	ll v26,v27;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="number">3</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="number">3</span>;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(table1[j+<span class="number">3</span>*i])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;<span class="number">3</span>;++k)</span><br><span class="line">				&#123;</span><br><span class="line">					</span><br><span class="line">					v26=table1[j*<span class="number">3</span>+k]*table1[j+<span class="number">3</span>*i];</span><br><span class="line">					v27=tmp[i*<span class="number">3</span>+k]+v26<span class="number">-666666666</span>*((((<span class="keyword">unsigned</span> __int128)(<span class="number">7427640243139921893</span>* (<span class="keyword">signed</span> __int128)v26) &gt;&gt; <span class="number">64</span>) &gt;&gt; <span class="number">28</span>)-(v26&gt;&gt;<span class="number">63</span>));</span><br><span class="line">                                        tmp[i*<span class="number">3</span>+k]=v27<span class="number">-666666666</span>*((((<span class="keyword">unsigned</span> __int128)(<span class="number">7427640243139921893</span> *(<span class="keyword">signed</span> __int128) v27) &gt;&gt; <span class="number">64</span>) &gt;&gt; <span class="number">28</span>)-(v27&gt;&gt;<span class="number">63</span>));</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="built_in">memcpy</span>(table1,tmp,<span class="keyword">sizeof</span>(table1));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">check1</span><span class="params">(ll input)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(input)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(input &amp; <span class="number">1</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			encrpt1();</span><br><span class="line">		&#125;</span><br><span class="line">		encrpt2();</span><br><span class="line">		input&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">return</span> table2[<span class="number">5</span>]<span class="number">-666666666</span>*((((<span class="keyword">unsigned</span> __int128)(<span class="number">7427640243139921893</span>* (<span class="keyword">signed</span> __int128)table2[<span class="number">5</span>]) &gt;&gt; <span class="number">64</span>) &gt;&gt; <span class="number">28</span>)-(table2[<span class="number">5</span>]&gt;&gt;<span class="number">63</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/*ll i;</span></span><br><span class="line"><span class="comment">    check1(9766380);</span></span><br><span class="line"><span class="comment">	for(int j=0;j&lt;=8;++j)</span></span><br><span class="line"><span class="comment">	&#123;</span></span><br><span class="line"><span class="comment">		cout&lt;&lt;table2[j]&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">	&#125;*/</span></span><br><span class="line">	ll i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">918020069</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		ll res;</span><br><span class="line">		ll qtable1[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">		ll qtable2[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line">		ll qtable3[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">		ll qtable3_old[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">                <span class="built_in">memcpy</span>(table1,qtable1,<span class="keyword">sizeof</span>(qtable1));</span><br><span class="line">		<span class="built_in">memcpy</span>(table2,qtable2,<span class="keyword">sizeof</span>(qtable1));</span><br><span class="line">		<span class="built_in">memcpy</span>(table3,qtable3,<span class="keyword">sizeof</span>(qtable1));</span><br><span class="line">		<span class="built_in">memcpy</span>(table3_old,qtable3_old,<span class="keyword">sizeof</span>(qtable1));</span><br><span class="line">		res=check1(i);</span><br><span class="line">		<span class="keyword">if</span>(res==<span class="number">571036091</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"okkkkkkkkkk!"</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">/*if(i%100000==0)</span></span><br><span class="line"><span class="comment">		&#123;</span></span><br><span class="line"><span class="comment">			cout&lt;&lt;i&lt;&lt;" "&lt;&lt;res&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">		&#125;*/</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ans=[<span class="number">5104421</span>,<span class="number">109010035</span>,<span class="number">119218877</span>,<span class="number">223124491</span>,<span class="number">233333333</span>,<span class="number">337238947</span>,<span class="number">347447789</span>,<span class="number">451353403</span>,<span class="number">461562245</span>,<span class="number">565467859</span>,<span class="number">575676701</span>,<span class="number">679582315</span>,<span class="number">689791157</span>,<span class="number">793696771</span>,<span class="number">803905613</span>,<span class="number">907811227</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(ans)):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,len(ans)):</span><br><span class="line">		<span class="keyword">for</span> k <span class="keyword">in</span> range(j+<span class="number">1</span>,len(ans)):</span><br><span class="line">			<span class="keyword">if</span>(ans[i]+ans[j]+ans[k]==<span class="number">0x36B7DFE5</span>):</span><br><span class="line">				<span class="keyword">print</span> <span class="string">'flag&#123;'</span>+str(ans[i])+<span class="string">'_'</span>+str(ans[j])+<span class="string">'_'</span>+str(ans[k])+<span class="string">'&#125;'</span></span><br></pre></td></tr></table></figure>
+<p>然后稍微试一试就知道了，然后发现多解。。。</p>
+<img src="/2019/11/21/EIS2019/27.png">
+<h2 id="Crypto"><a href="#Crypto" class="headerlink" title="Crypto"></a>Crypto</h2><h3 id="rsa"><a href="#rsa" class="headerlink" title="rsa"></a>rsa</h3><p>设x是p的前200位，y是p的后200位</p>
+<p>n=x*y*10^400+( y^2+x^2)*10^200+x*y</p>
+<p>所以可以根据n的前200位以及最后200位确定出x*y的值(需要微调一下前200位的值)</p>
+<p>已知x<em>y以及x\</em>y*10^400+( y^2+x^2)*10^200+x*y 可以求出x,y的值。具体如下脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line">pimul=<span class="number">2117306430457495084373744640919209184441085835440785339151821982858580957554648046398035452941253078562547380021066127607547324391257803263684574686690799140082210093930925498879813981907487546461281266736088527333762011263273533065540484105964087424030617602336598479611569611018708530024591023015267812545697478378348866840434551477126856261767535209092047810194387033643274333303926423370062572301</span></span><br><span class="line">n=<span class="number">21173064304574950843737446409192091844410858354407853391518219828585809575546480463980354529412530785625473800210661276075473243912578032636845746866907991400822100939309254988798139819074875464612813385347487571449985243023886473371811269444618192595245380064162413031254981146354667983890607067651694310528489568882179752700069248266341927980053359911075295668342299406306747805925686573419756406095039162847475158920069325898899318222396609393685237607183668014820188522330005608037386873926432131081161531088656666402464062741934007562757339219055643198715643442608910351994872740343566582808831066736088527333762011263273533065540484105964087424030617602336598479611569611018708530024591023015267812545697478378348866840434551477126856261767535209092047810194387033643274333303926423370062572301</span></span><br><span class="line">pjia2=(n-pimul*pow(<span class="number">10</span>,<span class="number">400</span>)-pimul)/pow(<span class="number">10</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#print pjia2</span></span><br><span class="line">p2=pjia2*pjia2<span class="number">-4</span>*pimul*pimul<span class="comment"># (x^4+y^4-2x^2y^2)</span></span><br><span class="line">p2s=gmpy2.iroot(p2,<span class="number">2</span>)[<span class="number">0</span>]<span class="comment">#(x^2-y^2)</span></span><br><span class="line"><span class="comment">#print p2s</span></span><br><span class="line">pb200=gmpy2.iroot((pjia2+p2s)/<span class="number">2</span>,<span class="number">2</span>)[<span class="number">0</span>]<span class="comment">#x^2-y^2</span></span><br><span class="line">pe200=pimul/pb200</span><br><span class="line">p=pb200*pow(<span class="number">10</span>,<span class="number">200</span>)+pe200</span><br><span class="line"><span class="comment">#print p</span></span><br><span class="line">q=pe200*pow(<span class="number">10</span>,<span class="number">200</span>)+pb200</span><br><span class="line">phi=(p<span class="number">-1</span>)*(q<span class="number">-1</span>)</span><br><span class="line">c=<span class="number">16396023285324039009558195962852040868243807971027796599580351414803675753933120024077886501736987010658812435904022750269541456641256887079780585729054681025921699044139927086676479128232499416835051090240458236280851063589059069181638802191717911599940897797235038838827322737207584188123709413077535201099325099110746196702421778588988049442604655243604852727791349351291721230577933794627015369213339150586418524473465234375420448340981330049205933291705601563283196409846408465061438001010141891397738066420524119638524908958331406698679544896351376594583883601612086738834989175070317781690217164773657939589691476539613343289431727103692899002758373929815089904574190511978680084831183328681104467553713888762965976896013404518316128288520016934828176674482545660323358594211794461624622116836</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">d=gmpy2.invert(e,phi)</span><br><span class="line">plain=pow(c,d,n)</span><br><span class="line"><span class="keyword">print</span> hex(plain)[<span class="number">2</span>:].decode(<span class="string">'hex'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="misc3"><a href="#misc3" class="headerlink" title="misc3"></a>misc3</h3><p>f12发现可疑的东西</p>
+<img src="/2019/11/21/EIS2019/1.png">
+<p>一个转成0一个转成1，再转字符串</p>
+<img src="/2019/11/21/EIS2019/2.png">
+<h3 id="twocats"><a href="#twocats" class="headerlink" title="twocats"></a>twocats</h3><p>盲水印，现成脚本解码即可</p>
+<img src="/2019/11/21/EIS2019/3.png">
+<h3 id="MISC1"><a href="#MISC1" class="headerlink" title="MISC1"></a>MISC1</h3><img src="/2019/11/21/EIS2019/4.png">
+<p>打开看到一串乱码结果，推测应该是某种特定编码或者编码转换的错误</p>
+<p>在使用010 Editor和 WinHex查看以及放到Linux下改变编码都不可以</p>
+<p>使用偏门编码逐一尝试，在使用EBCDIC编码时，成功看到flag</p>
+<img src="/2019/11/21/EIS2019/5.png">
+<h3 id="MISC2"><a href="#MISC2" class="headerlink" title="MISC2"></a>MISC2</h3><p>进去看到python代码，稍作格式化整理 </p>
+<img src="/2019/11/21/EIS2019/6.png">
+<p>这里注意到使用了open()函数打开了flag文件，然后把flag文件进行删除操作</p>
+<p>但这里有个问题，由于采用了open文件操作函数，会导致在linux下中/dev/fd下生成进程文件描述符，而/dev/fd/3是读取文件系统的描述符，直接读取/dev/fd/3会把之前open的文件内容读取出来，除非当前进程被关闭后重新打开，这时候3中的内容才会改变（如果修改了flag）</p>
+<p><a href="https://blog.csdn.net/zhangpeterx/article/details/90672749" target="_blank" rel="noopener">https://blog.csdn.net/zhangpeterx/article/details/90672749</a></p>
+<p><a href="https://unix.stackexchange.com/questions/74454/somethings-special-about-dev-fd-3" target="_blank" rel="noopener">https://unix.stackexchange.com/questions/74454/somethings-special-about-dev-fd-3</a></p>
+<p><a href="http://www.tldp.org/LDP/abs/html/io-redirection.html" target="_blank" rel="noopener">http://www.tldp.org/LDP/abs/html/io-redirection.html</a></p>
+
+<h3 id="WebShell"><a href="#WebShell" class="headerlink" title="WebShell"></a>WebShell</h3><p><strong>下载下来是个数据包，直接追踪**</strong>HTTP<strong>**流</strong></p>
+
+
+<p>基本可以确定是被机密混淆的流量</p>
+<p>这里编写正则提取出所有的chr中的十六进制字符，然后转换成字符串</p>
+<img src="/2019/11/21/EIS2019/10.jpg">
+<p>这里提取的解密最后部分有点乱码，但不影响解密</p>
+<p>这里对所有的数据包解密后，可以看到最后两个数据包涉及flag读取操作</p>
+<img src="/2019/11/21/EIS2019/11.jpg">
+<img src="/2019/11/21/EIS2019/12.jpg">
+<p>上面的base64解码为/bin/sh</p>
+<p>下面base64解码为cd “/var/www/html/tmp”;cat flag|base64 ;echo [S];pwd;echo [E]</p>
+<img src="/2019/11/21/EIS2019/13.jpg">
+<p>可以看到最后一个数据包是flag读取响应包</p>
+<p>其中AES的key可知为$key=’f5045b05abe6ec9b1e37fafa851f5de9’;</p>
+<p>删掉前后的0897d  60c97 然后使用PHP的openssl直接解密即可</p>
+<img src="/2019/11/21/EIS2019/14.jpg">
+<p>把最后一行</p>
+<p>bm5ubm5ubm5ubm5ubm5ubm4KZmxhZ3tBbnRTd29yZF9pc19Qb3dlcmZ1bF8zMjIyMjIyISEhIX0K</p>
+<p>Base64解密即可得到flag</p>
+<img src="/2019/11/21/EIS2019/15.jpg">
+<h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="Ezbypass"><a href="#Ezbypass" class="headerlink" title="Ezbypass"></a>Ezbypass</h3><p>这是最近的php7系列disable function bypass的题</p>
+<p>把</p>
+<p><a href="https://github.com/mm0r1/exploits/blob/master/php7-gc-bypass/exploit.php" target="_blank" rel="noopener">https://github.com/mm0r1/exploits/blob/master/php7-gc-bypass/exploit.php</a></p>
+<p>脚本进行修改</p>
+<p>命令改写成 /readflag</p>
+<p>然后部署到自己的服务器上面</p>
+<img src="/2019/11/21/EIS2019/16.jpg">
+<img src="/2019/11/21/EIS2019/17.jpg">
+
+<p>直接部属到自己的服务器，然后远程读取，本地包含即可绕过disable function读到flag</p>
+<h3 id="Ezupload"><a href="#Ezupload" class="headerlink" title="Ezupload"></a>Ezupload</h3><img src="/2019/11/21/EIS2019/19.jpg">
+<img src="/2019/11/21/EIS2019/20.jpg">
+<p>下载下来恢复看看</p>
+<img src="/2019/11/21/EIS2019/21.jpg">
+<p>这里直接把username置为空 不发送password参数即可绕过限制</p>
+<img src="/2019/11/21/EIS2019/22.jpg">
+<p>再上传界面 要求上传图片 这里bp抓包修改，但发现不能发送php文件</p>
+<p>于是尝试phtml</p>
+<p>发现要求图片，这里加上GIF89a标识，即可成功上传</p>
+<img src="/2019/11/21/EIS2019/23.jpg">
+<img src="/2019/11/21/EIS2019/24.jpg">
+<p>直接蚁剑连上即可，在根目录执行readflag即可</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/11/30/i-soonctf2019/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/11/10/2019redhat/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/IMG_4116.JPG" alt="Xzhah's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        xzh3ha@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">十月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/angr/">angr<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/c/">c++<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/crypt/">crypt<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf/">ctf<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-wp/">ctf wp<span class="sidebar_archives-count">38</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-writeup/">ctf writeup<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-pwn/">ctf-pwn<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-re/">ctf-re<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/cve/">cve<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/dll注入/">dll注入<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/iot/">iot<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/oi/">oi<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/oj/">oj<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/pwn/">pwn<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/python/">python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/一键评教/">一键评教<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/links" title="My friends">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                My friends
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">favorite</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">history</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/PidanXU/PidanXU.github.io.git" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Stay foolish,stay hungry!
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
