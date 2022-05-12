@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Frida、Xposed原理"><span class="post-toc-number">1.</span> <span class="post-toc-text">Frida、Xposed原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-胡说八道"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.胡说八道</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-xposed-hook原理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.xposed hook原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-background："><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 background：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-xposed-java-method-hook原理"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 xposed java method hook原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-xposed检测方法"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2.3 xposed检测方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Frida-hook原理"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. Frida hook原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-Frida-注入代码原理"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">3.1 Frida 注入代码原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-1-ptrace"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">3.1.1 ptrace</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-2-Frida通过ptrace注入"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">3.1.2 Frida通过ptrace注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-额外插一句System-server-agent"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3.2 额外插一句System-server agent</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-Frida的ART-HOOK实现"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">3.3 Frida的ART HOOK实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-1-art和dalvik的区别"><span class="post-toc-number">1.3.4.1.</span> <span class="post-toc-text">3.3.1 art和dalvik的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-2-art-java-hook原理"><span class="post-toc-number">1.3.4.2.</span> <span class="post-toc-text">3.3.2 art java hook原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-3-art-native-hook原理"><span class="post-toc-number">1.3.4.3.</span> <span class="post-toc-text">3.3.3 art native hook原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#References"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">References</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Frida、Xposed原理"><span class="post-toc-number">1.</span> <span class="post-toc-text">Frida、Xposed原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-胡说八道"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.胡说八道</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-xposed-hook原理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.xposed hook原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-background："><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 background：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-xposed-java-method-hook原理"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 xposed java method hook原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-xposed检测方法"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2.3 xposed检测方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-Frida-hook原理"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. Frida hook原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-Frida-注入代码原理"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">3.1 Frida 注入代码原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-1-ptrace"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">3.1.1 ptrace</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-2-Frida通过ptrace注入"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">3.1.2 Frida通过ptrace注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-额外插一句System-server-agent"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3.2 额外插一句System-server agent</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-Frida的ART-HOOK实现"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">3.3 Frida的ART HOOK实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-1-art和dalvik的区别"><span class="post-toc-number">1.3.4.1.</span> <span class="post-toc-text">3.3.1 art和dalvik的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-2-art-java-hook原理"><span class="post-toc-number">1.3.4.2.</span> <span class="post-toc-text">3.3.2 art java hook原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-3-art-native-hook原理"><span class="post-toc-number">1.3.4.3.</span> <span class="post-toc-text">3.3.3 art native hook原理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-References"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.References</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -500,22 +500,23 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="Frida、Xposed原理"><a href="#Frida、Xposed原理" class="headerlink" title="Frida、Xposed原理"></a>Frida、Xposed原理</h1><h2 id="1-胡说八道"><a href="#1-胡说八道" class="headerlink" title="1.胡说八道"></a>1.胡说八道</h2><p>我对于hook原理的想法就是，要么把地址替换了(如got hook)，要么插入一些代码劫持控制流完成自己的功能(如inline hook)。</p>
-<p>Frida/Xposed使用的是动态二进制插桩技术，可以在程序运行的时候注入代码。</p>
-<p>对于Android 5.0以下，采用dalvik虚拟机，frida和xposed这时的原理是相同的。</p>
-<h2 id="2-xposed-hook原理"><a href="#2-xposed-hook原理" class="headerlink" title="2.xposed hook原理"></a>2.xposed hook原理</h2><h3 id="2-1-background："><a href="#2-1-background：" class="headerlink" title="2.1 background："></a>2.1 background：</h3><p>android启动的第一个用户空间进程是Init进程，init随后会创建zygote进程，android应用程序进程都是由zygote fork出来的。zygote对应的二进制程序是app_process，xposed 框架就是通过替换系统的 app_process 可执行文件以及虚拟机动态链接库，让 zygote 在启动应用程序进程时注入框架代码，进而实现对应用程序进程的劫持。</p>
-<p>zygote进程启动流程如下：</p>
+        <h1 id="Frida、Xposed原理"><a href="#Frida、Xposed原理" class="headerlink" title="Frida、Xposed原理"></a>Frida、Xposed原理</h1><h2 id="1-胡说八道"><a href="#1-胡说八道" class="headerlink" title="1.胡说八道"></a>1.胡说八道</h2><p>​    我对于hook原理的想法就是，要么把地址替换了(如got hook)，要么插入一些代码劫持控制流完成自己的功能(如inline hook)。</p>
+<p>​    Frida/Xposed使用的是动态二进制插桩技术，可以在程序运行的时候注入代码。</p>
+<p>​    对于Android 5.0以下，采用dalvik虚拟机，frida和xposed这时的原理是相同的。</p>
+<h2 id="2-xposed-hook原理"><a href="#2-xposed-hook原理" class="headerlink" title="2.xposed hook原理"></a>2.xposed hook原理</h2><h3 id="2-1-background："><a href="#2-1-background：" class="headerlink" title="2.1 background："></a>2.1 background：</h3><p>​    android启动的第一个用户空间进程是Init进程，init随后会创建zygote进程，android应用程序进程都是由zygote fork出来的。zygote对应的二进制程序是app_process，xposed 框架就是通过替换系统的 app_process 可执行文件以及虚拟机动态链接库，让 zygote 在启动应用程序进程时注入框架代码，进而实现对应用程序进程的劫持。</p>
+<p>​    zygote进程启动流程如下：</p>
 <ol>
 <li>调用 AppRuntime start 方法，启动 zygote 进程。</li>
 <li>创建 Java 虚拟机，并为虚拟机注册 JNI 方法。成为java进程的母体，用于孵化java进程</li>
 <li>通过 JNI 调用 ZygoteInit 的 main 方法进入 Java 框架层。</li>
 <li>注册服务端 Socket ，等待 ActivityManagerService 请求创建应用程序进程。</li>
-<li>开启 SystemServer 进程。</li>
-</ol>
+<li><p>开启 SystemServer 进程。</p>
 <p>总的来说可以参考下图</p>
+</li>
+</ol>
 <img src="/2022/05/10/android-study-1/start_zygote_flow.jpg">
-<h3 id="2-2-xposed-java-method-hook原理"><a href="#2-2-xposed-java-method-hook原理" class="headerlink" title="2.2 xposed java method hook原理"></a>2.2 xposed java method hook原理</h3><p>Xposed ，就是用自己实现的app_process替换掉了系统原本提供的app_process，加载一个额外的jar包，然后入口从原来的<code>com.android.internal.osZygoteInit.main()</code>被替换成了<code>de.robv.android.xposed.XposedBridge.main()</code>，然后创建的Zygote进程就变成Hook的Zygote进程了，而后面zygote Fork出来的进程也是被Hook过的。这个Jar包XposedBridge.jar，就会被加载到每个安卓进程中。这样一来就可以完成对zygote创建出来的dalvik虚拟机的劫持，从而修改Method结构体，将java method改为native method。然后这个native method其实就是需要插进去的<strong>自定义函数</strong>，最后自定义函数运行完再调用被Hook的原函数。</p>
-<p>XposedBridge有一个私有的Native方法：hookMethodNative，这个方法也在app_process中使用。该函数提供一个方法对象利用Java的反射机制来对内置的方法覆写。zygote进程加载XposedBridge将所有需要替换的Method通过JNI方法hookMethodNative指向Native方法</p>
+<h3 id="2-2-xposed-java-method-hook原理"><a href="#2-2-xposed-java-method-hook原理" class="headerlink" title="2.2 xposed java method hook原理"></a>2.2 xposed java method hook原理</h3><p>​    Xposed ，就是用自己实现的app_process替换掉了系统原本提供的app_process，加载一个额外的jar包，然后入口从原来的<code>com.android.internal.osZygoteInit.main()</code>被替换成了<code>de.robv.android.xposed.XposedBridge.main()</code>，然后创建的Zygote进程就变成Hook的Zygote进程了，而后面zygote Fork出来的进程也是被Hook过的。这个Jar包XposedBridge.jar，就会被加载到每个安卓进程中。这样一来就可以完成对zygote创建出来的dalvik虚拟机的劫持，从而修改Method结构体，将java method改为native method。然后这个native method其实就是需要插进去的<strong>自定义函数</strong>，最后自定义函数运行完再调用被Hook的原函数。</p>
+<p>​    XposedBridge有一个私有的Native方法：hookMethodNative，这个方法也在app_process中使用。该函数提供一个方法对象利用Java的反射机制来对内置的方法覆写。zygote进程加载XposedBridge将所有需要替换的Method通过JNI方法hookMethodNative指向Native方法</p>
 <h3 id="2-3-xposed检测方法"><a href="#2-3-xposed检测方法" class="headerlink" title="2.3 xposed检测方法"></a>2.3 xposed检测方法</h3><ol>
 <li><strong>通过PackageManager查看安装列表</strong>,通过调用Package Manager API，看安装的app中是否有Xposed Installer</li>
 <li><strong>制造异常读取栈</strong>，既然xposed会劫持每个安卓进程，那么在处理异常的栈里也应该出现xposed的身影</li>
@@ -523,17 +524,17 @@
 <li><strong>通过反射读取XposedHelper字段</strong>，读取methodCache(hashmap)相关变量,如果key中有来自app的方法，则可认为有xposed注入。</li>
 <li><strong>在Native层使用c/c++解析/proc/self/maps文件</strong>，检测app加载的库里是否有XposedBridge.jar的存在。</li>
 </ol>
-<h2 id="3-Frida-hook原理"><a href="#3-Frida-hook原理" class="headerlink" title="3. Frida hook原理"></a>3. Frida hook原理</h2><h3 id="3-1-Frida-注入代码原理"><a href="#3-1-Frida-注入代码原理" class="headerlink" title="3.1 Frida 注入代码原理"></a>3.1 Frida 注入代码原理</h3><h4 id="3-1-1-ptrace"><a href="#3-1-1-ptrace" class="headerlink" title="3.1.1 ptrace"></a>3.1.1 ptrace</h4><p>ptrace是linux提供的API函数, 它可以监视和控制进程运行，可以动态修改进程的内存，寄存器值。它一般被用来调试。ida动态调试so，就是基于ptrace实现的。因为一个进程只能被ptrace一次, 所以进程可以自己ptrace自己，这样ida和别的基于ptrace的工具和调试器或就无法调试这个进程了。ptrace注入流程如下:</p>
-<p>1.attach到远程进程；<br>2.保存寄存器环境<br>3.远程调用mmap函数分配内存空间<br>4.向远程进程写入加载模块名称和调用函数<br>5.通过dlopne打开注入模块<br>6.dlsym获取调用函数地址<br>7.远程调用注入模块的函数<br>8.恢复寄存器<br>9.剥离远程进程</p>
-<h3 id="3-1-2-Frida通过ptrace注入"><a href="#3-1-2-Frida通过ptrace注入" class="headerlink" title="3.1.2 Frida通过ptrace注入"></a>3.1.2 Frida通过ptrace注入</h3><p>Frida是通过ptrace在进程里注入一个agent，然后通过agent来完成hook。</p>
-<p>什么是agent?agent是Frida注入到进程中的动态库。</p>
-<p><strong>frida 的进程注入是通过 ptrace 实现的</strong>，注入之后会在远端进程分配一段内存将 agent 拷贝过去并在目标进程中执行代码，<strong>执行完成后会 detach 目标进程</strong>。frida-agent 注入到目标进程并启动后会启动一个新进程与 host 进行通信，从而 host 可以给目标进行发送命令，比如执行代码，激活/关闭 hook，同时也能接收到目标进程的执行返回以及异步事件信息等。</p>
-<h3 id="3-2-额外插一句System-server-agent"><a href="#3-2-额外插一句System-server-agent" class="headerlink" title="3.2 额外插一句System-server agent"></a>3.2 额外插一句System-server agent</h3><p>除了注入到目标进程的 agent，还有一个 agent，即 <code>system_server_agent</code>。</p>
-<p>Frida会用该agent对SystemServer 进行注入，参考2.1节内容，可知SystemServer 是zygote中启动的第一个进程，同时也是系统中启动的第一个java进程，其中包含了AMS和PMS等系统服务。对SystemService注入，Frida则可以获取系统中的应用信息，以及可以完成一些相应的功能</p>
-<p>以获取当前窗口中展示在最上层的应用功能为例，接口为 <code>get_frontmost_application</code>，最终的实现在 <code>SystemServerAgent</code>:</p>
-<h3 id="3-3-Frida的ART-HOOK实现"><a href="#3-3-Frida的ART-HOOK实现" class="headerlink" title="3.3 Frida的ART HOOK实现"></a>3.3 Frida的ART HOOK实现</h3><h4 id="3-3-1-art和dalvik的区别"><a href="#3-3-1-art和dalvik的区别" class="headerlink" title="3.3.1 art和dalvik的区别"></a>3.3.1 art和dalvik的区别</h4><p>Dalvik虚拟机是基于apache的java虚拟机，并被改进以适应低内存，低处理器速度的移动设备环境。Dalvik虚拟机依赖于Linux内核，实现进程隔离与线程调试管理，安全和异常管理，垃圾回收等重要功能。</p>
-<p>dalvik依靠JIT(Just-In-Time)编译器去解释字节码。JIT 编译器可以对执行次数频繁的 dex/odex 代码进行编译与优化，将 dex/odex 中的 Dalvik Code（Smali 指令集）翻译成相当精简的 Native Code 去执行。但是问题在于，JIT每次启动都需要重新编译。</p>
-<p>ART(android runtime)，相比于dalvik是更加高效的。在于ART引进了一种AOT(ahead of time)的编译策略，Android 7.0后，AOT和JIT是混合存在于ART中的。AOT编译策略会在安装的时候就预编译字节码到机器码，形成quick code模式。quick code模式即通过AOT将Java方法在APP安装时预先编译成机器码以后，在运行时直接执行。那么当然，AOT并不是一定比JIT好的，否则现在ART中也不会是两者并存的模式。</p>
+<h2 id="3-Frida-hook原理"><a href="#3-Frida-hook原理" class="headerlink" title="3. Frida hook原理"></a>3. Frida hook原理</h2><h3 id="3-1-Frida-注入代码原理"><a href="#3-1-Frida-注入代码原理" class="headerlink" title="3.1 Frida 注入代码原理"></a>3.1 Frida 注入代码原理</h3><h4 id="3-1-1-ptrace"><a href="#3-1-1-ptrace" class="headerlink" title="3.1.1 ptrace"></a>3.1.1 ptrace</h4><p>​    ptrace是linux提供的API函数, 它可以监视和控制进程运行，可以动态修改进程的内存，寄存器值。它一般被用来调试。ida动态调试so，就是基于ptrace实现的。因为一个进程只能被ptrace一次, 所以进程可以自己ptrace自己，这样ida和别的基于ptrace的工具和调试器或就无法调试这个进程了。ptrace注入流程如下:</p>
+<p>​    1.attach到远程进程；<br>​    2.保存寄存器环境<br>​    3.远程调用mmap函数分配内存空间<br>​    4.向远程进程写入加载模块名称和调用函数<br>​    5.通过dlopne打开注入模块<br>​    6.dlsym获取调用函数地址<br>​    7.远程调用注入模块的函数<br>​    8.恢复寄存器<br>​    9.剥离远程进程</p>
+<h3 id="3-1-2-Frida通过ptrace注入"><a href="#3-1-2-Frida通过ptrace注入" class="headerlink" title="3.1.2 Frida通过ptrace注入"></a>3.1.2 Frida通过ptrace注入</h3><p>​    Frida是通过ptrace在进程里注入一个agent，然后通过agent来完成hook。</p>
+<p>​    什么是agent?agent是Frida注入到进程中的动态库。</p>
+<p>​    <strong>frida 的进程注入是通过 ptrace 实现的</strong>，注入之后会在远端进程分配一段内存将 agent 拷贝过去并在目标进程中执行代码，<strong>执行完成后会 detach 目标进程</strong>。frida-agent 注入到目标进程并启动后会启动一个新进程与 host 进行通信，从而 host 可以给目标进行发送命令，比如执行代码，激活/关闭 hook，同时也能接收到目标进程的执行返回以及异步事件信息等。</p>
+<h3 id="3-2-额外插一句System-server-agent"><a href="#3-2-额外插一句System-server-agent" class="headerlink" title="3.2 额外插一句System-server agent"></a>3.2 额外插一句System-server agent</h3><p>​    除了注入到目标进程的 agent，还有一个 agent，即 <code>system_server_agent</code>。</p>
+<p>​    Frida会用该agent对SystemServer 进行注入，参考2.1节内容，可知SystemServer 是zygote中启动的第一个进程，同时也是系统中启动的第一个java进程，其中包含了AMS和PMS等系统服务。对SystemService注入，Frida则可以获取系统中的应用信息，以及可以完成一些相应的功能</p>
+<p>​    以获取当前窗口中展示在最上层的应用功能为例，接口为 <code>get_frontmost_application</code>，最终的实现在 <code>SystemServerAgent</code>:</p>
+<h3 id="3-3-Frida的ART-HOOK实现"><a href="#3-3-Frida的ART-HOOK实现" class="headerlink" title="3.3 Frida的ART HOOK实现"></a>3.3 Frida的ART HOOK实现</h3><h4 id="3-3-1-art和dalvik的区别"><a href="#3-3-1-art和dalvik的区别" class="headerlink" title="3.3.1 art和dalvik的区别"></a>3.3.1 art和dalvik的区别</h4><p>​    Dalvik虚拟机是基于apache的java虚拟机，并被改进以适应低内存，低处理器速度的移动设备环境。Dalvik虚拟机依赖于Linux内核，实现进程隔离与线程调试管理，安全和异常管理，垃圾回收等重要功能。</p>
+<p>​    dalvik依靠JIT(Just-In-Time)编译器去解释字节码。JIT 编译器可以对执行次数频繁的 dex/odex 代码进行编译与优化，将 dex/odex 中的 Dalvik Code（Smali 指令集）翻译成相当精简的 Native Code 去执行。但是问题在于，JIT每次启动都需要重新编译。</p>
+<p>​    ART(android runtime)，相比于dalvik是更加高效的。在于ART引进了一种AOT(ahead of time)的编译策略，Android 7.0后，AOT和JIT是混合存在于ART中的。AOT编译策略会在安装的时候就预编译字节码到机器码，形成quick code模式。quick code模式即通过AOT将Java方法在APP安装时预先编译成机器码以后，在运行时直接执行。那么当然，AOT并不是一定比JIT好的，否则现在ART中也不会是两者并存的模式。</p>
 <p><strong>JIT编译模式的缺点：</strong></p>
 <ul>
 <li>每次启动应用都需要重新编译；</li>
@@ -542,22 +543,23 @@
 <p><strong>AOT编译模式的缺点：</strong></p>
 <ul>
 <li>应用安装和系统升级之后的应用优化比较耗时；</li>
-<li>优化后文件会占用额外的存储空间；</li>
+<li><p>优化后文件会占用额外的存储空间；</p>
+<p> 所以呢，应用程序安装时不会将字节码全部编译成机器码，而是在运行时将热点代码编译成机器码。因此在Android系统中，Java方法的执行大概可以分为直接执行机器码（AOT），以及使用解释器解释执行两种模式（JIT）。</p>
+</li>
 </ul>
-<p>所以呢，应用程序安装时不会将字节码全部编译成机器码，而是在运行时将热点代码编译成机器码。因此在Android系统中，Java方法的执行大概可以分为直接执行机器码（AOT），以及使用解释器解释执行两种模式（JIT）。</p>
-<h4 id="3-3-2-art-java-hook原理"><a href="#3-3-2-art-java-hook原理" class="headerlink" title="3.3.2 art java hook原理"></a>3.3.2 art java hook原理</h4><p>前面说的两种模式即quick code 模式(直接执行arm机器码)和Interpreter模式(解释执行)。</p>
+<h4 id="3-3-2-art-java-hook原理"><a href="#3-3-2-art-java-hook原理" class="headerlink" title="3.3.2 art java hook原理"></a>3.3.2 art java hook原理</h4><p>​    前面说的两种模式即quick code 模式(直接执行arm机器码)和Interpreter模式(解释执行)。</p>
 <img src="/2022/05/10/android-study-1/art_native_execute.png">
-<p>从上图可以看出，对于一个native method, ART虚拟机首先会尝试quickcode模式执行，检查ARTMethod结构中的entry_point_from_quick_compiled_code成员，这里分3种情况：</p>
+<p>​    从上图可以看出，对于一个native method, ART虚拟机首先会尝试quickcode模式执行，检查ARTMethod结构中的entry_point_from_quick_compiled_code成员，这里分3种情况：</p>
 <ol>
 <li>如果函数已经存在quick code, 则指向这个函数对应的 quick code的起始地址，而当quick code不存在时，它的值则会代表其他的意义；</li>
 <li>当一个 java 函数不存在 quick code时，它的值是函数 artQuickToInterpreterBridge 的地址，用以从 quick 模式切换到 Interpreter 模式来解释执行 java 函数代码；</li>
 <li>当一个 java native（JNI）函数不存在 quick code时，它的值是函数 art_quick_generic_jni_trampoline 的地址，用以执行没有quick code的 jni 函数；</li>
 </ol>
-<p>那么Frida把一个java method 变成native method类型，是肯定没有quick code的，这时候就需要将entry_point_from_quick_compiled_code成员修改为art_quick_generic_jni_trampoline 的地址。art_quick_generic_jni_trampoline最终会调到entry_point_from_jni，即jni函数的入口。Frida把entry_point_from_jni改为自定义代码的入口，即可达到目的。</p>
-<p>frida把java method改为jni method，需要修改ARTMethod结构体中的这几个值：<br>access<em>flags</em> = native<br>entry_point_from<em>jni</em> = 自定义代码的入口<br>entry_point_from_quick_compiled_code = art_quick_generic_jni_trampoline函数的地址<br>entry_point_from_interpreter = artInterpreterToCompiledCodeBridge函数地址(把以interpreter模式调用入口地址指向artInterpreterToCompiledCodeBridge)</p>
-<h4 id="3-3-3-art-native-hook原理"><a href="#3-3-3-art-native-hook原理" class="headerlink" title="3.3.3 art native hook原理"></a>3.3.3 art native hook原理</h4><p>这个我暂时没查到太多资料，改天看看英文参考资料补充一下。</p>
-<p>大概就是Frida就是在进程里面注入一个agent，然后agent来inline hook那一套。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>ref:<a href="https://mabin004.github.io/2018/07/31/Mac上编译Frida/" target="_blank" rel="noopener">Frida源码分析 | m4bln (mabin004.github.io)</a></p>
+<p>​    那么Frida把一个java method 变成native method类型，是肯定没有quick code的，这时候就需要将entry_point_from_quick_compiled_code成员修改为art_quick_generic_jni_trampoline 的地址。art_quick_generic_jni_trampoline最终会调到entry_point_from_jni，即jni函数的入口。Frida把entry_point_from_jni改为自定义代码的入口，即可达到目的。</p>
+<p>​    Frida把java method改为jni method，需要修改ARTMethod结构体中的这几个值：<br>​    access<em>flags</em> = native<br>​    entry_point_from<em>jni</em> = 自定义代码的入口<br>​    entry_point_from_quick_compiled_code = art_quick_generic_jni_trampoline函数的地址<br>​    entry_point_from_interpreter = artInterpreterToCompiledCodeBridge函数地址(把以interpreter模式调用入口地址指向    artInterpreterToCompiledCodeBridge)</p>
+<h4 id="3-3-3-art-native-hook原理"><a href="#3-3-3-art-native-hook原理" class="headerlink" title="3.3.3 art native hook原理"></a>3.3.3 art native hook原理</h4><p>​    这个我暂时没查到太多资料，改天看看英文参考资料补充一下。</p>
+<p>​    大概就是Frida就是在进程里面注入一个agent，然后agent来inline hook那一套。</p>
+<h2 id="4-References"><a href="#4-References" class="headerlink" title="4.References"></a>4.References</h2><p>ref:<a href="https://mabin004.github.io/2018/07/31/Mac上编译Frida/" target="_blank" rel="noopener">Frida源码分析 | m4bln (mabin004.github.io)</a></p>
 <p>ref:<a href="https://www.jianshu.com/p/51e6aef175a2" target="_blank" rel="noopener">hook工具frida原理及使用 - 简书 (jianshu.com)</a></p>
 <p>ref:<a href="https://www.pythonf.cn/read/164792" target="_blank" rel="noopener">https://www.pythonf.cn/read/164792</a></p>
 <p>ref:<a href="https://zhuanlan.zhihu.com/p/389889716" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/389889716</a></p>
