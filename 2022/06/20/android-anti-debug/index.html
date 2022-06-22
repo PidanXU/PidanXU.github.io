@@ -12,7 +12,7 @@
     
     <title>
         
-            标签: NSCTF re500 | 
+            android-anti-debug | 
         
         Stay foolish,stay hungry!
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Xzhah">
     <meta name="description" itemprop="description" content="二进制">
-    <meta name="keywords" content="ctf">
+    <meta name="keywords" content="ctf,android">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="EMuf09ADP-S7GIydWv2sIXYV0sWMR9YjIKrmuBm6jVU">
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://pidanxu.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: NSCTF re500 | Stay foolish,stay hungry!">
+    <meta property="og:title" content="android-anti-debug | Stay foolish,stay hungry!">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="二进制">
-    
+    <meta property="og:article:tag" content="android"> 
 
+    
+        <meta property="article:published_time" content="6月 20, 2022">
+        <meta property="article:modified_time" content="6月 22, 2022">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: NSCTF re500 | Stay foolish,stay hungry!">
+    <meta name="twitter:title" content="android-anti-debug | Stay foolish,stay hungry!">
     <meta name="twitter:description" content="二进制">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://pidanxu.github.io/tags/NSCTF-re500/index.html">
+        <link rel="canonical" href="http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stay foolish,stay hungry!",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Xzhah",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "在这里与你相遇，是一件幸运的事情"
+    },
+    "headline": "android-anti-debug",
+    "url": "http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html",
+    "datePublished": "6月 20, 2022",
+    "dateModified": "6月 22, 2022",
+    "description": "二进制",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://pidanxu.github.io"
+    }
+}
+</script>
 
 
     
@@ -275,97 +308,259 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安卓反调试"><span class="post-toc-number">1.</span> <span class="post-toc-text">安卓反调试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-java层反调试"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. java层反调试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-native层反调试"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. native层反调试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-调试端口检测"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 调试端口检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-基于时间检测"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 基于时间检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-基于文件检测"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2.3 基于文件检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-基于文件格式反调试"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">2.4 基于文件格式反调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-5-ptrace"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">2.5 ptrace</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-6-断点扫描"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">2.6 断点扫描</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-7-调试器错误理解"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">2.7 调试器错误理解</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-8-多进程-线程"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">2.8 多进程/线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-9-进程名"><span class="post-toc-number">1.2.9.</span> <span class="post-toc-text">2.9 进程名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-10-利用调试器截获信号进行反调试"><span class="post-toc-number">1.2.10.</span> <span class="post-toc-text">2.10 利用调试器截获信号进行反调试</span></a></li></ol></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/05/pyc-re/">pyc re</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这是一道pyc题目
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/05/pyc-re/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>9月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                android-anti-debug
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Xzhah</strong>
+        <span>6月 20, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://pidanxu.github.io/2022/06/20/android-anti-debug/">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=android-anti-debug&url=http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=android-anti-debug&url=http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html&via=Xzhah" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Stay foolish,stay hungry!&title=android-anti-debug&summary=二进制&pics=http://pidanxu.github.io/img/favicon.png&url=http://pidanxu.github.io/2022/06/20/android-anti-debug/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="安卓反调试"><a href="#安卓反调试" class="headerlink" title="安卓反调试"></a>安卓反调试</h1><h2 id="1-java层反调试"><a href="#1-java层反调试" class="headerlink" title="1. java层反调试"></a>1. java层反调试</h2><p>​    Android的android.os.Debug类提供了isDebuggerConnected()方法，用于检测是否有调试器挂载到程序上。首先会想到，能不能改了smali重新编译回去？问题在于app有签名校验，改了smali后不能再打开该app。所以一个比较好的方法是用frida进行hook。还看到有人思路是直接修改测试机的系统，把aosp的相关代码直接改为returen False。</p>
+<h2 id="2-native层反调试"><a href="#2-native层反调试" class="headerlink" title="2. native层反调试"></a>2. native层反调试</h2><h3 id="2-1-调试端口检测"><a href="#2-1-调试端口检测" class="headerlink" title="2.1 调试端口检测"></a>2.1 调试端口检测</h3><p>​    android_server的默认监听的端口号是23946，所以可以通过检测这个端口号来起到一定的反调试作用。在Linux系统中，<code>/proc/net/tcp</code>文件会记录一些连接信息，在启动android_server以后，文件中会多出一条23946端口的记录。这样可以起到检测调试的作用，当然如果调试指定了其他监听端口，本方法就无法检测了。</p>
+<h3 id="2-2-基于时间检测"><a href="#2-2-基于时间检测" class="headerlink" title="2.2 基于时间检测"></a>2.2 基于时间检测</h3><p>​    利用计时api,判断某段代码用时是否异常，如果某段代码用时明显长于正常值，则很可能是在调试当中。</p>
+<h3 id="2-3-基于文件检测"><a href="#2-3-基于文件检测" class="headerlink" title="2.3 基于文件检测"></a>2.3 基于文件检测</h3><p>​    可以去读取一些/proc目录下的文件。</p>
+<p>​    1. /proc/pid/status文件，在未调试的情况下，TracerPid这一项是0，调试状态下是调试进程的PID。/proc/pid/stat文件，在调试状态下，会有t字符的标志出现。/proc/pid/wchan文件，在调试状态下，里面的内容是ptrace_stop。</p>
+<h3 id="2-4-基于文件格式反调试"><a href="#2-4-基于文件格式反调试" class="headerlink" title="2.4 基于文件格式反调试"></a>2.4 基于文件格式反调试</h3><ol>
+<li><p>比如文件名是假的，需要用别的文件格式去解析。</p>
+<ol start="2">
+<li>文件数据被修改，可以正常运行但是无法被IDA等工具解析。</li>
+</ol>
+</li>
+</ol>
+<p>比如elf的文件头在系统运行时解析和工具解析是不一样的，这时候可以精心构造一个文件头，让readelf/IDA等工具解析失败。</p>
+<h3 id="2-5-ptrace"><a href="#2-5-ptrace" class="headerlink" title="2.5 ptrace"></a>2.5 ptrace</h3><p>​    因为Linux下每个进程同时只能被一个进程调试，linux 系统gdb等调试器，都是通过ptrace系统调用实现。所以app可以先ptrace自己，防止调试器附加。解决办法就是找到ptrace代码手工patch掉。或者可以在LD_PRELOAD里设置一个自定义的so，自己在so里实现一个fake_ptrace，相当于把ptrace给hook掉。</p>
+<p>​    以及看到网上有思路可以用ptrace附加zygote,去拦截zygote的fork子进程，从而定位到目标应用pid。然后拦截目标pid的系统调用，把ptrace_traceme这种相关参数改了，让ptrace失败。</p>
+<h3 id="2-6-断点扫描"><a href="#2-6-断点扫描" class="headerlink" title="2.6 断点扫描"></a>2.6 断点扫描</h3><p>​    1.调试器的原理是向断点地址插入breakpoint的汇编指令，把原来的指令暂存到别处。那么就可以扫描本so内存中有没有breakpoint指令就好了。</p>
+<p>​    2.另一方面，breakpoint指令会使被调试进程发出信号SIGTRAP，调试器会截获linux系统给被调试进程的信号。由调试者来选择是否传递信号。但是SIGTRAP是个例外，因为通常的目标程序中不会出现breakpoint，因为这会使得程序自己奔溃。因此，当调试器遇到SIGTRAP信号时会认为是自己下的断点发出的。这样一来当调试器给这个breakpoint命令插入断点breakpoint后，备份的命令也是breakpoint，这样当继续执行时，调试器将备份指令恢复并执行，结果误以为备份后这个位置发出的SIGTRAP又是自己下的断点造成的，这样一来就会使得调试器的处理逻辑出现错误，不同的调试器会导致各种不同的问题。开发者可以在自己的signal handler函数里再把breakpoint指令替换为相关函数。</p>
+<h3 id="2-7-调试器错误理解"><a href="#2-7-调试器错误理解" class="headerlink" title="2.7 调试器错误理解"></a>2.7 调试器错误理解</h3><p>​    Arm架构的CPU却不仅仅只是运行Arm指令集，还会运行Thumb指令集，并且目前Android Studio已经将Thumb-2模式设定为默认NDK编译指令集，比Arm指令集还要优先。这是为什么？因为Thumb-2模式是Thumb16和Thumb32指令的混合执行，有更高的效率和代码密度，对于APP的运行效率和空间占用都有着更好的表现。</p>
+<p>​    但是这对于调试器来说并不是好事。Thumb16和Thumb32在opcode上没有冲突，只要一条条按照顺序去反汇编，就可以得到正确的Thumb指令。但是Arm指令集和Thumb指令集是会有冲突的，一条Thumb32指令是可以被理解为作用意义完全不同的另一条Arm指令的，甚至2条Thumb16指令可以被调试器误解为一条合法的Arm指令。</p>
+<p>​    而这两个模式的切换涉及跳转时候的地址数值，这个值可能是动态产生的，因此对编译器来说难以判断跳转后的代码是该理解为Thumb还是Arm。</p>
+<h3 id="2-8-多进程-线程"><a href="#2-8-多进程-线程" class="headerlink" title="2.8 多进程/线程"></a>2.8 多进程/线程</h3><p>​    这里意思是开一个守护线程，用来检测父线程是否被调试。算是反调的一种实现方式吧，原理还是以上检测原理。</p>
+<h3 id="2-9-进程名"><a href="#2-9-进程名" class="headerlink" title="2.9 进程名"></a>2.9 进程名</h3><p>​    遍历进程，看有没有android-server之类的进程，来判断是否有调试器</p>
+<h3 id="2-10-利用调试器截获信号进行反调试"><a href="#2-10-利用调试器截获信号进行反调试" class="headerlink" title="2.10 利用调试器截获信号进行反调试"></a>2.10 利用调试器截获信号进行反调试</h3><p>​    调试器会截获系统给进程的信号，然后选择是否传递给进程。那其实可执行文件里就可以自己将一些流程放在信号处理函数中，从而达到检测调试目的。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2022/06/16/android-study-5-java/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -559,6 +754,25 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
 
                     
 
