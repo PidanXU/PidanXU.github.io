@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2020 | 
+            android study 6 | 
         
         Stay foolish,stay hungry!
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Xzhah">
     <meta name="description" itemprop="description" content="二进制">
-    <meta name="keywords" content="ctf">
+    <meta name="keywords" content="ctf,android">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="EMuf09ADP-S7GIydWv2sIXYV0sWMR9YjIKrmuBm6jVU">
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://pidanxu.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2020 | Stay foolish,stay hungry!">
+    <meta property="og:title" content="android study 6 | Stay foolish,stay hungry!">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="二进制">
-    
+    <meta property="og:article:tag" content="android"> 
 
+    
+        <meta property="article:published_time" content="6月 23, 2022">
+        <meta property="article:modified_time" content="6月 24, 2022">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2020 | Stay foolish,stay hungry!">
+    <meta name="twitter:title" content="android study 6 | Stay foolish,stay hungry!">
     <meta name="twitter:description" content="二进制">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://pidanxu.github.io/archives/2020/index.html">
+        <link rel="canonical" href="http://pidanxu.github.io/2022/06/23/android-study-6/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stay foolish,stay hungry!",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Xzhah",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "在这里与你相遇，是一件幸运的事情"
+    },
+    "headline": "android study 6",
+    "url": "http://pidanxu.github.io/2022/06/23/android-study-6/index.html",
+    "datePublished": "6月 23, 2022",
+    "dateModified": "6月 24, 2022",
+    "description": "二进制",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://pidanxu.github.io"
+    }
+}
+</script>
 
 
     
@@ -275,393 +308,264 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/12/28/huaweictf2020/">huaweictf2020</a></p>
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
+    -->
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            ...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/12/28/huaweictf2020/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>12月 28, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安卓的加固与脱壳"><span class="post-toc-number">1.</span> <span class="post-toc-text">安卓的加固与脱壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Dex壳"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Dex壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-整体壳的工作流程"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.1 整体壳的工作流程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-脱壳"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 脱壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-修改源码脱壳"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 修改源码脱壳</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-Frida脱壳"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 Frida脱壳</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#References"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">References</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/11/23/2020-11-23Record/">2020-11-23Record</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Recor...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/11/23/2020-11-23Record/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>11月 23, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/10/15/2020西湖论剑-逆向/">2020西湖论剑-逆向</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/10/15/2020西湖论剑-逆向/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>10月 15, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/05/10/2020网鼎杯/">2020网鼎杯</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            [TOC]
-Re
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/05/10/2020网鼎杯/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>5月 10, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/04/22/2020虎符杯逆向题解/">2020虎符杯逆向题解</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            enc这个题...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/04/22/2020虎符杯逆向题解/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>4月 22, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2020/02/11/codegate2020/">codegate2020</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            [TOC]
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2020/02/11/codegate2020/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>2月 11, 2020</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf/">ctf</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                android study 6
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Xzhah</strong>
+        <span>6月 23, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://pidanxu.github.io/2022/06/23/android-study-6/">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=android study 6&url=http://pidanxu.github.io/2022/06/23/android-study-6/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=android study 6&url=http://pidanxu.github.io/2022/06/23/android-study-6/index.html&via=Xzhah" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pidanxu.github.io/2022/06/23/android-study-6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pidanxu.github.io/2022/06/23/android-study-6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Stay foolish,stay hungry!&title=android study 6&summary=二进制&pics=http://pidanxu.github.io/img/favicon.png&url=http://pidanxu.github.io/2022/06/23/android-study-6/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="安卓的加固与脱壳"><a href="#安卓的加固与脱壳" class="headerlink" title="安卓的加固与脱壳"></a>安卓的加固与脱壳</h1><h2 id="1-Dex壳"><a href="#1-Dex壳" class="headerlink" title="1. Dex壳"></a>1. Dex壳</h2><p>​     Dex壳可以分为三种类型:</p>
+<p>​    1. 整体加壳。将目标Apk里的整个dex文件内容都进行加密/压缩。运行的时候壳dex负责将App的dex解密还原并加载到虚拟机中。加载的方式可以采用文件加载或者内存加载。如果发现找不到组件类的实现，那就可以判断是加了整体壳。</p>
+<ol start="2">
+<li><p>函数粒度加壳。把dex中的某些方法抽空，使用nop指令填充，壳会在合适的时机把方法内容还原，这有点像SMC。</p>
+</li>
+<li><p>指令粒度加壳。比如VMP，用自己实现的解释器来执行加壳后的smali指令。以及dex2C, 可以把java的方法转换为native方法。</p>
+</li>
+</ol>
+<h3 id="1-1-整体壳的工作流程"><a href="#1-1-整体壳的工作流程" class="headerlink" title="1.1 整体壳的工作流程"></a>1.1 整体壳的工作流程</h3><p>​        整体加壳需要完成三个任务。1.把原始的dex文件加密/压缩。2.获得控制权并且访问原始dex的加密后数据，将其解密。3. 动态加载解密后的dex文件，并且让java虚拟机可以识别到dex文件中的四大组件。</p>
+<p>​        <strong>任务1</strong></p>
+<p>​        壳将原始的dex文件加密添加到壳dex文件的末尾，并且更新壳dex文件的checksum,signature和file_size反映出这些变化，因为在dex文件的头部信息中会保留这些值来检查dex文件格式的正确性。修改了这三个值以后，壳dex文件的末尾就可以添加一些和dex格式定义中无关的信息，比如原始dex文件的个数，大小以及加密以后原始dex文件的内容。然后将壳dex替换掉原始的dex文件对Apk进行重打包即可。</p>
+<p>​        <strong>任务2</strong></p>
+<p>​        壳会把自己的Application类替换掉原来的Application类，因此壳的Application类的<code>onCreate()</code>和<code>attachBaseContext()</code>会在App进程启动的时候率先执行拿到控制权。而访问被隐藏加密的dex可以通过<code>getApplicationInfo().sourceDir</code>来获取apk的路径，解压apk得到壳dex文件从而解密出壳dex文件里边附带的原始dex文件。</p>
+<p>​        <strong>任务3</strong></p>
+<p>​        壳会使用类加载器动态加载解密后的dex文件，为了让组件的生命周期函数也正常运行，还要对类加载器进行修正。</p>
+<p>​        类加载器可以在运行的时候加载在编译时未知的类,而Android里边的<code>BaseDexClassLoader</code>可以实现在运行的时候加载在编译时未知的dex文件，经过此加载器的加载，ART虚拟机内存中会形成相应的数据结构，对应的dex文件也会由mmap映射到虚拟内存当中，通过此加载器的<code>loadClass(String className, boolean resolve)</code>方法就可以得到类的Class对象，从而可以使用该类。</p>
+<p>​        PatchClassLoader可以加载开发者自己编写的类，也就是classpath下的类。他有一个兄弟类叫DexClassLoader。他们都是继承自<code>BaseDexClassLoader</code>。壳会使用DexClassLoader来动态加载解密后的dex文件。<strong>PathClassLoader</strong>是Android默认使用的类加载器，一个APK的Activity等类是在其中加载。DexClassLoader可以加载任意目录下的dex/jar/apk/zip文件，比PathClassLoader更加灵活，是实现热更新、热修复、dex加壳的重点。</p>
+<p>​        对类加载器的修正：加载完原始的dex以后还需要对<code>ClassLoader</code>进行修正，否则加载组件类运行的时候会报<code>ClassNotFoundException</code>，为什么会报这种错误呢? 这就涉及到了组件类的创建过程，比如对于Activity来说，应用程序的Activity对象是在ActivityThread类的<code>performLaunchActivity()</code>方法中通过调用<code>mInstrumentation.newActivity()</code>创建出来的。newActivity是通过<code>ClassLoader</code>先加载Activity类，再通过<code>newInstance()</code>来实例化类对象。<br>​     由于组件相关的Activity实际上是由PathClassLoader进行加载的，虽然可以通过反射拿到需要动态加载的Activity,但是却造成ActivityManager在管理上无法找到我们要加载的Activity,因为是先加载AndroidManifest才到onCreate的！<br>     为了解决上面的问题，可以有两种解决方案（核心目的都是使得组件类的加载交由DexClassLoader完成）:</p>
+<p>​    1.替换系统的组件类加载器为DexClassLoader，同时设置DexClassLoader的parent为系统组件类加载器。</p>
+<p>​    2. 打破原有的双亲关系，在系统组件类加载器和BootClassLoader的中间插入DexClassLoader即可；</p>
+<h2 id="2-脱壳"><a href="#2-脱壳" class="headerlink" title="2. 脱壳"></a>2. 脱壳</h2><p>​        脱壳的总体思路就是：在某个时间，内存里是会有完整的解密后的dex文件。脱壳就是把这个解密后的dex给dump下来。</p>
+<p>​        <strong>art:DexFile</strong></p>
+<p>​        这是art虚拟机里一个关键的数据结构，它有两个成员变量，分别代表着dex文件加载到内存后的大小以及起始地址。类加载器是会用到这个数据结构的。即使是art的quick code模式(被编译到机器码)也会有完整dex文件存在。</p>
+<h3 id="2-1-修改源码脱壳"><a href="#2-1-修改源码脱壳" class="headerlink" title="2.1 修改源码脱壳"></a>2.1 修改源码脱壳</h3><p>​        找到libart.so文件中所有导出函数中带有<code>art::DexFile</code>参数或者返回值的函数，那么这就是一个可以脱壳的点。在这些函数里把dex写入文件即可。</p>
+<h3 id="2-2-Frida脱壳"><a href="#2-2-Frida脱壳" class="headerlink" title="2.2 Frida脱壳"></a>2.2 Frida脱壳</h3><p>​        网上看到一篇文章用Frida进行内存搜索，从内存中把已经解密的dex给dump下来。通过在内存里搜索dex文件特征。或者通过DexFile.java类的mCookie变量来获取。对于通过使用<code>BaseDexClassLoader</code>来加载的程序来说，<code>DexFile.java</code>类的<code>mCookie</code>变量在native层的表现其实是一个jlong类型的指针的数组，数组的个数为此<code>ClassLoader</code>加载的dex文件个数 + 1,第一个元素类型为<code>OatFile*</code>,剩余的元素为对应的<code>art::DexFile*</code>，因此可以通过获取<code>mCookie</code>变量来得到<code>art::DexFile*</code>列表，并且通过<code>art::DexFile</code>的begin和size来dump。利用 Java.enumerateClassLoadersSync()来枚举所有类加载器，从中进行判断，把BaseDexClassLoader加载的Dex都dump下来。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="http://www.juziss.cn/2020/09/22/app%E7%9A%84%E5%8A%A0%E5%A3%B3%E4%B8%8E%E8%84%B1%E5%A3%B3/" target="_blank" rel="noopener">http://www.juziss.cn/2020/09/22/app%E7%9A%84%E5%8A%A0%E5%A3%B3%E4%B8%8E%E8%84%B1%E5%A3%B3/</a></p>
+<p><a href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1116812&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D343" target="_blank" rel="noopener">https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1116812&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D343</a></p>
+<p><a href="https://www.anquanke.com/post/id/195869" target="_blank" rel="noopener">https://www.anquanke.com/post/id/195869</a></p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2022/06/20/android-anti-debug/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
