@@ -72,7 +72,7 @@
 
     
         <meta property="article:published_time" content="6月 23, 2022">
-        <meta property="article:modified_time" content="6月 24, 2022">
+        <meta property="article:modified_time" content="6月 28, 2022">
     
 
     <!-- The Twitter Card protocol -->
@@ -113,7 +113,7 @@
     "headline": "android study 6",
     "url": "http://pidanxu.github.io/2022/06/23/android-study-6/index.html",
     "datePublished": "6月 23, 2022",
-    "dateModified": "6月 24, 2022",
+    "dateModified": "6月 28, 2022",
     "description": "二进制",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -335,7 +335,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安卓的加固与脱壳"><span class="post-toc-number">1.</span> <span class="post-toc-text">安卓的加固与脱壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Dex壳"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Dex壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-整体壳的工作流程"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.1 整体壳的工作流程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-脱壳"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 脱壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-修改源码脱壳"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 修改源码脱壳</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-Frida脱壳"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 Frida脱壳</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#References"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">References</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安卓的加固与脱壳"><span class="post-toc-number">1.</span> <span class="post-toc-text">安卓的加固与脱壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Dex壳"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. Dex壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-整体壳的工作流程"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.1 整体壳的工作流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-指令抽取型壳的工作流程"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">1.2 指令抽取型壳的工作流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-1-android免root权限hook系统函数，从而修改程序运行时的内存指令"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">1.2.1 android免root权限hook系统函数，从而修改程序运行时的内存指令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-2-抽取型壳工作原理"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">1.2.2 抽取型壳工作原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-3-art中存在的问题"><span class="post-toc-number">1.1.2.3.</span> <span class="post-toc-text">1.2.3 art中存在的问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-vmp-java2c"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">1.3 vmp/java2c</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-脱壳"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 脱壳</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-修改源码脱壳"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 修改源码脱壳</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-Frida脱壳"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 Frida脱壳</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#References"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">References</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -520,6 +520,13 @@
 <p>​        对类加载器的修正：加载完原始的dex以后还需要对<code>ClassLoader</code>进行修正，否则加载组件类运行的时候会报<code>ClassNotFoundException</code>，为什么会报这种错误呢? 这就涉及到了组件类的创建过程，比如对于Activity来说，应用程序的Activity对象是在ActivityThread类的<code>performLaunchActivity()</code>方法中通过调用<code>mInstrumentation.newActivity()</code>创建出来的。newActivity是通过<code>ClassLoader</code>先加载Activity类，再通过<code>newInstance()</code>来实例化类对象。<br>​     由于组件相关的Activity实际上是由PathClassLoader进行加载的，虽然可以通过反射拿到需要动态加载的Activity,但是却造成ActivityManager在管理上无法找到我们要加载的Activity,因为是先加载AndroidManifest才到onCreate的！<br>     为了解决上面的问题，可以有两种解决方案（核心目的都是使得组件类的加载交由DexClassLoader完成）:</p>
 <p>​    1.替换系统的组件类加载器为DexClassLoader，同时设置DexClassLoader的parent为系统组件类加载器。</p>
 <p>​    2. 打破原有的双亲关系，在系统组件类加载器和BootClassLoader的中间插入DexClassLoader即可；</p>
+<h3 id="1-2-指令抽取型壳的工作流程"><a href="#1-2-指令抽取型壳的工作流程" class="headerlink" title="1.2 指令抽取型壳的工作流程"></a>1.2 指令抽取型壳的工作流程</h3><h4 id="1-2-1-android免root权限hook系统函数，从而修改程序运行时的内存指令"><a href="#1-2-1-android免root权限hook系统函数，从而修改程序运行时的内存指令" class="headerlink" title="1.2.1 android免root权限hook系统函数，从而修改程序运行时的内存指令"></a>1.2.1 android免root权限hook系统函数，从而修改程序运行时的内存指令</h4><p>​    大概流程如下：</p>
+<pre><code>1. 每个方法要运行，首先会将类加载到内存中，那么就需要调用安卓系统中的dexFindClass函数，这个函数的返回值是一个DexClassDef结构体信息, 通过里面的成员class_data找下去会有一个code_item成员，存了方法的指令信息。
+ 2. 把相关的内存区域改为可写，修改指令为自定义指令，覆盖原指令即可。
+</code></pre><h4 id="1-2-2-抽取型壳工作原理"><a href="#1-2-2-抽取型壳工作原理" class="headerlink" title="1.2.2 抽取型壳工作原理"></a>1.2.2 抽取型壳工作原理</h4><p>​    1.首先通过解析dex文件，将其指定方法内容指令置空。然后重新计算checksum和signature信息写回到头部。</p>
+<p>​    2.参考1.2.1篡改内存指令即可。</p>
+<h4 id="1-2-3-art中存在的问题"><a href="#1-2-3-art中存在的问题" class="headerlink" title="1.2.3 art中存在的问题"></a>1.2.3 art中存在的问题</h4><p>​    art由于存在quick code，所以如果还原指令的时机不对，art就执行quick code去了，还原的指令自然不生效。这种情况下要么禁用dex2oat，要么在dex2oat之前就还原dex文件，但是这样的话只要在dex2oat的流程中进行脱壳就能dump下来完整的dex文件了。</p>
+<h3 id="1-3-vmp-java2c"><a href="#1-3-vmp-java2c" class="headerlink" title="1.3 vmp/java2c"></a>1.3 vmp/java2c</h3><p>​    其实就是自定义指令集，然后自己写解释器去解释执行。或者也可以把dex里的指令转成c,c++，然后去执行。</p>
 <h2 id="2-脱壳"><a href="#2-脱壳" class="headerlink" title="2. 脱壳"></a>2. 脱壳</h2><p>​        脱壳的总体思路就是：在某个时间，内存里是会有完整的解密后的dex文件。脱壳就是把这个解密后的dex给dump下来。</p>
 <p>​        <strong>art:DexFile</strong></p>
 <p>​        这是art虚拟机里一个关键的数据结构，它有两个成员变量，分别代表着dex文件加载到内存后的大小以及起始地址。类加载器是会用到这个数据结构的。即使是art的quick code模式(被编译到机器码)也会有完整dex文件存在。</p>
@@ -528,6 +535,7 @@
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="http://www.juziss.cn/2020/09/22/app%E7%9A%84%E5%8A%A0%E5%A3%B3%E4%B8%8E%E8%84%B1%E5%A3%B3/" target="_blank" rel="noopener">http://www.juziss.cn/2020/09/22/app%E7%9A%84%E5%8A%A0%E5%A3%B3%E4%B8%8E%E8%84%B1%E5%A3%B3/</a></p>
 <p><a href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1116812&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D343" target="_blank" rel="noopener">https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=1116812&amp;extra=page%3D1%26filter%3Dtypeid%26typeid%3D343</a></p>
 <p><a href="https://www.anquanke.com/post/id/195869" target="_blank" rel="noopener">https://www.anquanke.com/post/id/195869</a></p>
+<p><a href="https://blog.csdn.net/m0_46204016/article/details/104579953" target="_blank" rel="noopener">https://blog.csdn.net/m0_46204016/article/details/104579953</a></p>
 
     
 
