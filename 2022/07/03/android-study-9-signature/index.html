@@ -12,7 +12,7 @@
     
     <title>
         
-            标签: reverse ctf | 
+            android study 9 signature | 
         
         Stay foolish,stay hungry!
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Xzhah">
     <meta name="description" itemprop="description" content="二进制">
-    <meta name="keywords" content="ctf">
+    <meta name="keywords" content="ctf,android">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="EMuf09ADP-S7GIydWv2sIXYV0sWMR9YjIKrmuBm6jVU">
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://pidanxu.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: reverse ctf | Stay foolish,stay hungry!">
+    <meta property="og:title" content="android study 9 signature | Stay foolish,stay hungry!">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="二进制">
-    
+    <meta property="og:article:tag" content="android"> 
 
+    
+        <meta property="article:published_time" content="7月 03, 2022">
+        <meta property="article:modified_time" content="7月 05, 2022">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: reverse ctf | Stay foolish,stay hungry!">
+    <meta name="twitter:title" content="android study 9 signature | Stay foolish,stay hungry!">
     <meta name="twitter:description" content="二进制">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://pidanxu.github.io/tags/reverse-ctf/index.html">
+        <link rel="canonical" href="http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stay foolish,stay hungry!",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Xzhah",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "在这里与你相遇，是一件幸运的事情"
+    },
+    "headline": "android study 9 signature",
+    "url": "http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html",
+    "datePublished": "7月 03, 2022",
+    "dateModified": "7月 05, 2022",
+    "description": "二进制",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://pidanxu.github.io"
+    }
+}
+</script>
 
 
     
@@ -275,453 +308,267 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#android签名机制"><span class="post-toc-number">1.</span> <span class="post-toc-text">android签名机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-初识android程序签名"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.初识android程序签名</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-签名的验证方式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.签名的验证方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-v1签名"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1 v1签名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-v2签名"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2 v2签名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-v3签名"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">2.3 v3签名</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#References"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">References</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/05/16/第四届全国网络空间安全技术大赛CSTC/">第四届全国网络空间安全技术大赛CSTC</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            首先感谢我队两位师傅带我，给师傅们端了两天水拿了第四名
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/05/16/第四届全国网络空间安全技术大赛CSTC/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>5月 16, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/19/美亚柏科2017/">美亚柏科2017</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这次美（公）亚（费）柏（旅）科（游）还是好玩，近距离接触到了蓝莲花大哥和天枢大哥（大哥们真的很友好），仰望
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/19/美亚柏科2017/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>1月 19, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/04/hctf2017-level2/">hctf2017 level2</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            这是我接触ctf以来见过最喜欢的题，无论是思路还是各方面，杭电大佬真厉害
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/04/hctf2017-level2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>12月 04, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/21/hctf2017-level1/">hctf2017 level1</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            * 用户名
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/21/hctf2017-level1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>11月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/14/njctf2017/">njctf2017</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            njctf2017一道比赛时做出来的，一道今天回过头做的
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/14/njctf2017/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>10月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/07/11/全国大学生信息安全竞赛-填数游戏/">全国大学生信息安全竞赛 填数游戏</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            2017全国大学生信息安全竞赛 填数游戏 re200
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/07/11/全国大学生信息安全竞赛-填数游戏/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>7月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/07/05/polictf-re350/">polictf2015 re350 wp</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            #####polictf2015 re350 wp
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/07/05/polictf-re350/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Xzhah's avatar">
-            </div>
-            <div>
-                <strong>Xzhah</strong>
-                <span>7月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/ctf-wp/">ctf wp</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                android study 9 signature
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Xzhah</strong>
+        <span>7月 03, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://pidanxu.github.io/2022/07/03/android-study-9-signature/">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=android study 9 signature&url=http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=android study 9 signature&url=http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html&via=Xzhah" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Stay foolish,stay hungry!&title=android study 9 signature&summary=二进制&pics=http://pidanxu.github.io/img/favicon.png&url=http://pidanxu.github.io/2022/07/03/android-study-9-signature/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="android签名机制"><a href="#android签名机制" class="headerlink" title="android签名机制"></a>android签名机制</h1><h2 id="1-初识android程序签名"><a href="#1-初识android程序签名" class="headerlink" title="1.初识android程序签名"></a>1.初识android程序签名</h2><p>​    在android系统中，所有安装到系统的应用必须有一个数字证书。这个数字证书用于标志程序作者，以及在应用程序之间建立信任关系。</p>
+<p>​    <strong>签名的作用</strong></p>
+<p>​    1） 签名可以证明apk的所有者，通过对Apk进行签名，开发者可以证明自己对apk的所有权与控制权。签名可用于程序的安装和更新，软件包管理器会同构签名证书和数字摘要来验证程序是否被篡改。</p>
+<p>​    2） 有利于程序升级。当旧版本与新版本的数字证书相同时，android系统会认为这两个程序是同一个程序的不同版本。如果证书不同，系统则认为是两个不同的程序，会要求新程序更改包名。</p>
+<p>​    3） 有利于程序的模块化设计，android系统允许拥有同一签名的程序运行在同一进程中，所以开发者可以分模块开发，用户只需要在需要的时候下载合适的模块即可。</p>
+<p>​    4） 通过permission的方式在多个程序间共享数据和代码。如果某个权限(permission)的protectionLevel是signature，则这个权限就只能授予那些跟该权限所在的包拥有同一个数字证书的程序。</p>
+<h2 id="2-签名的验证方式"><a href="#2-签名的验证方式" class="headerlink" title="2.签名的验证方式"></a>2.签名的验证方式</h2><p>​    发送者对文件计算摘要，然后用私钥签名。把密文，证书，公钥发送给接收端。接收端使用证书认证身份，然后用公钥解密，自己计算一遍摘要，对比摘要是否相同确保完整性。</p>
+<h3 id="2-1-v1签名"><a href="#2-1-v1签名" class="headerlink" title="2.1 v1签名"></a>2.1 v1签名</h3><p>​    v1是基于jar签名，jarsigner            </p>
+<p>​    首先META-INF目录下有3个和签名有关的文件</p>
+<p>​    1）MANIFEST.MF：APK所有原始文件的数据摘要的base64编码，数据摘要算法一般就是SHA1或者SHA256。</p>
+<p>​    2）CERT.SF: 首先计算MANIFEST.MF文件的数据摘要。然后base64编码记录在CERT.SF的文件头里。逐条计算MANIFEST.MF文件中每一个块的数据摘要，并经过BASE64编码后，记录在CERT.SF中的同名块中，属性的名字是“SHA1-Digest</p>
+<p>​    3）CERT.RSA：把之前生成的CERT.SF文件用私钥计算出签名，然后将签名以及含公钥信息的数字证书一同写入CERT.RSA文件。</p>
+<p>​    所以生成签名的过程就是:</p>
+<p>​    1) 对APK内部所有文件，提取摘要后base64编码，生成指纹清单MANIFEST.MF</p>
+<p>​    2) 对指纹清单的数据计算摘要，然后base64编码保存到CERT.SF文件主属性中，计算指纹清单文件内每一个数据块的数据摘要，编码后保存到CERT.SF的文件属性中</p>
+<p>​    3）计算CERT.SF文件摘要，然后签名，最后把签名和证书一同保存到CERT.RSA文件中</p>
+<p>​    <strong>v1签名的缺陷</strong></p>
+<p>​    v1签名方案是不会保护到APK内所有内容的，并且验证时候不够迅速，需要先解压然后验证每个文件的摘要。因此就引入了v2方案</p>
+<h3 id="2-2-v2签名"><a href="#2-2-v2签名" class="headerlink" title="2.2 v2签名"></a>2.2 v2签名</h3><p>​    v2签名是对APK本身进行摘要计算，那么则不需要解压APK的操作，减少了校验时间。并且针对整个APK的摘要计算，修改apk中任意一个文件都会不通过校验。</p>
+<p>​    <strong>apk文件格式</strong></p>
+<p>​    apk文件本质上是一个ZIP压缩包，而ZIP格式是固定的，主要由三部分构成：</p>
+<p>​    1）内容块： 所有压缩文件都在这里面，每个压缩文件有一个local file header，主要会记录文件名，压缩算法，压缩前后大小，修改时间，CRC32值等。</p>
+<p>​    2）中央目录：包含了多个central directory file header，和每个local file header一一对应。每个中央目录文件头主要记录了压缩算法，注释信息，local file header的偏移等。</p>
+<p>​    3）最后是EOCD（end of central record），主要记录了中央目录大小和偏移，注释信息等。</p>
+<p>​    v1只会校验内容块中的压缩文件。</p>
+<p>​    v2会在apk中新增一个签名块，新的块中存了签名，摘要，签名算法，证书链等信息。APK签名块位于中央目录之前，文件数据之后。V2签名同时修改了EOCD中的中央目录的偏移，使得签名后的APK还符合ZIP结构。</p>
+<p>​    v2方案会把APK分块签名，分成1M的块，计算每个块的摘要，以及针对所有摘要计算一个总摘要。再对总摘要进行签名。每个块的摘要，证书链，额外信息会类似一个MANIFEST.MF文件，然后计算这个文件的数字签名，形成类似SF文件，最后把“MF”和”SF”文件与公钥通过keystore签名后，形成签名块放入apk文件中。</p>
+<h3 id="2-3-v3签名"><a href="#2-3-v3签名" class="headerlink" title="2.3 v3签名"></a>2.3 v3签名</h3><p>​    v2签名的问题在哪里呢？签名是默认25年有效期的，如果在签名过期或者密钥泄露想更换签名的情况下，不是那么方便，而v3在v2的基础上支持了密钥轮转。</p>
+<p>​    具体来说，即v3可以在签名部分添加新的证书，在这个新块中，会记录之前的签名信息以及新的签名信息，以密钥转轮的方案，来做签名的替换和升级。这意味着，只要旧签名证书在手，开发者就可以通过它在新的 APK 文件中，更改签名。v3 签名新增的新块（attr）存储了所有的签名信息，由更小的 Level 块，以链表的形式存储。</p>
+<p>​    其中每个节点都包含用于为之前版本的应用签名的签名证书，最旧的签名证书对应根节点，系统会让每个节点中的证书为列表中下一个证书签名，从而为每个新密钥提供证据来证明它应该像旧密钥一样可信。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.jianshu.com/p/145fb9ad6f07" target="_blank" rel="noopener">https://www.jianshu.com/p/145fb9ad6f07</a></p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2022/07/01/android-study-8/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -915,6 +762,25 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
 
                     
 

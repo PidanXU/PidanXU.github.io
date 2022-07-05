@@ -6,7 +6,7 @@
   <link href="http://pidanxu.github.io/atom.xml" rel="self"/>
   
   <link href="http://pidanxu.github.io/"/>
-  <updated>2022-07-03T03:52:29.594Z</updated>
+  <updated>2022-07-05T03:56:31.991Z</updated>
   <id>http://pidanxu.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android study 9 signature</title>
+    <link href="http://pidanxu.github.io/2022/07/03/android-study-9-signature/"/>
+    <id>http://pidanxu.github.io/2022/07/03/android-study-9-signature/</id>
+    <published>2022-07-03T15:17:33.000Z</published>
+    <updated>2022-07-05T03:56:31.991Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="android签名机制"><a href="#android签名机制" class="headerlink" title="android签名机制"></a>android签名机制</h1><h2 id="1-初识android程序签名"><a href="#1-初识android程序签名" class="headerlink" title="1.初识android程序签名"></a>1.初识android程序签名</h2><p>​    在android系统中，所有安装到系统的应用必须有一个数字证书。这个数字证书用于标志程序作者，以及在应用程序之间建立信任关系。</p><p>​    <strong>签名的作用</strong></p><p>​    1） 签名可以证明apk的所有者，通过对Apk进行签名，开发者可以证明自己对apk的所有权与控制权。签名可用于程序的安装和更新，软件包管理器会同构签名证书和数字摘要来验证程序是否被篡改。</p><p>​    2） 有利于程序升级。当旧版本与新版本的数字证书相同时，android系统会认为这两个程序是同一个程序的不同版本。如果证书不同，系统则认为是两个不同的程序，会要求新程序更改包名。</p><p>​    3） 有利于程序的模块化设计，android系统允许拥有同一签名的程序运行在同一进程中，所以开发者可以分模块开发，用户只需要在需要的时候下载合适的模块即可。</p><p>​    4） 通过permission的方式在多个程序间共享数据和代码。如果某个权限(permission)的protectionLevel是signature，则这个权限就只能授予那些跟该权限所在的包拥有同一个数字证书的程序。</p><h2 id="2-签名的验证方式"><a href="#2-签名的验证方式" class="headerlink" title="2.签名的验证方式"></a>2.签名的验证方式</h2><p>​    发送者对文件计算摘要，然后用私钥签名。把密文，证书，公钥发送给接收端。接收端使用证书认证身份，然后用公钥解密，自己计算一遍摘要，对比摘要是否相同确保完整性。</p><h3 id="2-1-v1签名"><a href="#2-1-v1签名" class="headerlink" title="2.1 v1签名"></a>2.1 v1签名</h3><p>​    v1是基于jar签名，jarsigner            </p><p>​    首先META-INF目录下有3个和签名有关的文件</p><p>​    1）MANIFEST.MF：APK所有原始文件的数据摘要的base64编码，数据摘要算法一般就是SHA1或者SHA256。</p><p>​    2）CERT.SF: 首先计算MANIFEST.MF文件的数据摘要。然后base64编码记录在CERT.SF的文件头里。逐条计算MANIFEST.MF文件中每一个块的数据摘要，并经过BASE64编码后，记录在CERT.SF中的同名块中，属性的名字是“SHA1-Digest</p><p>​    3）CERT.RSA：把之前生成的CERT.SF文件用私钥计算出签名，然后将签名以及含公钥信息的数字证书一同写入CERT.RSA文件。</p><p>​    所以生成签名的过程就是:</p><p>​    1) 对APK内部所有文件，提取摘要后base64编码，生成指纹清单MANIFEST.MF</p><p>​    2) 对指纹清单的数据计算摘要，然后base64编码保存到CERT.SF文件主属性中，计算指纹清单文件内每一个数据块的数据摘要，编码后保存到CERT.SF的文件属性中</p><p>​    3）计算CERT.SF文件摘要，然后签名，最后把签名和证书一同保存到CERT.RSA文件中</p><p>​    <strong>v1签名的缺陷</strong></p><p>​    v1签名方案是不会保护到APK内所有内容的，并且验证时候不够迅速，需要先解压然后验证每个文件的摘要。因此就引入了v2方案</p><h3 id="2-2-v2签名"><a href="#2-2-v2签名" class="headerlink" title="2.2 v2签名"></a>2.2 v2签名</h3><p>​    v2签名是对APK本身进行摘要计算，那么则不需要解压APK的操作，减少了校验时间。并且针对整个APK的摘要计算，修改apk中任意一个文件都会不通过校验。</p><p>​    <strong>apk文件格式</strong></p><p>​    apk文件本质上是一个ZIP压缩包，而ZIP格式是固定的，主要由三部分构成：</p><p>​    1）内容块： 所有压缩文件都在这里面，每个压缩文件有一个local file header，主要会记录文件名，压缩算法，压缩前后大小，修改时间，CRC32值等。</p><p>​    2）中央目录：包含了多个central directory file header，和每个local file header一一对应。每个中央目录文件头主要记录了压缩算法，注释信息，local file header的偏移等。</p><p>​    3）最后是EOCD（end of central record），主要记录了中央目录大小和偏移，注释信息等。</p><p>​    v1只会校验内容块中的压缩文件。</p><p>​    v2会在apk中新增一个签名块，新的块中存了签名，摘要，签名算法，证书链等信息。APK签名块位于中央目录之前，文件数据之后。V2签名同时修改了EOCD中的中央目录的偏移，使得签名后的APK还符合ZIP结构。</p><p>​    v2方案会把APK分块签名，分成1M的块，计算每个块的摘要，以及针对所有摘要计算一个总摘要。再对总摘要进行签名。每个块的摘要，证书链，额外信息会类似一个MANIFEST.MF文件，然后计算这个文件的数字签名，形成类似SF文件，最后把“MF”和”SF”文件与公钥通过keystore签名后，形成签名块放入apk文件中。</p><h3 id="2-3-v3签名"><a href="#2-3-v3签名" class="headerlink" title="2.3 v3签名"></a>2.3 v3签名</h3><p>​    v2签名的问题在哪里呢？签名是默认25年有效期的，如果在签名过期或者密钥泄露想更换签名的情况下，不是那么方便，而v3在v2的基础上支持了密钥轮转。</p><p>​    具体来说，即v3可以在签名部分添加新的证书，在这个新块中，会记录之前的签名信息以及新的签名信息，以密钥转轮的方案，来做签名的替换和升级。这意味着，只要旧签名证书在手，开发者就可以通过它在新的 APK 文件中，更改签名。v3 签名新增的新块（attr）存储了所有的签名信息，由更小的 Level 块，以链表的形式存储。</p><p>​    其中每个节点都包含用于为之前版本的应用签名的签名证书，最旧的签名证书对应根节点，系统会让每个节点中的证书为列表中下一个证书签名，从而为每个新密钥提供证据来证明它应该像旧密钥一样可信。</p><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.jianshu.com/p/145fb9ad6f07" target="_blank" rel="noopener">https://www.jianshu.com/p/145fb9ad6f07</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;android签名机制&quot;&gt;&lt;a href=&quot;#android签名机制&quot; class=&quot;headerlink&quot; title=&quot;android签名机制&quot;&gt;&lt;/a&gt;android签名机制&lt;/h1&gt;&lt;h2 id=&quot;1-初识android程序签名&quot;&gt;&lt;a href=&quot;#1-</summary>
+      
+    
+    
+    
+    
+    <category term="android" scheme="http://pidanxu.github.io/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>android study 8</title>
@@ -456,29 +478,6 @@
     
     
     <category term="cve-2018-8941" scheme="http://pidanxu.github.io/tags/cve-2018-8941/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>roarctf2019-math</title>
-    <link href="http://pidanxu.github.io/2019/10/23/roarctf2019-math/"/>
-    <id>http://pidanxu.github.io/2019/10/23/roarctf2019-math/</id>
-    <published>2019-10-23T07:57:07.000Z</published>
-    <updated>2021-07-15T08:07:15.317Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h3><p>RoarCTF的逆向math是一个几何数学题，看出题人写的出题思路是弦心距极坐标blablabla…</p><p>题目:<a href="https://github.com/berTrAM888/RoarCTF-Writeup-some-Source-Code/tree/master/Reverse/math" target="_blank" rel="noopener">https://github.com/berTrAM888/RoarCTF-Writeup-some-Source-Code/tree/master/Reverse/math</a> </p><p>出题人给出的题目设计思路如下:</p><p>基于圆的几何问题</p><p>所有其他点的坐标都是相对A点的，可以看作坐标系移动了(Ax,Ay)</p><p><img src="https://xzfile.aliyuncs.com/media/upload/picture/20191023185127-1041d2a4-f583-1.png" alt="10.png"></p><p>M，O点坐标已给</p><p>输入N点，MN形成弦，计算出弦心距，画一个小圆</p><p>然后进入概率check，cnt1和cnt2分别是落在小圆和大圆内的次数</p><p>符合概率 反推即 对弦心距的长度有要求</p><p>再反推N点相对A点的坐标，N有2解</p><p>最后的限制是N在圆上，正好是切点的位置</p><p>改：输入的值都进行了极坐标运算，另外添加了ollvm</p><p>通过check即给出服务器上的flag</p><p>理解几何逻辑后，根据弦心距反推N点即可</p><p>1.41421356 5.2057298 0.67083</p><p>输入上面这一串以后很大概率成功</p><p>最简单的输入A点(1,1)</p><p>于是N点坐标即为</p><p>//std::cin &gt;&gt; N.x; //N.x = A.x(1) + sqrt(5 + 2 * sqrt(5)); x == 4.07768 //std::cin &gt;&gt; N.y; //N.y = A.y(1) + sqrt(5); y == 3.23607 //转换为极坐标 tan == y/x == 3.23607 / 4.07768 == 0.793606 弧度==0.67083 // ρ == sqrt(27.0996232273) == 5.2057298 长度==5.2057298</p><p>//4.07768 3.23607 转换为极坐标后输入有较大可能性通过概率检测</p><p>但是其实说到底也就是两个方程，所以可以用matlab这种神器直接解方程，不用去做几何数学(就我的使用体验，对于浮点数的方程来说，matlab的效果比z3好太多了)。</p><h3 id="题目逻辑"><a href="#题目逻辑" class="headerlink" title="题目逻辑"></a>题目逻辑</h3><p>第一个输入是根号2不多说了，伪代码都可以看得很清楚</p><img src="/2019/10/23/roarctf2019-math/1.png"><p>我们设第二个输入是a,第三个输入是b</p><p>根据程序后面所使用的，我们令</p><p>y=a×cos(b)</p><p>z=a×sin(b)</p><p>v8=sqrt(10+2×sqrt(5))+sqrt(2)×cos(pi/4)</p><p>比较重要的函数是下面这个401049函数。两个不等式都围绕他来展开。</p><p>(下图中v29就是y,v30就是z，v27=v28=v8,v26=sqrt(2)*sin(pi/4)=1)</p><img src="/2019/10/23/roarctf2019-math/2.png"><p>该函数的第一个子函数最好跟汇编，该函数的第一个子函数的返回结果是两个乘积相减</p><img src="/2019/10/23/roarctf2019-math/3.png"><p>第二个子函数伪代码没什么问题</p><img src="/2019/10/23/roarctf2019-math/4.png"><img src="/2019/10/23/roarctf2019-math/5.png"><p>耐心跟一下可以得到第一次调用401049函数的返回值为:</p><img src="/2019/10/23/roarctf2019-math/6.png"><p>然后该返回值会进入与随机数的比较循环。</p><img src="/2019/10/23/roarctf2019-math/7.png"><p>这里可以看成是用随机数落在两个圆里的概率比来代表两个圆的面积比。所以可以通过概率比来确定返回值的大小。也就是</p><img src="/2019/10/23/roarctf2019-math/8.png"><p>该等式就是我们能获得的第一个等式。</p><p>第二个等式也和401049函数有关,v22已知，为sqrt(5)-1</p><img src="/2019/10/23/roarctf2019-math/9.png"><p>第二次的返回值是</p><img src="/2019/10/23/roarctf2019-math/10.png"><p>所以应该满足的公式为</p><img src="/2019/10/23/roarctf2019-math/11.png"><h3 id="解方程"><a href="#解方程" class="headerlink" title="解方程"></a>解方程</h3><p>   //matlab<br>    syms y z<br>    v28=vpa(sqrt(10+2 * sqrt(5))+1,24)<br>    e1=(y-v28)^2-0.0954915* ((z-1)^2+(y-v28)^2)<br>    e2=((y-1)* (sqrt(5)-1)-((z-1) * (v28-1)))^2-(sqrt(5)-1)^2 * ((z-1)^2+(y-1)^2)<br>    [y0,z0]=solve(e1,e2,y,z)</p><p>得到结果如下</p><img src="/2019/10/23/roarctf2019-math/12.png"><p>四组可以都试试，最后发现第二组是正确答案(当然带进去稍微跟一下也能确定第二组是正确答案)。</p><p>因为y0^2+z0^2可以得到第一个输入的平方:a^2，而z0/y0可以得到第二个输入b的tan值tan(b)。</p><p>所以正确输入如下</p><img src="/2019/10/23/roarctf2019-math/13.png"><img src="/2019/10/23/roarctf2019-math/14.png"><p>因为满足方程后会执行cat flag，所以在本地我们事先写一个flag文件内容为aaaaaa来进行测试。</p><p>注意一下精度的调整便能成功</p><img src="/2019/10/23/roarctf2019-math/15.png">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;题目介绍&quot;&gt;&lt;a href=&quot;#题目介绍&quot; class=&quot;headerlink&quot; title=&quot;题目介绍&quot;&gt;&lt;/a&gt;题目介绍&lt;/h3&gt;&lt;p&gt;RoarCTF的逆向math是一个几何数学题，看出题人写的出题思路是弦心距极坐标blablabla…&lt;/p&gt;
-&lt;p&gt;题目:&lt;</summary>
-      
-    
-    
-    
-    
-    <category term="reverse" scheme="http://pidanxu.github.io/tags/reverse/"/>
     
   </entry>
   
