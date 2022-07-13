@@ -6,7 +6,7 @@
   <link href="http://pidanxu.github.io/atom.xml" rel="self"/>
   
   <link href="http://pidanxu.github.io/"/>
-  <updated>2022-07-05T03:56:31.991Z</updated>
+  <updated>2022-07-13T12:38:39.981Z</updated>
   <id>http://pidanxu.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android study 10 so load</title>
+    <link href="http://pidanxu.github.io/2022/07/09/android-study-10-so-load/"/>
+    <id>http://pidanxu.github.io/2022/07/09/android-study-10-so-load/</id>
+    <published>2022-07-09T13:48:16.000Z</published>
+    <updated>2022-07-13T12:38:39.981Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="android-so加固"><a href="#android-so加固" class="headerlink" title="android so加固"></a>android so加固</h1><h2 id="1-so加固简介"><a href="#1-so加固简介" class="headerlink" title="1. so加固简介"></a>1. so加固简介</h2><p>​    因为so逆向的难度比dex逆向难度更大，所以开发者常常会把核心算法(加解密，协议)放在native实现。这时候就需要对so进行加固保护。</p><p>​    so加固分为有源so加固和无源so加固。有源的so加固：自解密，混淆，源码VMP等。无源保护则是对so加壳，vmp保护等。</p><p>​    有源保护中的自解密就是先把要加密的函数给加密了，然后加载so文件，在运行的时候把加密的数据给解密。还有一种比较常见的是ollvm，通过指令膨胀，虚假指令，控制流平坦化等方式可以混淆代码达到保护的目的。而vmp就是自己写一个解释器，对自定义的指令进行解释执行，不过对性能影响较大。</p><p>​    无源码保护的加壳，其核心是自定义linker。在壳被执行后还原出原来的so文件，最后把控制流交还给被保护的so文件，该方法成本低，对性能影响小，但是也相对容易攻破。</p><h2 id="2-so加载原理"><a href="#2-so加载原理" class="headerlink" title="2. so加载原理"></a>2. so加载原理</h2><p>​    so有执行视图和链接视图。链接视图以Section为单位访问各段数据，编译链接过程会用section信息去读取相关数据。执行视图则是程序加载执行过程中访问的方式。so加固则是根据so执行流程以及所依赖的数据结构进行拆解，加密和重组的。</p><p>​    so加载流程如下：</p><p>​    1）dl_open会调用find_library -&gt; find_loaded_library_by_soname，从内存中查找已经加载的so文件，如果有已经加载的直接返回handler。</p><p>​    2）如果没有已加载的so，则执行加载，并且新建soinfo结构体，将so加载到内存中。</p><p>​    3）执行预加载prelink_image，读取so文件中dynamic字段的内容，初始化重定位需要的数据。</p><p>​    4） 执行link_image，修复内存中的数据，完成重定位，调用call_constructors构造函数</p><p>​    5） 执行so的init和init_array中的函数</p><p>​    从以上流程可以知道，在重定位完成以前，so中的代码是不会被执行的，代码都在linker中执行。以及so中最先执行的函数是init, 其次是init_array。所以有很多加固会利用init,init_array中的函数来进行解密。或者利用JNI_OnLoad函数，但这种方式只适用于Android下特殊的so。</p><h2 id="3-so的加固"><a href="#3-so的加固" class="headerlink" title="3.so的加固"></a>3.so的加固</h2><p>​    UPX加固方法：只加固代码段。数据段和重定位的相关结构都保留在文件中，利用插入的init节对代码进行解密。本质上和Section加密类似，只是放大了加密范围，并添加修改init节的操作。</p><p>​    自实现linker方法：重定位过程需要自己实现，带来的好处是可以破坏so的结构或者自定义so的结构。</p><h2 id="4-ollvm混淆"><a href="#4-ollvm混淆" class="headerlink" title="4.ollvm混淆"></a>4.ollvm混淆</h2><p>​    llvm分为三段式：Frontend、Optimizer、backend。前端负责词法分析，语法分析，语义分析，生成中间代码等。然后进入optimizer优化环节,比如死代码去除，编译器内联等操作。最后就是bankend后端环节，核心是根据中间语言ir生成和CPU匹配的机器码。</p><p>​    混淆这个操作就是在optimizer这个环节进行的：</p><p>​    1. 字符串加密，逐行扫面ir中的字符串，对这些字符串进行逐字节异或。</p><pre><code>2. 指令膨胀，会把简单的指令膨胀为功能相同，但是逻辑上更复杂的指令。我看网上对这个反混淆的思路有人把二进制反过来提升为llvm ir指令，然后用llvm自己的优化把这种指令膨胀的混淆和不可达路径给干掉。。。 3. 虚假控制流，加入额外的条件跳转和不可达基本块，达到干扰控制流分析的目的。解决思路的话，可以考虑用符号执行/模拟执行遍历出所有的真实块，或者对跳转条件做分析？把恒定跳转的分支给定下来 4. 控制流平坦化，ollvm会添加一个用于控制跳转的状态变量和分发器，当真实块执行了过后就更新这个状态变量。然后分发器根据这个状态变量跳转到下一个真实块。如果原本的执行流程中存在条件跳转，则会在各条件下对状态变量设置不同的值，再回到分发器进行检查和跳转。就相当于做了一个大范围的switch。</code></pre><h3 id="4-2-去控制流平坦化"><a href="#4-2-去控制流平坦化" class="headerlink" title="4.2 去控制流平坦化"></a>4.2 去控制流平坦化</h3><p>​    首先我的观点是，ollvm的混淆其实都没啥很好的办法可以通用的自动化去混淆。原因是混淆指令和开发者指令之间没有明显边界，特别是编译器优化过后(比如把大switch优化成二分查找的if), 真的要调试还不如用脚本给所有真实块第一条指令下个断点来调试。</p><p>​    网上的帖子用符号执行/模拟执行来自动去控制流平坦化，其实大多都是需要对着样本特地写的，没法泛化使用，核心思想就是1）通过规则识别真实块，2）获取真实块之间的前后关系，3）patch二进制程序，重新连边。</p><p>​    <strong>识别真实块</strong></p><pre><code>1）函数的开始地址为序言的地址2）序言的后继为主分发器3）后继为主分发器的块为预处理器4）后继为预处理器的块为真实块5）无后继的块为retn块6）剩下的为无用块</code></pre><p>​    <strong>识别真实块前后关系</strong></p><p>​    主要需要处理的就是分支语句，这里就是把cmov涉及的状态设为true/false，分别获取两次的分支地址。</p><p>​    <strong>patch程序</strong></p><p>​    把无用块置为nop，没有分支的则直接jmp导向下一个真实块，分支的则把cmovz这样的改为jz,然后在后面新增jmp指向另一分支。</p><h2 id="references"><a href="#references" class="headerlink" title="references"></a>references</h2><p><a href="https://f5.pm/go-87511.html" target="_blank" rel="noopener">https://f5.pm/go-87511.html</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;android-so加固&quot;&gt;&lt;a href=&quot;#android-so加固&quot; class=&quot;headerlink&quot; title=&quot;android so加固&quot;&gt;&lt;/a&gt;android so加固&lt;/h1&gt;&lt;h2 id=&quot;1-so加固简介&quot;&gt;&lt;a href=&quot;#1-so加</summary>
+      
+    
+    
+    
+    
+    <category term="android" scheme="http://pidanxu.github.io/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>android study 9 signature</title>
@@ -452,32 +474,6 @@
     
     
     <category term="ctf" scheme="http://pidanxu.github.io/tags/ctf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CVE-2018-8941分析</title>
-    <link href="http://pidanxu.github.io/2019/10/31/CVE-2018-8941%E5%88%86%E6%9E%90/"/>
-    <id>http://pidanxu.github.io/2019/10/31/CVE-2018-8941%E5%88%86%E6%9E%90/</id>
-    <published>2019-10-31T08:01:37.000Z</published>
-    <updated>2019-10-31T09:16:32.118Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p><p>文章首发于先知社区 :<a href="https://xz.aliyun.com/t/6607" target="_blank" rel="noopener">https://xz.aliyun.com/t/6607</a></p><h2 id="cve-2018-8941分析"><a href="#cve-2018-8941分析" class="headerlink" title="cve-2018-8941分析"></a>cve-2018-8941分析</h2><p>想开始入门搞搞路由器，选择cve-2018-8941入门。因为感觉网上能找到的资料不是太详细，所以想写一篇新手入门向的记录一下。</p><p>漏洞信息:<a href="https://github.com/SECFORCE/CVE-2018-8941" target="_blank" rel="noopener">https://github.com/SECFORCE/CVE-2018-8941</a></p><p>参考:<a href="https://www.freebuf.com/articles/wireless/168870.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/wireless/168870.html</a></p><p>固件下载: <a href="ftp://ftp.dlink.eu/Products/dsl/dsl-3782/driver_software/DSL-3782_A1_EU_1.01_07282016.zip" target="_blank" rel="noopener">ftp://ftp.dlink.eu/Products/dsl/dsl-3782/driver_software/DSL-3782_A1_EU_1.01_07282016.zip</a> </p><h2 id="漏洞信息"><a href="#漏洞信息" class="headerlink" title="漏洞信息"></a>漏洞信息</h2><p>在/userfs/bin/tcapi 二进制文件中存在栈溢出漏洞，tcapi是一个被用作Web GUI中”诊断”功能的包装。</p><p>现实世界中触发该漏洞需要通过身份验证，经过身份验证的用户可以使用”set Diagnostics_Entry”功能将一个长缓冲区作为”Addr”参数传递给” /user / bin / tcapi”二进制文件，并导致内存损坏。进一步可以覆盖返回地址，劫持控制流执行任意代码。</p><h2 id="详细分析"><a href="#详细分析" class="headerlink" title="详细分析"></a>详细分析</h2><p>首先用firmware-analysis-toolkit进行一个仿真模拟，在里面发现了Diagnostics Entry Address的接口</p><img src="/2019/10/31/CVE-2018-8941分析/1.png"><p>但是无法输入造成栈溢出的数据(因为在前端有校验)，所以通过burpsuite发送造成栈溢出的数据。</p><img src="/2019/10/31/CVE-2018-8941分析/2.png"><p>把burpsuite发送的内容改成栈溢出的数据，可以看到存返回地址的ra寄存器已经被覆盖了</p><img src="/2019/10/31/CVE-2018-8941分析/3.png"><p>路由器也崩了</p><img src="/2019/10/31/CVE-2018-8941分析/4.png"><p>现在回到具体漏洞点，首先运行tcapi文件，用qemu-mips-static来运行程序以及进行调试。</p><img src="/2019/10/31/CVE-2018-8941分析/5.png"><p>我们要运行的是set 功能 后面应该跟三个参数，正常来说应该是这样的：sudo chroot . ./qemu-mips-static userfs/bin/tcapi set Diagn<br>ostics_Entry Addr www 或者IP (如192.168.100.1）</p><p>我们使用IDA进行调试来看一下，给qemu提供了调试功能，-g 参数加上端口号就可以用gdb或者IDA的remote gdb 进行调试了。</p><img src="/2019/10/31/CVE-2018-8941分析/6.png"><p>可以看到程序调用tcapi_set函数，该函数位于libtcapi中实现。</p><img src="/2019/10/31/CVE-2018-8941分析/7.png"><p>而tcapi_set中的strcpy调用没有检验长度导致了栈溢出的发生。且简单计算可以得知存放返回地址的栈距离第三个参数在栈上的偏移是596</p><img src="/2019/10/31/CVE-2018-8941分析/8.png"><p>我们令第三个参数为’A’*596+’BBBB’，实际调试的时候可以看到，当栈溢出发生后，存放返回值的寄存器的值变为了42424242(‘BBBB’)</p><img src="/2019/10/31/CVE-2018-8941分析/9.png"><p>已经可以覆盖返回地址了，那么接下来怎么执行我们自己的命令呢？checksec可以看到什么保护都没开，那首先考虑写shellcode?本来我的想法是找到类似jmp esp这样的指令然后在后面写Shellcode就行了。这个打算后面花时间看看mips有没有类似的指令，或者看看有没有哪里可以泄露栈地址？</p><img src="/2019/10/31/CVE-2018-8941分析/10.png"><p>老老实实构造rop链，然而发现tcapi这个程序里没有合适的gadget,只能去libc里找了，可以通过readelf -d 判断程序的依赖库</p><img src="/2019/10/31/CVE-2018-8941分析/11.png"><p>我们选择libc.so.0</p><p>首先我们可以控制的是s0-s3,ra，使用mipsrop查找符合条件的gadget</p><img src="/2019/10/31/CVE-2018-8941分析/12.png"><p>我们选择16710偏移处的gadget，最终调用的函数地址由s0寄存器决定，而参数是sp+24，所以我们只需要让libcbase+16708覆盖$ra寄存器，system实际地址覆盖s0寄存器，和esp+24。</p><p>那么为了测试，我们需要获得libc基址，原Poc作者说”since we are exploiting through the WEB GUI, binary process mappings (/proc/pid of boa/maps) were obtained from ‘/userfs/bin/boa’ binary”，意思是运行boa，然后通过cat proc/pid/boa 获得libc基址吗?但是经过我的测试发现并不能对应上，我拿到基址的方法是通过给qemu 加上-strace参数，然后看系统调用得到的。</p><img src="/2019/10/31/CVE-2018-8941分析/13.png"><p>这里我也不太确定，我看到open libc.so.0过后用read读进了0x40867000，把0x40867000+offset带进IDA里去找，稍微调整一下发现了0x40868000是libc基址。</p><p>所以最后我们的payload就是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import struct</span><br><span class="line">libc_base = 0x40868000</span><br><span class="line">libc_system = struct.pack(<span class="string">"&gt;I"</span>,libc_base+0x59bb0) </span><br><span class="line">rop_pad = <span class="string">'A'</span>*580</span><br><span class="line">s0 = libc_system</span><br><span class="line">s1 = <span class="string">'BBBB'</span></span><br><span class="line">s2 = <span class="string">'BBBB'</span></span><br><span class="line">s3 = <span class="string">'BBBB'</span></span><br><span class="line">ra = struct.pack(<span class="string">"&gt;I"</span>,libc_base+0x16708)</span><br><span class="line">payload = rop_pad + s0 + s1 + s2 + s3 + ra + <span class="string">"C"</span>*24+<span class="string">'ls'</span></span><br></pre></td></tr></table></figure><p>最后使用qemu触发就行了</p><img src="/2019/10/31/CVE-2018-8941分析/14.png">]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;p&gt;文章首发于先知社区 :&lt;a href=&quot;https://xz.aliyun.com/t/6607&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://xz.aliyun.com/t/6607&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id</summary>
-      
-    
-    
-    
-    <category term="cve" scheme="http://pidanxu.github.io/categories/cve/"/>
-    
-    
-    <category term="cve-2018-8941" scheme="http://pidanxu.github.io/tags/cve-2018-8941/"/>
     
   </entry>
   
