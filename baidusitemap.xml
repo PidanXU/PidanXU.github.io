@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://pidanxu.github.io/2022/07/26/android-study-13/</loc>
+    <lastmod>2022-08-02</lastmod>
+  </url>
+  <url>
     <loc>http://pidanxu.github.io/2022/07/23/android-study-12-lifecycle/</loc>
     <lastmod>2022-07-23</lastmod>
   </url>
