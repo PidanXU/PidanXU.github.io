@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            面试问题 | 
+        
+        Stay foolish,stay hungry!
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Xzhah">
+    <meta name="description" itemprop="description" content="二进制">
+    <meta name="keywords" content="ctf,others">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="EMuf09ADP-S7GIydWv2sIXYV0sWMR9YjIKrmuBm6jVU">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Stay foolish,stay hungry!">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://pidanxu.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="面试问题 | Stay foolish,stay hungry!">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="二进制">
+    <meta property="og:article:tag" content="others"> 
+
+    
+        <meta property="article:published_time" content="9月 28, 2022">
+        <meta property="article:modified_time" content="10月 06, 2022">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="面试问题 | Stay foolish,stay hungry!">
+    <meta name="twitter:description" content="二进制">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://pidanxu.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://pidanxu.github.io/2022/09/28/面试问题/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stay foolish,stay hungry!",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Xzhah",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "在这里与你相遇，是一件幸运的事情"
+    },
+    "headline": "面试问题",
+    "url": "http://pidanxu.github.io/2022/09/28/面试问题/index.html",
+    "datePublished": "9月 28, 2022",
+    "dateModified": "10月 06, 2022",
+    "description": "二进制",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://pidanxu.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    .footer-sns-facebook {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNjU3LjYgODcuOGw0LjggMy44djU1LjJjMCA1NC42IDAgNTUuMi00LjYgNTkuNi00LjQgNC40LTYgNC42LTUwLjIgNS42bC00NS42IDEtNy4yIDUuNmMtMTAuNCA4LTE2LjggMTcuMi0xOS4yIDI3LjQtMSA1LTEuOCAyNC44LTEuOCA0NCAuMiAzOCAxLjYgNDQuNiAxMC44IDQ4IDIuOCAxLjIgMjguNCAyIDU2LjggMiA0Ny44IDAgNTIgLjIgNTYuMiAzLjhsNC44IDMuOHY1NS4yYzAgNTQuNiAwIDU1LjItNC42IDU5LjYtNC40IDQuNi01LjQgNC42LTU3IDUuMi0yOC44LjItNTQuNC44LTU2LjggMS40LTIuNC42LTUuNiAzLTYuOCA1LjQtMS44IDMuMi0yLjQgNDEuNC0yLjYgMTQzLjJsLS4yIDEzOC44LTUuNiA0LjgtNS42IDQuOEg2MDljLTUyLjQgMC01Mi44IDAtNTguMi00LjZsLTUuNC00LjYtLjItMTQwLjYtLjItMTQwLjYtNC44LTMuOGMtNC4yLTMuNC04LTMuOC0zNS42LTMuOC0zMi44IDAtNDEtMS44LTQzLjYtMTAtLjYtMi4yLTEuMi0yNS40LTEuMi01MS40IDAtNjAuOC0uMi01NyAzLjQtNjEuNiAyLjgtMy42IDYtNCAzNy44LTUgMzMtMSAzNS4yLTEuMiAzOS40LTUuNiA0LjYtNC40IDQuNi01LjIgNS44LTcxIDEuMi03My40LjItNjcuMiAxNi42LTk5LjQgOC0xNS44IDEyLjgtMjIgMjgtMzcgMTUuMi0xNS4yIDIxLjQtMTkuNiAzOC4yLTI4IDExLTUuNCAyNC0xMSAyOS0xMi4yIDYuMi0xLjggMjguNi0yLjYgNzEuMi0yLjYgNTguNi0uMiA2Mi42IDAgNjcgMy42eiIvPjwvc3ZnPg==);
+    }
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    .footer-sns-gplus {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHpNNDMwIDI5NS40YzQwLjYgMTUuNCA1Ni42IDIzLjggNzIuNiAzOC40IDYuOCA2LjIgNy4yIDE1LjIgMSAyMy40LTYuMiA4LTMzLjYgMzMuOC0zOSAzNi42LTUuNiAyLjgtMTcuNiAyLjgtMjMuMi0uMi0yLjQtMS4yLTguMi01LjItMTMtOC44LTExLjItOC42LTI0LjYtMTEuMi01NS4yLTExLjItMjcuNCAwLTQwLjYgMi42LTUyLjIgMTAuNC00LjQgMi44LTEyLjIgNy42LTE3LjIgMTAuNi0yMyAxMy4yLTUxLjQgNTUtNTUuOCA4Mi40LTIuNiAxNS42LTIuNCAzNC44LjIgNTEgMi44IDE3LjQgMTkuOCA0OC44IDM1LjIgNjUuMiAxNiAxNi42IDQ1IDMzLjYgNjIuOCAzNi42IDI2LjggNC40IDY1LjggMS42IDc5LjQtNS44IDIwLjYtMTEuNCAzMS0xOSA0MS0zMC40IDE4LjgtMjEuNiAyMy40LTM0LjIgMTUuNi00My44LTMuOC00LjgtNC40LTQuOC01MS01LjgtNjAuOC0xLjItNTYuMiAyLjItNTYuMi00My4yIDAtMzIuNC4yLTMzLjIgNC44LTM3IDQuNC0zLjYgOS0zLjggOTItMy44IDc5IDAgODcuOC40IDk0LjIgMy42IDExLjIgNS42IDEzIDExLjQgMTIuOCA0My40IDAgMjUuNC0uOCAzMC44LTcuNiA1OC00IDE2LjYtOS44IDM0LTEyLjYgMzktMi44IDUtOC4yIDE0LjItMTEuNiAyMC42LTguNCAxNS40LTI3LjIgMzYuOC00MC44IDQ2LjYtNS44IDQuNC0xMy44IDEwLjItMTcuNiAxMy4yLTMuOCAzLTExIDctMTYuMiA4LjgtNS4yIDEuOC0xNi4yIDYuNC0yNC40IDEwLTIyLjQgOS42LTM0LjggMTEuNi03MyAxMS42LTM3LjYuMi00Ny0xLjQtNzEtMTItOC4yLTMuNi0xNy42LTcuMi0yMC44LTgtMTUuOC0zLjgtNjctNDUuMi03Ny44LTYyLjgtMi4yLTMuOC03LjYtMTEuNi0xMS44LTE3LjItNC4yLTUuNC05LTE0LTEwLjYtMTktMS44LTQuOC02LjItMTYtMTAtMjQuOC0zLjYtOC44LTcuOC0yMi4yLTkuMi0yOS42LTMuMi0xOC44LTEuNC03OS40IDIuOC05MS40IDEzLjgtNDAuNiAzNS42LTc4IDU4LjgtMTAwLjIgMTQtMTMuNiA0Ny4yLTM2LjQgNTgtMzkuOCA0LjItMS40IDEzLjQtNS4yIDIwLjYtOC40IDIyLTEwIDMyLjgtMTEuNiA3Ni0xMSAzMy44LjYgNDAuNCAxLjIgNTAgNC44em0zNDAuOCA4MC44YzggMy42IDkuNiAxMS4yIDkuMiAzOS4yLS42IDM0LjQtLjYgMzQgNSAzOS42IDQuOCA1IDUuNCA1IDM3LjYgNSA0My40IDAgNDQuNC44IDQzLjIgMzYuMi0uOCAxNy0xLjIgMTguNC02LjQgMjMtNS40IDQuNi02LjYgNC44LTM3LjYgNC44LTMxLjIgMC0zMiAuMi0zNi44IDUtNS42IDUuNC01LjYgNC40LTUgNDEuMi40IDI2LjQuMiAyNy40LTQuNiAzMy00LjggNS42LTYgNS44LTI0LjQgNi40LTIwLjguOC0yOS42LTEuNC0zMy40LTguNC0xLjQtMi42LTItMTUuNi0xLjgtMzUuNi40LTMxLjIuNC0zMS42LTQuNi0zNi42cy01LjYtNS0zNi01Yy0xOC44IDAtMzMtLjgtMzYtMi4yLTcuNi0zLjYtOS42LTExLjItOC44LTMzLjguOC0yOC4yLjQtMjggNDEtMjggNDUuNCAwIDQ1LjQgMCA0NC42LTQyLjYtLjYtMzMtLjYtMzMgNS0zOC40IDQuNC00LjYgNi4yLTUgMjQuOC01IDExIDAgMjIuMiAxIDI1IDIuMnoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="alternate" href="/atom.xml" title="Stay foolish,stay hungry!" type="application/atom+xml">
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#web相关"><span class="post-toc-number">1.</span> <span class="post-toc-text">web相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是ssrf攻击以及原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是ssrf攻击以及原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是csrf以及原理"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">什么是csrf以及原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#http里为什么还要有host"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">http里为什么还要有host</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#xss"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">xss</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#socket的粘包和分包"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">socket的粘包和分包</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java相关"><span class="post-toc-number">2.</span> <span class="post-toc-text">java相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ThreadLocal原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ThreadLocal原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gc回收机制"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">gc回收机制</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引用类型"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">引用类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#线程池"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">线程池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计模式"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">设计模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#jvm"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">jvm</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存管理"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">内存管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JIT编译器"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">JIT编译器</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#操作系统相关"><span class="post-toc-number">3.</span> <span class="post-toc-text">操作系统相关</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程与线程的区别"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">进程与线程的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程间通信方式"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">进程间通信方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#共享内存相关的文件夹"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">共享内存相关的文件夹</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#kill信号，以及Linux信号"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">kill信号，以及Linux信号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#namespace与cgroup"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">namespace与cgroup</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#execve与system的区别"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">execve与system的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker相关"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">docker相关</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker建议禁用的syscall"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">docker建议禁用的syscall</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#docker逃逸"><span class="post-toc-number">3.9.</span> <span class="post-toc-text">docker逃逸</span></a></li></ol></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                面试问题
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/IMG_4116.JPG" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Xzhah</strong>
+        <span>9月 28, 2022</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=http://pidanxu.github.io/2022/09/28/面试问题/">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/others/">others</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=面试问题&url=http://pidanxu.github.io/2022/09/28/面试问题/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=面试问题&url=http://pidanxu.github.io/2022/09/28/面试问题/index.html&via=Xzhah" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pidanxu.github.io/2022/09/28/面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pidanxu.github.io/2022/09/28/面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Stay foolish,stay hungry!&title=面试问题&summary=二进制&pics=http://pidanxu.github.io/img/favicon.png&url=http://pidanxu.github.io/2022/09/28/面试问题/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="web相关"><a href="#web相关" class="headerlink" title="web相关"></a>web相关</h1><h2 id="什么是ssrf攻击以及原理"><a href="#什么是ssrf攻击以及原理" class="headerlink" title="什么是ssrf攻击以及原理"></a><strong>什么是ssrf攻击以及原理</strong></h2><p>​    服务端请求伪造，攻击者在未能取得服务器所有权限时，利用服务器漏洞以服务器的身份发送构造好的请求给服务器所在内网。比如可以用来端口扫描，file协议读文件。</p>
+<p>​    一般是用户输入url，服务器帮忙解析资源，比如根据url下载图片，然后去抓包，通过修改url为内网的ip和端口，达到访问内网资源的目的。</p>
+<p>​    如果探测到redis服务，默认情况下没有密码，就可以未授权执行命令（把反弹shell写进定时任务里），从而达到反弹shell的目的。</p>
+<p>​    ssrf防护可以通过过滤返回信息、统一错误信息、限制请求的端口为常用端口、内网ip黑名单、禁用不需要的协议等方法。</p>
+<h2 id="什么是csrf以及原理"><a href="#什么是csrf以及原理" class="headerlink" title="什么是csrf以及原理"></a><strong>什么是csrf以及原理</strong></h2><p>​    跨站请求伪造，一种挟持用户在当前已登录的Web上执行非本意操作的攻击方法。具体来说，比如用户已经登录了A网站，攻击者利用广告，链接等诱导用户打开B网站（比如把图片地址设置为攻击链接、js自动提交表单、构造一个诱惑链接），而B网站利用表单或者其他方式向A网站发送请求，就能通过身份验证执行操作。本质是利用了网站对用户网页浏览器的信任。</p>
+<p>​    csrf的防护方式：</p>
+<p>​    1）重要操作二次认证，防止操作在后台自动执行</p>
+<p>​    2）设置会话的超时时间</p>
+<p>​    3）操作类请求使用Post，浏览类请求使用Get。因为Post更安全，不会作为url的一部分，不会被缓存，并且可以被服务器日志记录</p>
+<p>​    4）可以通过referer字段表明请求来源，服务端可以通过这个字段判断是否在合法的网站下发送的请求，用于同源检测。但是referer的内容来自于浏览器，各浏览器对referer的实现方法不同，可能有漏洞被利用。</p>
+<p>​    5）在请求地址中加入token，攻击者只能利用用户的cookie信息，当HTTP请求中以参数的形式加入一个随机产生的token，并在服务端验证。比如token可以放在session中，每次请求就可以把session中的token拿出来与请求中的token对比。</p>
+<p>​    6）跨域时不发送cookie</p>
+<h2 id="http里为什么还要有host"><a href="#http里为什么还要有host" class="headerlink" title="http里为什么还要有host"></a><strong>http里为什么还要有host</strong></h2><p>​    host的目的是用来实现虚拟主机技术，即把一台完整的服务器分成若干个主机，可以在一个主机上运行多个网站或服务。因为http默认端口80，https默认端口443。这样的话根据一个ip来解析就不知道是访问哪个目录了。但是使用host请求头，就可以根据域名解析对应网站。</p>
+<h2 id="xss"><a href="#xss" class="headerlink" title="xss"></a><strong>xss</strong></h2><p>​    跨站脚本攻击，是一种代码注入攻击，攻击者通过在目标网站上注入恶意脚本，使之在用户浏览器上运行，从而获取用户的Cookie等敏感信息。</p>
+<p>​    该漏洞原理本质是攻击者的输入/参数中携带者恶意代码，而浏览器可能会把其解析为正常代码，从而执行。</p>
+<p>​    xss可以分为三种：</p>
+<p>​    存储型XSS：攻击者将恶意代码提交到目标网站的数据库中(通过论坛发帖、商品评论、用户私信)，用户打开目标网站时，网站服务端将恶意代码从数据库中取出，拼接在HTML中返回给浏览器。</p>
+<p>​    反射型XSS：攻击者构造出特殊的URL，其中包含恶意代码。当用户打开url，恶意代码被取出，拼接在HTML中返回给浏览器。浏览器解析并执行恶意代码。</p>
+<p>​    DOM型XSS：攻击者构造出特殊的URL，其中的恶意代码由前端的JS取出解析执行。</p>
+<h2 id="socket的粘包和分包"><a href="#socket的粘包和分包" class="headerlink" title="socket的粘包和分包"></a><strong>socket的粘包和分包</strong></h2><p>​    粘包：如果两个包发送时间间隔很短，包长度足够长，那么发送的两个包内容可能在接收端那边就是合并到一个包里去了。这是socket的优化机制，可以降低内存开销。这时候就要考虑怎么把两个包的内容区分开了，有两种方法：1.给包的头尾都加上标记 2.在包头加上内容长度。</p>
+<p>​    分包：如果socket包有长度限制，那么一个包的内容也可能会被拆分为多个包进行发送。同样可以靠1.给包的头尾都加上标记 2.在包头加上内容长度两种方式解决。</p>
+<p><strong>xxe</strong></p>
+<p><strong>poi</strong></p>
+<p><strong>文件上传</strong></p>
+<p><strong>文件包含</strong></p>
+<p><strong>java反序列化</strong></p>
+<h1 id="java相关"><a href="#java相关" class="headerlink" title="java相关"></a>java相关</h1><h2 id="ThreadLocal原理"><a href="#ThreadLocal原理" class="headerlink" title="ThreadLocal原理"></a><strong>ThreadLocal原理</strong></h2><p>​    ThreadLocal的目的是每个线程都有一份独立的局部变量，互相之间无法影响。与加锁不同之处在于，ThreadLocal会把传进来的变量每个线程都产生一个新的副本，从而互不影响。ThreadLocal的实现原理如下：<br>​    1）每个线程都维护了一个ThreadLocalMap对象，ThreadLocalMap由数组实现，采用开放定址法解决hash冲突（即如果发生了元素冲突的情况，就使用下一个槽位存储。因为使用了散列算法，所以地址分配得比较均匀，所以可以使用开放定址法）。与开放定址法作为对比的还有链表法，冲突的元素放到一个链表中，如HashMap。</p>
+<p>​    2）ThreadLocalMap中存储着Entry对象，Entry中的key就是ThreadLocal对象，value是真正的值。Entry中的key是弱引用，其目的是当ThreadLocal不再被使用时，gc可以自动回收这个ThreadLocal对象，避免内存泄漏。但Entry中的value是强引用，所以在ThreadLocal的get,set,remove方法中都会检测是否有key变为null,进行对相应Entry的清理工作。所以建议每次用完ThreadLocal都做一次remove的调用。</p>
+<p>​    建议将ThreadLocal作为静态对象使用，这样的话多个线程的ThreadLocalMap中共用一个ThreadLocal对象作为key,就可以操作线程自己的副本对象。如果把ThreadLocal作为示例对象就会每个线程里多创建一个对象，造成内存的浪费。</p>
+<h2 id="gc回收机制"><a href="#gc回收机制" class="headerlink" title="gc回收机制"></a><strong>gc回收机制</strong></h2><p>​    gc回收机制中使用了两种判断对象是否可回收的策略：</p>
+<p>​    1）引用计数法，当一个对象被创建后，每次被引用其对应的引用计数器就+1。当引用失效后，引用计数器就-1。这种方法的问题在于，如果两个或者多个对象之间存在循环引用的情况，引用计数就永远不会归0。所以只有早期JVM采用这个策略。</p>
+<p>​    2）可达性分析，定义GC ROOT对象，然后从这些对象出发，得到所有的可达对象。Java中可以作为GC ROOT的对象有：a）虚拟机栈中的引用对象，如局部变量。b）方法区中的静态属性对象，方法区中常量引用对象。c）本地方法栈中(Native方法)引用的对象。</p>
+<p>​    三种经典的gc回收算法是：</p>
+<p>​    1）标记-清除法：最基础的收集算法，由<strong>标记</strong>和<strong>清除</strong>两个步骤组成。由上面的可达性分析找出所有的不可达对象，然后对所有标记的对象原地清除。这种方法的缺点在于回收完后会有很多不连续的内存空间。</p>
+<p>​    2）复制算法：复制算法的思路是把内存区域分为两块：S0,S1，每次只使用其中一块内存如S0，当使用完触发gc时，便把S0上存活的对象移到S1上面去。然后把S0上的全部清理掉。这样也保证了内存的连续性，并且标记和复制可以同步进行。缺点就是内存减小了一半。</p>
+<p>​    3）标记-整理法：该方法解决了标记-清除算法中内存不连续的问题，在完成标记步骤后，该算法会把存活的对象全都向前移动。然后将边界以外的内存全部清理掉。该算法的缺点在于效率会低于标记-清除法。</p>
+<p>​    堆中分为年轻代、老年代、永久代三个部分：</p>
+<p>​    1）年轻代是存活周期比较短的对象，分为Eden、S0、S1三个区域。一开始对象都在年轻代的Eden区域，当Eden区放满了或者对象太大无法再放进Eden区时，此时对年轻代（Eden和S0）进行一次minor gc，存活的对象放进S1中，然后清空Eden和S0，因为年轻代中存活的对象数量通常少，所以此时用复制算法开销较低。每次年轻代经历了minor gc存活下来的对象年龄会+1，到了一定岁数(通常15)就可以进入老年代。以及S1满了的话对象也可以进入老年代。</p>
+<p>​    2）老年代中再满了就会出发full gc，或者System.gc()也可能会触发full gc 。此时就使用标记-清除法或者标记整理法。也可以使用两者结合，先多次标记-清除，等碎片太多了再用标记-整理。</p>
+<p>​    在java语言中提供了四种垃圾回收器：</p>
+<p>​    1）串行垃圾回收器：串行垃圾回收器会暂停所有的应用程序线程，然后采用单独的线程进行GC。</p>
+<p>​    2）并行垃圾回收器：JVM的默认垃圾回收器，相较于串行回收性能有所提升，也需要暂停有所程序线程，但是会多线程进行gc。</p>
+<p>​    3）并发标记扫描垃圾回收器：在初始标记时暂停其他线程，然后在可达性分析过程中恢复应用线程。但这在实时性上可能出问题，因为应用中对象的引用是在不断更新的。然后是重新标记，即把并发标记时产生变动的对象的存活标记进行修正，这需要暂停其他线程。最后是并发清除，此时可以恢复其他线程。</p>
+<p>​    4）G1垃圾回收器：G1中各代（年轻代、老年代、永久代）的存储地址不连续，其会维护一个优先级列表，每次在收集时间内优先回收价值最大的Region。这种使用 Region 划分内存空间以及有优先级的区域回收方式，保证了 G1 收集器在有限时间内可以尽可能高的收集效率（把内存化整为零）。</p>
+<h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a><strong>引用类型</strong></h2><p>​    1）强引用，在java中使用最广泛的，如Object o = new Object()这一类。只要强引用还在，gc永远不会回收被引用的对象。</p>
+<p>​    2）软引用，用来描述有用但是非必须的对象。对于软引用，在系统内存不足时会对其进行回收。这种可以用来缓存相关进行处理。</p>
+<p>​    3）弱引用，当gc扫描到只有弱引用时，不管内存是否充足都会回收。比如ThreadLocal，如果不使用弱引用，其会等到线程结束才被回收，但是有的线程生命周期可能远长于ThreadLocal的生命周期。</p>
+<p>​    4）虚引用，任何时候gc都可以回收虚引用，不会对生命周期构成任何影响。虚引用必须和引用队列关联使用，其作用在于这个对象被gc回收时可以收到一个系统通知，也就是说如果gc要回收一个虚引用时，会把它加入到相应的引用队列，如果程序发现某个虚引用已经加入到引用队列，就可以在其被回收之前进行相应工作。比如管理直接内存（堆以外内存，jvm自动管理的范围是堆内存），就会用虚引用来进行清理工作。</p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a><strong>线程池</strong></h2><p>​    1）线程池的意义：线程池使得线程可以被复用，当线程执行完任务又可以返回线程池领取新任务执行。同时线程池可以更好管理线程，无论是控制线程数量还是控制线程状态。</p>
+<p>​    2）线程池重要概念：<strong>corePoolSize</strong>，核心线程大小，线程池一直运行核心线程就不会停止，核心线程就是线程池里一直要复用的线程，非核心线程是当核心线程满了，阻塞队列也满了，临时顶上去的任务线程，后续没任务了是要回收的，所以非核心线程不会一直被复用。<strong>maximumPoolSize</strong>，线程池最大线程数，非核心线程数量=maximumPoolSize - corePoolSize。<strong>keepAliveTime</strong>，空闲线程存活时间，如果线程空闲下来，超过这个时间还没有任务执行，则会结束该线程。但是这里只回收非核心线程。<strong>workQueue</strong>，阻塞队列，线程池中的线程数量大于核心线程的数量时，就把新建的任务加入阻塞队列。<strong>RejectedExecutionHandler</strong>，饱和策略，如果阻塞队列满了，线程数也达到了最大线程数，线程池会根据饱和策略来执行后续操作，默认的策略就是丢掉任务抛出异常，还有三种是callerRunsPolicy（谁往线程池里丢这个任务就谁负责，一般是主线程），DiscardOldestPolicy（放弃阻塞队列中最旧的任务，然后把该线程加入阻塞队列），DiscardPolicy（丢掉任务，不报异常）。</p>
+<p>​    3）线程池可以用submit和execute两种方法去启动任务，execute只能提交Runnable类型任务，submit既能提交Runnable类型又能提交Callable类型任务。execute碰到异常会直接抛出，并且execute是没有重量级锁的。submit会吃掉异常，通过Future的get方法可以将异常重新抛出。</p>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><p>​    <strong>单例模式</strong>：单例模式下的类只有一个实例，类的构造函数为私有函数以保证该类无法被其他代码实例化。在自己的类构造过程中实例化自己，提供get()方法让其他代码获取自己的唯一实例。也可以在get()方法里实例化，这样可以起到lazy初始化的效果。也可以在类构造过程中写一个静态类Holder，其内部成员INSTANCE是单例类的实例化对象。然后在get方法中访问Holder.INSTANCE也能起到lazy加载的效果，并且还是线程安全。</p>
+<p>​    <strong>工厂模式</strong>：定义一个创建对象的接口，让其子类自行决定要实例化哪一个工厂类。比如暴露一个getXXX(String type)，可以根据type的内容选择实例化哪一个子类，不过这些子类需要实现相同的接口或者继承自相同的父类。</p>
+<p>​    <strong>抽象工厂模式</strong>：抽象工厂就是创建工厂的工厂。</p>
+<p>​    <strong>建造者模式</strong>：把复杂对象拆分为多个零件对象实现，分为Product（产品）、AbstractBuilder（抽象构建者）、ConcreteBuilder（具体构建者）、Director（指挥者）。以StringBuilder为例，StringBuilder中Appendable为抽象建造者，定义了建造方法append, AbstractStringBuilder实现了Appendable接口的方法所以是具体构建者，StringBuilder重写了AbstractStringBuilder的append方法并以特定顺序对AbstractStringBuilder的append方法进行调用，所以既是具体建造者又是指挥者。另外提一下，StringBuffer的建造者模式和StringBuilder是一样的，只不过StringBuffer加了synchrozed关键字是线程安全的。</p>
+<h2 id="jvm"><a href="#jvm" class="headerlink" title="jvm"></a><strong>jvm</strong></h2><p>​    包括内存管理、解释执行、JIT、classLoader、gc。</p>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>​    jvm将内存划分为以下几个区域：</p>
+<p>​    1）程序计数器：程序计数器的作用可以看作当前线程所指向字节码的行号指示器，在JVM中需要执行字节码解释工作，就会通过程序计数器来选取下一条字节码指令。占据较小的内存空间，是线程私有。</p>
+<p>​    2）虚拟机栈：Java方法执行的内存模型，每个方法执行的时候会创建一个栈帧，用于存储局部变量、操作栈、动态链接、方法出口等信息。每个方法从被调用到执行完成，就对应着一个栈帧在虚拟机栈中从入栈到出栈的过程。StockOverflowError错误代表着，该栈的深度过深，大于规定的深度（如递归一直调用下去），就会抛出该错误。线程私有。</p>
+<p>​    3）本地方法栈：本地方法栈服务于native方法，与虚拟机栈的作用相似。本地方法接口可以通过本地方法接口来访问虚拟机内部的运行时信息。线程私有。</p>
+<p>​    4）堆：java内存中最大的一块，被所有线程共享的一片区域。堆的目的是存放对象实例，几乎所有的对象实例都在这里分配内存。但是随着JIT编译器的发展和逃逸分析技术的成熟，栈上分配、标量替换优化技术使得“所有对象在堆上分配内存”不那么绝对了。</p>
+<h3 id="JIT编译器"><a href="#JIT编译器" class="headerlink" title="JIT编译器"></a>JIT编译器</h3><p>​    为了提高热点代码的执行效率，在运行时，JIT（即时编译器）会把java字节码编译成本地机器码，并进行各层次的优化，保存到内存中。重点有C1编译器（局部优化，短时程序）、C2编译器（长期优化），方法内联优化、逃逸分析，栈上分配、标量替换等。</p>
+<h1 id="操作系统相关"><a href="#操作系统相关" class="headerlink" title="操作系统相关"></a>操作系统相关</h1><h2 id="进程与线程的区别"><a href="#进程与线程的区别" class="headerlink" title="进程与线程的区别"></a><strong>进程与线程的区别</strong></h2><p>​    进程是资源的容器，把资源集中到一起，而线程是在CPU上被实际调度的实体对象。<strong>进程</strong>是资源分配的基本单位，包括可执行的代码、打开的文件描述符、挂起的信号、进程的状态、内存地址空间、以及一个或多个执行线程。而<strong>线程</strong>是进程中的活动对象，CPU调度的基本单位，每个线程拥有自己独立的程序计数器、线程栈、寄存器。</p>
+<p>​    为什么有了进程还需要线程？因为一个进程中会有多个任务，如果只有一个调度单位，那么任务被阻塞时其他任务无法继续进行。因此需要有多个独立的调度单位来并发的完成这些任务。另一方面，线程比进程更加的轻量级，可以更快被创建、切换。因为进程中拥有大量资源，所以每次切换进程需要保存资源导致切换开销大。</p>
+<p>​    在Linux内核中，并没有把进程和线程进行区分，线程就是一种特殊的进程，都被叫做任务。都是使用task_struct结构体表示、调用fork函数，由clone方法创建。</p>
+<h2 id="进程间通信方式"><a href="#进程间通信方式" class="headerlink" title="进程间通信方式"></a><strong>进程间通信方式</strong></h2><p>​    1）匿名管道通信：管道是半双工，数据只能由一个方向流动。如果双方都需要通信，那么就需要建立两个管道。且管道只能用于父子进程或者兄弟进程之间。管道对于管道两端的进程来说，就是一个文件，但它不是普通文件，其单独构成一种文件系统，只存在于内存之中。</p>
+<p>​    管道实质上是一个内核缓冲区，进程以先进先出的方式从缓冲区中存取文件，一端存，一端取。管道的局限在于其只支持单向数据流、只能用于有亲缘关系的进程中、没有名字用以标志、管道的缓冲区有限、管道传送的是无格式字节流导致管道两端需要事先约定好数据格式。</p>
+<p>​    2）有名管道通信：有名管道提供了一个路径名与之关联，以有名管道的文件形式存在于文件系统中，这样即使不存在亲缘关系的进程也可以通过该路径访问管道通信。有名管道把名字放在文件系统中，内容放在内存中。</p>
+<p>​    所以管道（无论是否有名）本质就是一种特殊类型的文件，用于先进先出的读写。</p>
+<p>​    3）信号量：信号量的本质是一个计数器，用于多进程对共享数据对象的存取，不以传输数据为主要目的，而是以保护共享资源作为主要目的，使得资源在一个时刻只能被一个进程独享。常作为一种锁机制作为进程间以及同一进程内不同线程之间的同步手段。比如可以用于买票场景，每次办理一次业务，信号量就-1，信号量为0时就是没有车票了，进程便挂起。    </p>
+<p>​    4）消息队列：消息队列是在两个不相关进程间传递数据的一种方式，本质是一种消息链表，可以独立于独写两端，即使进程终止消息队列也不会消失。且消息队列可以有优先级，可以随机读取，每个消息队列在内核中由队列ID进行标志。</p>
+<p>​    5）共享内存：共享内存是两个或多个进程共享同一块内存。最快的一种IPC，因为进程是直接对内存进行存取。因为多个进程同时操作，所以需要处理同步问题，信号量与共享内存常结合在一起使用。所以服务器和客户端进行通信可以由共享内存+信号量+消息队列共同实现</p>
+<p>​    6）套接字：socket可以在本地单机的跨进程通信，也可以在不同计算机上通过网络连接完成跨进程通信。套接字是支持TCP/IP的网络通信的基本操作单元。套接字的特性由3个属性组成：域、端口、协议。域指定传播介质，最常用的是AF_INET，表示使用英特网，第二种常见的是AF_UNIX，表示UNIX文件系统。同一主机的不同进程被赋予了不同端口号。套接字协议在因特网中有三种：a)流套接字：通过TCP/IP实现，提供一个有序、可靠、双向字节流的连接。而且有出错后重发机制。b)数据报套接字：不需要建立连接与维持连接，通过UDP/IP实现，对发送长度有限制。数据报作为一个单独的网络消息被传输，可能出现丢失、乱序等情况，因为UDP不是一个可靠协议，但是速度快。c)原始套接字：可以操纵较低层次的协议，如IP，ICMP。</p>
+<p>​    在套接字中TCP是没有长度限制的，因为TCP是基于流的协议，但是一般由于链路层的数据帧是1500字节限制，IP数据包则是1500-IP头的大小限制(8)。一般TCP的长度不要超过IP数据包内容长度(1500-IP头-TCP头)，这样就不需要对单个TCP包进行分割。</p>
+<h2 id="共享内存相关的文件夹"><a href="#共享内存相关的文件夹" class="headerlink" title="共享内存相关的文件夹"></a><strong>共享内存相关的文件夹</strong></h2><h2 id="kill信号，以及Linux信号"><a href="#kill信号，以及Linux信号" class="headerlink" title="kill信号，以及Linux信号"></a><strong>kill信号，以及Linux信号</strong></h2><p>​    -9是无条件终止，不加-9默认是SIGTERM,以正常方式来终止。ctrl c会发送SIGINT信号，当cpu从内核切回到用户态，就会处理该信号，该信号的默认处理动作是结束进程。ctrl+z是SIGSTP，ctrl+\是SIGOUT，SIGOUT在程序终止后会产生core dump文件。</p>
+<p>​    信号是用来通知进程发生了异步事件。1-31是不可靠信号，34-64是可靠信号，这是因为linux的信号部分继承自unix,而unix因为早期设计导致信号可能会丢失（比如同时来N个信号，但是进程只能处理一个），所以linux在后续中引入了可靠信号32-64，进程无法及时处理的信号会去排队（双链表队列里等着），修复了信号丢失问题，但早期的信号就没法修复了。</p>
+<p>​    信号的发送可以由键盘按键、系统调用、硬件异常、程序错误、kill命令等方式进行生产与发送。</p>
+<p>​    信号的检测时机在内核态切换到用户态时检测，把未决信号（存在pending里，发送过来还没处理的信号）传递给用户态进行处理。进程也可以选择屏蔽某些信号，这些信号就会进入阻塞状态。</p>
+<p>​    信号的处理有两种：默认处理（如终止，终止+dump，忽略）、自定义。</p>
+<h2 id="namespace与cgroup"><a href="#namespace与cgroup" class="headerlink" title="namespace与cgroup"></a><strong>namespace与cgroup</strong></h2><h2 id="execve与system的区别"><a href="#execve与system的区别" class="headerlink" title="execve与system的区别"></a><strong>execve与system的区别</strong></h2><h2 id="docker相关"><a href="#docker相关" class="headerlink" title="docker相关"></a>docker相关</h2><h2 id="docker建议禁用的syscall"><a href="#docker建议禁用的syscall" class="headerlink" title="docker建议禁用的syscall"></a><strong>docker建议禁用的syscall</strong></h2><p>add_key: 阻止容器使用不在命名空间的内核密钥环</p>
+<p>bpf：拒绝将潜在的持久性bpf程序加载到内核中</p>
+<p>clone：拒绝clone新的namespace</p>
+<p>create_module：不能在容器中对内核模块进行操作</p>
+<p>kexec_load：不能在容器中加载内核模块并执行</p>
+<p>…</p>
+<h2 id="docker逃逸"><a href="#docker逃逸" class="headerlink" title="docker逃逸"></a><strong>docker逃逸</strong></h2>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2022/08/12/android-study-17-hook-dynamic-load-dex/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/IMG_4116.JPG" alt="Xzhah's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        xzh3ha@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2022/09/">九月 2022<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/08/">八月 2022<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/07/">七月 2022<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/06/">六月 2022<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2022/05/">五月 2022<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">十月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/angr/">angr<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/c/">c++<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/crypt/">crypt<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf/">ctf<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-wp/">ctf wp<span class="sidebar_archives-count">38</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-writeup/">ctf writeup<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-pwn/">ctf-pwn<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/ctf-re/">ctf-re<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/cve/">cve<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/dll注入/">dll注入<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/iot/">iot<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/oi/">oi<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/oj/">oj<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/pwn/">pwn<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/python/">python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/一键评教/">一键评教<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="My friends">
+                
+                    <i class="material-icons sidebar-material-icons">face</i>
+                
+                My friends
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">favorite</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">history</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/PidanXU/PidanXU.github.io.git" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Stay foolish,stay hungry!
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
