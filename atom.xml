@@ -6,7 +6,7 @@
   <link href="http://pidanxu.github.io/atom.xml" rel="self"/>
   
   <link href="http://pidanxu.github.io/"/>
-  <updated>2023-11-15T08:53:49.488Z</updated>
+  <updated>2024-08-19T07:40:15.859Z</updated>
   <id>http://pidanxu.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sdl安全知识杂记</title>
+    <link href="http://pidanxu.github.io/2024/08/15/sdl%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%9D%82%E8%AE%B0/"/>
+    <id>http://pidanxu.github.io/2024/08/15/sdl%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%9D%82%E8%AE%B0/</id>
+    <published>2024-08-15T14:30:53.000Z</published>
+    <updated>2024-08-19T07:40:15.859Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="sdl相关知识杂记"><a href="#sdl相关知识杂记" class="headerlink" title="sdl相关知识杂记"></a>sdl相关知识杂记</h1><h2 id="sql注入代码审计"><a href="#sql注入代码审计" class="headerlink" title="sql注入代码审计"></a>sql注入代码审计</h2><p>1.可以考虑从source点和sink点入手，比如把相关api都筛选出来。比如statement.executeQuery(sql)。如果sql参数是拼接而来（用户可控某些字段），那么就可能有sql注入风险。</p><p>2.PreparedStatement: PreparedStatement会对SQL语句进行预编译，预编译一定程度上可以防止sql注入，同时还减少sql语句的编译次数，提高性能。</p><p><strong>原理：</strong>先编译sql语句，预编译的语句只作为字符串执行，执行阶段不会再对sql语句进行解析，因此解决了注入问题。语句是语句，参数是参数，只能按照语句的语义跑。</p><p><strong>预编译不是万能的：</strong>预编译仅仅能防住可参数化位置的sql注入，对于不可参数化的部分，预编译是防不了的。比如order by是没有办法参数化的，因为这类关键字后面一般接字段，不能加引号，但预编译会自动加上引号，所以矛盾了。不能加引号的有：表名、列名、order by、 group by、limit、join、from</p><p><strong>可能还会有的漏洞：</strong>比如使用PreparedStatement的时候没使用“？”作为占位符，直接拼接仍然会有sql注入漏洞。使用in语句或Like语句。%和_符号，预编译不能处理相关符号，会导致慢查询，形成dos攻击。</p><h3 id="Mybatis框架下的sql注入"><a href="#Mybatis框架下的sql注入" class="headerlink" title="Mybatis框架下的sql注入"></a>Mybatis框架下的sql注入</h3><p>待补充。。。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;sdl相关知识杂记&quot;&gt;&lt;a href=&quot;#sdl相关知识杂记&quot; class=&quot;headerlink&quot; title=&quot;sdl相关知识杂记&quot;&gt;&lt;/a&gt;sdl相关知识杂记&lt;/h1&gt;&lt;h2 id=&quot;sql注入代码审计&quot;&gt;&lt;a href=&quot;#sql注入代码审计&quot; class</summary>
+      
+    
+    
+    
+    
+    <category term="sdl" scheme="http://pidanxu.github.io/tags/sdl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web3审计学习笔记2</title>
+    <link href="http://pidanxu.github.io/2023/12/16/web3%E5%AE%A1%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/"/>
+    <id>http://pidanxu.github.io/2023/12/16/web3%E5%AE%A1%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</id>
+    <published>2023-12-16T09:01:37.000Z</published>
+    <updated>2024-01-08T15:05:06.124Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="web3代码审计学习笔记"><a href="#web3代码审计学习笔记" class="headerlink" title="web3代码审计学习笔记"></a>web3代码审计学习笔记</h1><h2 id="1-空间分配"><a href="#1-空间分配" class="headerlink" title="1.空间分配"></a>1.空间分配</h2><p>1.对于String，Vec\<string>等类型，size_of返回的是固定值：24。但是在Anchor中要求String的长度应该是4+string_len，Vec\<string>的长度应该是4+(space(String)*amount)。因为size_of返回的是内存布局，不涉及堆上的动态空间（比如字符串内容真正所在的地方）</string></string></p><h2 id="2-zero-copy"><a href="#2-zero-copy" class="headerlink" title="2.zero copy"></a>2.zero copy</h2><p>1.如果账户没开zero copy，那么账户的空间上限只有10kb，开了上限则有10mb。这个知识点通常涉及到考虑账户里有Vec&lt;&gt;成员变量时，引用相关index是否会带来溢出。</p><h2 id="3-try-from"><a href="#3-try-from" class="headerlink" title="3.try_from"></a>3.try_from</h2><p>1.整数类型转换时，使用try_from可以避免整数溢出和整数截断的情况。</p><h2 id="4-nft的verified"><a href="#4-nft的verified" class="headerlink" title="4.nft的verified"></a>4.nft的verified</h2><p>1.如果要更新verified，需要creators和authorities去手动触发</p><p>2.一般是candy machine一开始设置好</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;web3代码审计学习笔记&quot;&gt;&lt;a href=&quot;#web3代码审计学习笔记&quot; class=&quot;headerlink&quot; title=&quot;web3代码审计学习笔记&quot;&gt;&lt;/a&gt;web3代码审计学习笔记&lt;/h1&gt;&lt;h2 id=&quot;1-空间分配&quot;&gt;&lt;a href=&quot;#1-空间分配&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="web3 solana" scheme="http://pidanxu.github.io/tags/web3-solana/"/>
+    
+  </entry>
   
   <entry>
     <title>初探web3安全审计</title>
@@ -411,50 +455,6 @@
     
     
     <category term="android" scheme="http://pidanxu.github.io/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>android study 3</title>
-    <link href="http://pidanxu.github.io/2022/05/22/android-study-3/"/>
-    <id>http://pidanxu.github.io/2022/05/22/android-study-3/</id>
-    <published>2022-05-22T07:43:57.000Z</published>
-    <updated>2022-05-24T03:16:27.034Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Android知识学习"><a href="#Android知识学习" class="headerlink" title="Android知识学习"></a>Android知识学习</h1><h2 id="1-ARM汇编指令"><a href="#1-ARM汇编指令" class="headerlink" title="1.ARM汇编指令"></a>1.ARM汇编指令</h2><p>​    之前打交道比较多的是x86指令集，接触过一点Mips指令集，对于arm指令集还没系统学习过</p><h3 id="1-1-arm的运行状态"><a href="#1-1-arm的运行状态" class="headerlink" title="1.1 arm的运行状态"></a>1.1 arm的运行状态</h3><p>​    arm分为七种运行模式和两种运行状态。</p><p>​    运行模式即用户模式(类似windows的ring3程序)，系统模式(类似ring0)，…等</p><p>​    运行状态分为ARM和Thumb状态。</p><p>​    <strong>1.1.a. Thumb状态</strong></p><p>​    Thumb状态是2字节，可以看做是ARM指令压缩形式的子集,具有16位的代码密度(也就是2个字节指令长度),但是只能是支持通用功能,必要的时候仍然需要ARM 指令。</p><h3 id="1-2-arm寄存器"><a href="#1-2-arm寄存器" class="headerlink" title="1.2 arm寄存器"></a>1.2 arm寄存器</h3><p>​    arm寄存器一共有37个，其中31个通用的，6个是状态寄存器。其中<strong>31</strong>个中分为未分组寄存器和分组寄存器。</p><p>​    <strong>未分组寄存器</strong></p><p>​    1.R0-R7，其意义是在各种运行模式下都可以使用的通用寄存器。R0-R7是通用寄存器，其中<strong>R0-R3</strong>可以用来传递参数，返回值。如果传参的时候寄存器不够的话就使用压栈来完成了。结果返回的寄存器是R0。</p><p>​    <strong>分组寄存器</strong></p><p>​    1.分组寄存器也就是说在不同模式下，会有不同的寄存器，R8-R12是较为特殊的，因为只有在快速模式(FIQ)下,其名字才不一样。也是通用寄存器，可以用来存局部变量之类的。</p><p>​    2. R11寄存器，代表栈底指针。</p><p>​    3.R13寄存器，代表sp栈顶指针。</p><p>​    4.R14寄存器，也叫LR寄存器，即链接寄存器，可以用作保存子程序或者中断的返回地址。</p><p>​    5.R15寄存器，PC寄存器，类似于EIP。</p><p>​    6.CPSR状态寄存器，类似于EFLAGS寄存器。其中的第五位为1时则代表运行在ARM状态，如果T=0则代表运行在Thumb状态。</p><h3 id="1-3-arm-64寄存器"><a href="#1-3-arm-64寄存器" class="headerlink" title="1.3 arm 64寄存器"></a>1.3 arm 64寄存器</h3><p>​    本质上没有什么不同，详情可以见<a href="https://support.huaweicloud.com/ref-kunpenggrf/kunpenggrffaq_10_0057.html" target="_blank" rel="noopener">https://support.huaweicloud.com/ref-kunpenggrf/kunpenggrffaq_10_0057.html</a></p><p>​    比较有意思的是X16,X17寄存器</p><p>​    x16~x17是Intra-procedure-call scratch registers。也就是调用的函数里会用到的一些寄存器(又叫IP0,IP1),比如常用于动态链接中的plt寻址等指令。比如以下指令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. adrp  x16, 11000 &lt;func22+0x10b30&gt; #adrp会拿到目标地址所在页的基址，这里应该就是相应的got表地址了</span><br><span class="line">2. ldr x17, [x16]</span><br><span class="line">3. add x16, x16,</span><br><span class="line">4. br x17</span><br></pre></td></tr></table></figure><h2 id="2-调用约定"><a href="#2-调用约定" class="headerlink" title="2.调用约定"></a>2.调用约定</h2><h3 id="2-1-arm-arm64调用约定"><a href="#2-1-arm-arm64调用约定" class="headerlink" title="2.1 arm/arm64调用约定"></a>2.1 arm/arm64调用约定</h3><p>​    ARM和ARM64使用的是ATPCS(ARM-Thumb Procedure Call Standard/ARM-Thumb过程调用标准)的函数调用约定。</p><p>​    ARM会把参数保存到R0-R3寄存器中，剩下的参数从右到左压栈。返回值放在R0中。</p><p>​    ARM64则是参数保存至X0-X7寄存器中，上下的参数从右到左入栈，返回值放在X0中。</p><h3 id="2-2-x86调用约定"><a href="#2-2-x86调用约定" class="headerlink" title="2.2 x86调用约定"></a>2.2 x86调用约定</h3><p>​    顺便说一下x86的调用约定，x86可以分为三种调用约定: cdecl/stdcall/fastcall。cdecl/stdcall是直接压栈，参数从右往左依次入栈，返回值放在EAX寄存器中。fastcall则是参数1，2保存在ECX,EDX中，剩下的参数从右往左依次入栈。结果放在EAX寄存器中。</p><p>​    x64则只有fastcall一种调用约定，参数1，2，3，4保存至RCX,RDX,R8,R9中，剩下参数从右往左依次入栈。</p><h3 id="2-3-C-函数调用约定"><a href="#2-3-C-函数调用约定" class="headerlink" title="2.3 C++函数调用约定"></a>2.3 C++函数调用约定</h3><p>​    西加加是遵循thiscall函数调用约定，对于x86，会把this指针存入ECX。x64则是参数1，2，3存在RDX，R8，R9，this指针存入ECX。</p><p>​    对于ARM而言，则是把this指针存在R0中，参数1，2，3存在R1,R2,R3。ARM64则是this指针存在X0中，参数1-7存放在X0-X7中，剩下参数从右到左入栈。</p><h2 id="3-跳转指令"><a href="#3-跳转指令" class="headerlink" title="3.跳转指令"></a>3.跳转指令</h2><p>​    ARM的跳转指令有B,BL,BX,BLX。</p><p>​    1.跳转指令B就是无条件跳转，类似于jmp指令。用法: B label</p><p>​    2.BL指令则是带返回的跳转指令，跳转之前会在R14(LR寄存器)中存入当前PC的值。类似于call指令。用法: BL label</p><p>​    3.BX则是带状态切换的跳转指令，根据operand的最低位来判断,如果是1则是Thumb状态，如果是0则是ARM状态。用法：BX 寄存器</p><p>​    4.BLX则是带返回和状态切换的，如果用法是BLX label，则一定会更改处理器的状态。如果是BLX 寄存器，则根据其在最低为来决定。</p><p>​    还有BNE,BEQ这些根据状态寄存器的条件跳转指令。。。除了跳转指令之外，还可以通过MOV,LDR指令，把地址直接赋给PC寄存器从而实现跳转。如MOV PC, LR。或者LDR PC,=0xFFFFFFFF(加等号表示是伪指令，直接把0xFFFFFFFF赋值给PC，否则是去该地址上取值)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Android知识学习&quot;&gt;&lt;a href=&quot;#Android知识学习&quot; class=&quot;headerlink&quot; title=&quot;Android知识学习&quot;&gt;&lt;/a&gt;Android知识学习&lt;/h1&gt;&lt;h2 id=&quot;1-ARM汇编指令&quot;&gt;&lt;a href=&quot;#1-ARM汇编指</summary>
-      
-    
-    
-    
-    
-    <category term="android" scheme="http://pidanxu.github.io/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>android study 2</title>
-    <link href="http://pidanxu.github.io/2022/05/13/android-study-2/"/>
-    <id>http://pidanxu.github.io/2022/05/13/android-study-2/</id>
-    <published>2022-05-13T13:18:19.000Z</published>
-    <updated>2022-05-22T07:37:10.418Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Android-native-hook原理"><a href="#Android-native-hook原理" class="headerlink" title="Android native hook原理"></a>Android native hook原理</h1><h1 id="1-android-got-hook"><a href="#1-android-got-hook" class="headerlink" title="1. android got hook"></a>1. android got hook</h1><h2 id="1-1-GOT-AND-PLT"><a href="#1-1-GOT-AND-PLT" class="headerlink" title="1.1 GOT AND PLT"></a>1.1 GOT AND PLT</h2><p>​    和windows的IAT HOOK一样，当程序调用外部函数时，需要先跳转到PLT(<code>Procedure Link Table</code> 程序链接表，位于代码段)，再跳转到GOT(<code>Global Offset Table</code> 全局偏移表，位于数据段)，执行目标函数。</p><p>​    既然GOT表中已经有了外部函数的真实地址，为什么还需要PLT表呢？因为存在延迟绑定(<code>Lazy Binding</code>)：当外部函数被调用时，才进行地址解析和重定位。所以PLT表是服务于延迟绑定而存在的。</p><p>​    PLT表内容如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jmp got[xx]#第一次调用前，linker会把got表相应的函数填为该jmp的下一条指令</span><br><span class="line">pushq $0x? #可以认为是函数标志，告诉_dl_runtime_resolve函数要填哪个函数的got表地址</span><br><span class="line">jmp _dl_runtime_resolve #让Linker填写GOT表地址</span><br></pre></td></tr></table></figure><h2 id="1-2-如何完成got-hook"><a href="#1-2-如何完成got-hook" class="headerlink" title="1.2 如何完成got hook?"></a>1.2 如何完成got hook?</h2><p>​    在已经完成注入的情况下，要完成got hook可以拆分为以下四个步骤。感觉和ctf 的一些简单pwn题差异不大，pwn需要泄露基地址，泄露libc的加载地址。只不过呢，pwn菜单题里面拿got表地址是直接拖到IDA里面去拿，而且要找漏洞利用点去覆写got表。got hook因为是已经完成注入，所以可以直接写，只需要解析elf文件自动拿到got偏移和so加载地址就好了。</p><p>​    1.找到GOT表在ELF文件中的偏移</p><p>​    2.找到GOT表所在模块加载的基址</p><p>​    3.定位到想要hook的函数</p><p>​    4.将自定义函数的地址进行覆盖</p><h2 id="2-inline-hook"><a href="#2-inline-hook" class="headerlink" title="2.inline hook"></a>2.inline hook</h2><p>​    inline hook就是把目标函数的前几条指令改为jmp 指令，jmp到一块shellcode的地方，然后在shellcode的地方调用自己已经注册的自定义函数，然后再执行之前被覆盖的指令，最后跳回目标函数位置。</p><h2 id="3-Exception-hook"><a href="#3-Exception-hook" class="headerlink" title="3.Exception hook"></a>3.Exception hook</h2><h3 id="3-1-Exception-hook原理"><a href="#3-1-Exception-hook原理" class="headerlink" title="3.1 Exception hook原理"></a>3.1 Exception hook原理</h3><p>​    Exception hook的缺点是执行效率较低，原理是每次在目标指令处制造一个不合法指令，这样进程执行到目标指令处会收到信号<em>SIGILL</em>（illegal instruction），从而进入到我们可以注册的Signal handler中，在异常处理函数中首先执行自定义逻辑，然后把原目标指令恢复，把下一条目标指令改为非法指令即可。</p><h3 id="3-2-如何注册signal-handler"><a href="#3-2-如何注册signal-handler" class="headerlink" title="3.2 如何注册signal handler"></a>3.2 如何注册signal handler</h3><p>​    使用sigaction函数，详情见<a href="https://www.man7.org/linux/man-pages/man2/sigaction.2.html。这个函数是用来在接收到异常信号后进行处理的，第二个结构体参数里面可以放入用户自定义的处理函数。" target="_blank" rel="noopener">https://www.man7.org/linux/man-pages/man2/sigaction.2.html。这个函数是用来在接收到异常信号后进行处理的，第二个结构体参数里面可以放入用户自定义的处理函数。</a></p><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://www.cnblogs.com/mmmmar/p/8227915.html" target="_blank" rel="noopener">https://www.cnblogs.com/mmmmar/p/8227915.html</a></p><p>​    </p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Android-native-hook原理&quot;&gt;&lt;a href=&quot;#Android-native-hook原理&quot; class=&quot;headerlink&quot; title=&quot;Android native hook原理&quot;&gt;&lt;/a&gt;Android native hook原理&lt;/</summary>
-      
-    
-    
-    
-    
-    <category term="android-hook" scheme="http://pidanxu.github.io/tags/android-hook/"/>
     
   </entry>
   
